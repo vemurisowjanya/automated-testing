@@ -27,7 +27,8 @@ public abstract class CommonCode extends PageObjectRef {
 	  public void tearDown() throws Exception {
 		 File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 	     FileUtils.copyFile(scrFile, new File("/home/shwetambara/ScreenshotOnFail/screenshot.png"));   
-		 driver.quit();
+		
+	     driver.quit();
 	   
 	    }
 	  }

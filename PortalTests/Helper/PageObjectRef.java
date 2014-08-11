@@ -23,21 +23,21 @@ public class PageObjectRef {
 	By Readmore4 = By.xpath("(//button[@type='button'])[5]");
 	
 	//Login page page objects 
-	protected By FacebookLink = By.linkText("Facebook");
+	protected By FacebookLink = By.linkText("Facebook"); //By.xpath("(//button[@type='submit'])[2]")
 	protected By TwitterLink = By.linkText("Twitter");
 	protected By GoogleLink = By.linkText("Google");
 	protected By GithubLink = By.linkText("GitHub");
-	By login_id = By.id("id_login");
-	By login_pass = By.id("id_password");
-	By signInbutton = By.cssSelector("button.primaryAction");
+	protected By login_id = By.id("id_login");
+	protected By login_pass = By.id("id_password");
+	protected By signInbutton = By.xpath("//button[@type='submit']");
 	By Rememberme = By.id("id_remember");
 	By ForgotPass = By.linkText("Forgot Password?");
 	
 	//Profile page objects
 	By Profile = By.linkText("Profile");
 	By changePass = By.linkText("Change password");
-	By Logout = By.linkText("Logout");
-	By Signout = By.cssSelector("button[type=\"submit\"]");
+	protected By Logout = By.linkText("Logout");
+	protected By Signout = By.cssSelector("button.btn.btn-primary"); //By.cssSelector("button[type=\"submit\"]");
 	
 	//Signup page page objects
 	By Username = By.id("id_username");
