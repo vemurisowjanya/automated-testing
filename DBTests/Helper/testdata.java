@@ -9,12 +9,12 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
-public abstract class testdata {
+public abstract class testdata extends Helper.PageObjectRef{
 	
 	protected WebDriver driver = null;
 	public String usrnm = "ssrivastava";
 	public String pswd = "giwhuw78";
-	protected String baseUrl = "http://systers.org/systers-dev/doku.php/gsocstudents2014?do=login";
+	protected String baseUrl = "http://systersportal-demo.herokuapp.com";//protected String baseUrl = "http://systers.org/systers-dev/doku.php/gsocstudents2014?do=login";
 	protected String url = "jdbc:mysql://localhost/shweta";
     protected String user = "root";
     protected String password = "check*123#";
