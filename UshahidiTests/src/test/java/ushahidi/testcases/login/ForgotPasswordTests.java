@@ -60,14 +60,14 @@ public class ForgotPasswordTests {
 		signup.submit();
 	}
 	
-	/*@Test
+	@Test
 	public void ExistingEmail_Success() {
 		// forgotpasswordofemail("kesha.shah1106@gmail.com");
 		// boolean condition = check in inbox if instructions recieved ?
 		boolean condition = true;
 		assertTrue(condition);
 	}
-	*/
+	
 	@Test
 	public void NonExistingEmail_Fail() {
 		forgotpasswordofemail("akadbakkad@gmail.com");
