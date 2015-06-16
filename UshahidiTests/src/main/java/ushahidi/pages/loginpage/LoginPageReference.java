@@ -9,7 +9,7 @@ import org.openqa.selenium.By;
  * @author Kesha
  *
  */
-public class LoginPageRefrence {
+public class LoginPageReference {
 	
 	// Login with
 	private By login_text_class = By.className("login_text");
@@ -19,7 +19,8 @@ public class LoginPageRefrence {
 	private By submit_id = By.id("submit");
 	private By forgotpassword_id = By.linkText("Forgot your password?");
 	private By logintoggle_id = By.linkText("Email and Password");
-	
+	private By logout_xpath = By.xpath("/html/body/div[1]/div/div/div/ul[2]/li/ul/li[4]/a/em");
+	private By autherror_xpath = By.xpath("/html/body/div[2]/div[2]");
 	/**
 	 * @return the login_text_class
 	 */
@@ -61,6 +62,18 @@ public class LoginPageRefrence {
 	 */
 	public By getLogintoggle_id() {
 		return logintoggle_id;
+	}
+	/**
+	 * @return the logout_xpath
+	 */
+	public By getLogout_xpath() {
+		return logout_xpath;
+	}
+	/**
+	 * @return the autherror_xpath
+	 */
+	public By getAutherror_xpath() {
+		return autherror_xpath;
 	}
 	
 	

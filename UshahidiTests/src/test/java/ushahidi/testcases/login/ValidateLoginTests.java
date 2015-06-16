@@ -16,16 +16,17 @@ import org.openqa.selenium.WebElement;
 
 import ushahidi.commons.ApplicationConstants;
 import ushahidi.commons.Driver;
-import ushahidi.pages.loginpage.LoginPageRefrence;
+import ushahidi.commons.LoginPageConstants;
+import ushahidi.pages.loginpage.LoginPageReference;
 
 /**
  * @author Kesha
  *
  */
-public class ValidateLogin {
+public class ValidateLoginTests {
 
 	WebDriver driver = null;
-	LoginPageRefrence pageref;
+	LoginPageReference pageref;
 	
 	/**
 	 * @throws java.lang.Exception
@@ -34,15 +35,15 @@ public class ValidateLogin {
 	public void setUp() throws Exception {
 		Driver d = new Driver();
 		driver = d.getInstance();
-		pageref = new LoginPageRefrence();
-	}
-
-	public void loginWith(String username, String password)
-			throws InterruptedException {
-
+		pageref = new LoginPageReference();
+	
+		// Getting to the login page URL
 		driver.get(ApplicationConstants.baseUrl + ApplicationConstants.extlogin);
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	}
 
+	private void loginWith(String username, String password)
+			throws InterruptedException {
 		// Enter user email id
 		WebElement login_text = driver.findElements(pageref.getLogin_text_class()).get(0);
 		WebElement uname = login_text.findElement(pageref.getUsername_id());
@@ -66,11 +67,62 @@ public class ValidateLogin {
 
 		// Check for logout button
 		driver.findElement(By.className("header_nav_label")).click();
-		String check = driver.findElement(By.xpath("/html/body/div[1]/div/div/div/ul[2]/li/ul/li[4]/a/em")).getText();
-		System.out.println(check);
-		Assert.assertEquals("Logout", check);
+		String check = driver.findElement(pageref.getLogout_xpath()).getText();
+		System.out.println("Test: loginCorrectUsernameCorrectPassword " + check);
+		Assert.assertEquals(LoginPageConstants.logout, check);
+		driver.findElement(pageref.getLogout_xpath()).click();
 	}
 
+	@Test
+	public void loginCorrectUsernameIncorrectPassword() throws InterruptedException {
+		loginWith("kesha.shah1106@gmail.com", "123abc");
+
+		// Check for logout button
+		String check = driver.findElement(pageref.getAutherror_xpath()).getText();
+		System.out.println("Test: loginCorrectUsernameIncorrectPassword " + check);
+		Assert.assertEquals(LoginPageConstants.incorrectuseridorpassword, check);
+	}
+	
+	@Test
+	public void loginIncorrectUsernameCorrectPassword() throws InterruptedException {
+		loginWith("missshah1106@gmail.com", "abc123");
+
+		// Check for logout button
+		String check = driver.findElement(pageref.getAutherror_xpath()).getText();
+		System.out.println("Test: loginIncorrectUsernameCorrectPassword " + check);
+		Assert.assertEquals(LoginPageConstants.incorrectuseridorpassword, check);
+	}
+	
+	@Test
+	public void loginNoUsernameAndSomePassword() throws InterruptedException {
+		loginWith("", "abc123");
+
+		// Check for logout button
+		String check = driver.findElement(pageref.getAutherror_xpath()).getText();
+		System.out.println("Test: loginNoUsernameAndSomePassword " + check);
+		Assert.assertEquals(LoginPageConstants.nouserid, check);
+	}
+	
+	@Test
+	public void loginSomeUsernameAndNoPassword() throws InterruptedException {
+		loginWith("missshah1106@gmail.com", "");
+
+		// Check for logout button
+		String check = driver.findElement(pageref.getAutherror_xpath()).getText();
+		System.out.println("Test: loginSomeUsernameAndNoPassword " + check);
+		Assert.assertEquals(LoginPageConstants.nopassword, check);
+	}
+	
+	@Test
+	public void loginNoUsernameAndNoPassword() throws InterruptedException {
+		loginWith("", "");
+
+		// Check for logout button
+		String check = driver.findElement(pageref.getAutherror_xpath()).getText();
+		System.out.println("Test: loginSomeUsernameAndNoPassword " + check);
+		Assert.assertEquals(LoginPageConstants.nouserid+"\n"+LoginPageConstants.nopassword, check);
+	}
+		
 	/**
 	 * @throws java.lang.Exception
 	 */
