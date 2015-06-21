@@ -1,4 +1,4 @@
-Automating Testing Portal Meetup
+Automation Testing Portal Meetup
 ==================================
 
 
@@ -13,4 +13,4 @@ Tools and Language used
 
 Project documentation
 ---------------------
-* Complete Project documentation can be found on my blog [here] (http://www.documentationgsoc15.blogspot.com/). 
+* Complete Project documentation can be found [here] (http://www.documentationgsoc15.blogspot.com/). 
