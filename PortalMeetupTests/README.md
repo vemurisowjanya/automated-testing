@@ -2,15 +2,15 @@ Automating Testing Portal Meetup
 ==================================
 
 
-This repository contains all the codes for the development of a Java based automation testing framework using Selenium WebDriver. The framework can be extended to add more features as the web application develops and more tests can be added for the same. Maven has been used as the build tool.
+This repository contains all the codes for the development of a Java based automation testing framework using Selenium. The framework can be extended to add more features as the web application develops and more tests can be added for the same. Maven has been used as the build tool.
 
 Tools and Language used
 ------------------------
-1.Java
-1.Selenium 
-1.Eclipse IDE
-1.Maven
+1. Java
+1. Selenium 
+1. Eclipse IDE
+1. Maven
 
 Project documentation
 ---------------------
-* Complete Project documentation can be found [here] (http://www.documentationgsoc15.blogspot.com/). 
+* Complete Project documentation can be found on my blog [here] (http://www.documentationgsoc15.blogspot.com/). 
