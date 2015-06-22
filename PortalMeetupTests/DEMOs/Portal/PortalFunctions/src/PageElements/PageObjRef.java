@@ -18,6 +18,10 @@ public class PageObjRef
     public static By ReadMore3 = By.xpath("html/body/div[2]/div[3]/div[2]/a");
     public static By ReadMore4 = By.xpath("html/body/div[2]/div[5]/div[2]/a");
     public static By SignUp = By.xpath("html/body/div[1]/div/div[2]/ul[2]/li[1]/a");
+    public static By JoinSysters= By.xpath("html/body/div[2]/div[1]/p[2]/a");
+    public static By AboutUs= By.xpath("html/body/div[1]/div/div[2]/ul[1]/li[1]/a");
+    public static By Wiki= By.xpath("html/body/div[1]/div/div[2]/ul[1]/li[3]/a"); 
+    public static By Contact= By.xpath("html/body/div[1]/div/div[2]/ul[1]/li[4]/a");
     
     //Community Proposal Form
     public static By FormTitle = By.xpath("html/body/div[1]/div/div[2]/div/h1");
