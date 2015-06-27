@@ -25,8 +25,8 @@ import ushahidi.pages.loginpage.LoginPageReference;
  */
 public class ValidateLoginTests {
 
-	WebDriver driver = null;
-	LoginPageReference pageref;
+	private WebDriver driver = null;
+	private LoginPageReference pageref;
 	
 	/**
 	 * @throws java.lang.Exception

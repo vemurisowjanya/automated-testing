@@ -32,9 +32,9 @@ import ushahidi.pages.loginpage.UIPageReference;
  */
 public class ValidateSignUpTests {
 	
-	WebDriver driver = null;
-	UIPageReference uipageref;
-	SignUpPageReference pageref;
+	private WebDriver driver = null;
+	private UIPageReference uipageref;
+	private SignUpPageReference pageref;
 	/**
 	 * @throws java.lang.Exception
 	 */

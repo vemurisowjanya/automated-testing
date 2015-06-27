@@ -8,7 +8,7 @@ package ushahidi.commons;
  *
  */
 public class LoginPageConstants {
-	public static final String logout = "logout";
+	public static final String logout = "Logout";
 	public static final String incorrectuseridorpassword = "• Please check that you entered the correct email and password.";
 	public static final String nopassword = "• The password field is required.";
 	public static final String nouserid = "• The public profile URL field is required.";

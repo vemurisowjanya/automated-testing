@@ -28,9 +28,9 @@ import ushahidi.pages.loginpage.UIPageReference;
  */
 public class ForgotPasswordTests {
 
-	WebDriver driver = null;
-	UIPageReference uipageref;
-	ForgotPasswordPageReference pageref; 
+	private WebDriver driver = null;
+	private UIPageReference uipageref;
+	private ForgotPasswordPageReference pageref; 
 	
 	/**
 	 * @throws java.lang.Exception
