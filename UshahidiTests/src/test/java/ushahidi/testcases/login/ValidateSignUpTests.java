@@ -76,6 +76,7 @@ public class ValidateSignUpTests {
 	
 	@Test
 	public void AllCorrectDetails() {
+		System.out.println("Test: AllCorrectDetails ");
 		
 		// just a logic to create new login name and email each time
 		DateTime dt = new DateTime();
@@ -93,6 +94,7 @@ public class ValidateSignUpTests {
 
 	@Test
 	public void NoPasswordDetails() {
+		System.out.println("Test: NoPasswordDetails ");
 		
 		String name = "kesha123";
 		String email = name+"@gmail.com";   
@@ -107,6 +109,7 @@ public class ValidateSignUpTests {
 	
 	@Test
 	public void NoNameDetails() {
+		System.out.println("Test: NoNameDetails ");
 		
 		String name = "";
 		String email = "kesha12345@gmail.com";   
@@ -121,6 +124,7 @@ public class ValidateSignUpTests {
 	
 	@Test
 	public void NoEmailDetails() {
+		System.out.println("Test: NoEmailDetails ");
 		
 		String name = "kesha12345";
 		String email = "";   
@@ -135,6 +139,7 @@ public class ValidateSignUpTests {
 
 	@Test
 	public void NoNameAndEmailDetails() {
+		System.out.println("Test: NoNameAndEmailDetails ");
 		
 		String name = "";
 		String email = "";   
@@ -150,6 +155,7 @@ public class ValidateSignUpTests {
 	
 	@Test
 	public void NoPasswordandNameDetails() {
+		System.out.println("Test: NoPasswordandNameDetails ");
 		
 		String name = "";
 		String email = "kesha123@gmail.com";   
@@ -164,6 +170,7 @@ public class ValidateSignUpTests {
 	
 	@Test
 	public void NoPasswordAndEmailDetails() {
+		System.out.println("Test: NoPasswordAndEmailDetails ");
 		
 		String name = "kesha123";
 		String email = "";   
@@ -178,6 +185,7 @@ public class ValidateSignUpTests {
 	
 	@Test
 	public void NoPasswordNoNameAndEmailDetails() {
+		System.out.println("Test: NoPasswordNoNameAndEmailDetails ");
 		
 		String name = "";
 		String email = "";   
@@ -192,6 +200,7 @@ public class ValidateSignUpTests {
 	
 	@Test
 	public void EmailAlreadyExists() {
+		System.out.println("Test: EmailAlreadyExists ");
 		
 		String name = "kesha.shah1106";
 		String email = name +"@gmail.com";   
@@ -206,6 +215,7 @@ public class ValidateSignUpTests {
 	
 	@Test
 	public void EmailAlreadyExistsAndNoName() {
+		System.out.println("Test: EmailAlreadyExistsAndNoName ");
 		
 		String name = "";
 		String email = "kesha.shah1106" +"@gmail.com";   
@@ -220,6 +230,7 @@ public class ValidateSignUpTests {
 	
 	@Test
 	public void EmailAlreadyExistsAndNoPassword() {
+		System.out.println("Test: EmailAlreadyExistsAndNoPassword ");
 		
 		String name = "kesha.shah1106";
 		String email = name +"@gmail.com";   
@@ -234,6 +245,7 @@ public class ValidateSignUpTests {
 	
 	@Test
 	public void EmailAlreadyExistsAndNoNameNoPassword() {
+		System.out.println("Test: EmailAlreadyExistsAndNoNameNoPassword ");
 		
 		String name = "";
 		String email = "kesha.shah1106" +"@gmail.com";   
@@ -248,7 +260,8 @@ public class ValidateSignUpTests {
 	
 	@Test
 	public void PasswordsNotSame() {
-
+		System.out.println("Test: PasswordsNotSame ");
+		
 		// just a logic to create new login name and email each time
 		DateTime dt = new DateTime();
 		DateTime now = dt.now();
@@ -265,7 +278,8 @@ public class ValidateSignUpTests {
 
 	@Test
 	public void PasswordsNotSameAndNoName() {
-
+		System.out.println("Test: PasswordsNotSameAndNoName ");
+		
 		// just a logic to create new login name and email each time
 		DateTime dt = new DateTime();
 		DateTime now = dt.now();
@@ -282,7 +296,8 @@ public class ValidateSignUpTests {
 
 	@Test
 	public void PasswordsNotSameAndNoEmail() {
-
+		System.out.println("Test: PasswordsNotSameAndNoEmail ");
+		
 		// just a logic to create new login name and email each time
 		DateTime dt = new DateTime();
 		DateTime now = dt.now();
@@ -299,7 +314,8 @@ public class ValidateSignUpTests {
 	
 	@Test
 	public void PasswordsNotSameAndNoNameNoEmail() {
-
+		System.out.println("Test: PasswordsNotSameAndNoNameNoEmail ");
+		
 		String name = "";
 		String email = ""; 
 		String password = "kesha12";
@@ -313,7 +329,8 @@ public class ValidateSignUpTests {
 
 	@Test
 	public void PasswordsNotSameAndEmailExists() {
-
+		System.out.println("Test: PasswordsNotSameAndEmailExists ");
+		
 		String name = "kesha.shah1106";
 		String email = name + "@gmail.com";   
 		String password = email.substring(0,4);
@@ -327,7 +344,8 @@ public class ValidateSignUpTests {
 	
 	@Test
 	public void PasswordsNotSameNoNameAndEmailExists() {
-
+		System.out.println("Test: PasswordsNotSameNoNameAndEmailExists ");
+		
 		String name = "";
 		String email = "kesha.shah1106" + "@gmail.com";   
 		String password = email.substring(0,4);

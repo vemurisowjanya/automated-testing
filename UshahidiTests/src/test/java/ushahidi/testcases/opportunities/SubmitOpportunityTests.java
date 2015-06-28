@@ -127,6 +127,8 @@ public class SubmitOpportunityTests {
 	
 	@Test
 	public void opporunityWithNoResource() {
+		System.out.println("Test: opporunityWithNoResource ");
+		
 		submitOpportunityWith("", "Kesha Shah", "06/11/2015", "06/28/2015", "+91-9234512345", "additonal info here");
 	
 		List<WebElement> allErrors = driver.findElements(submit_page_ref.getErrorlog()); 
@@ -146,6 +148,8 @@ public class SubmitOpportunityTests {
 	
 	@Test
 	public void opporunityWithNoPCV() {
+		System.out.println("Test: opporunityWithNoPCV ");
+		
 		submitOpportunityWith("Volunter", "", "06/11/2015", "06/28/2015", "+91-9234512345", "additonal info here");
 	
 		List<WebElement> allErrors = driver.findElements(submit_page_ref.getErrorlog()); 
@@ -165,6 +169,8 @@ public class SubmitOpportunityTests {
 	
 	@Test
 	public void opporunityWithNoAvailablefrom() {
+		System.out.println("Test: opporunityWithNoAvailablefrom ");
+		
 		submitOpportunityWith("Volunter", "Kesha Shah", "", "06/28/2015", "+91-9234512345", "additonal info here");
 	
 		List<WebElement> allErrors = driver.findElements(submit_page_ref.getErrorlog()); 
@@ -184,6 +190,8 @@ public class SubmitOpportunityTests {
 	
 	@Test
 	public void opporunityWithNoAvailableUntil() {
+		System.out.println("Test: opporunityWithNoAvailableUntil ");
+		
 		submitOpportunityWith("Volunter", "Kesha Shah", "06/11/2015", "", "+91-9234512345", "additonal info here");
 	
 		List<WebElement> allErrors = driver.findElements(submit_page_ref.getErrorlog()); 
@@ -203,6 +211,8 @@ public class SubmitOpportunityTests {
 	
 	@Test
 	public void opporunityWithNoContact() {
+		System.out.println("Test: opporunityWithNoContact ");
+		
 		submitOpportunityWith("Volunter", "Kesha Shah", "06/11/2015", "06/28/2015", "", "additonal info here");
 	
 		List<WebElement> allErrors = driver.findElements(submit_page_ref.getErrorlog()); 
@@ -222,6 +232,8 @@ public class SubmitOpportunityTests {
 	
 	@Test
 	public void opporunityWithNoAdditionalInfo() {
+		System.out.println("Test: opporunityWithNoAdditionalInfo ");
+		
 		submitOpportunityWith("Volunter", "Kesha Shah", "06/11/2015", "06/28/2015", "+91-9234512345", "");
 	
 		List<WebElement> allErrors = driver.findElements(submit_page_ref.getErrorlog()); 
@@ -241,6 +253,8 @@ public class SubmitOpportunityTests {
 	
 	@Test
 	public void opporunityWithWrongFormatAvailableFrom() {
+		System.out.println("Test: opporunityWithWrongFormatAvailableFrom ");
+		
 		submitOpportunityWith("Volunter", "Kesha Shah", "06112015", "06/28/2015", "+91-9234512345", "additonal info here");
 	
 		List<WebElement> allErrors = driver.findElements(submit_page_ref.getErrorlog()); 
@@ -260,6 +274,8 @@ public class SubmitOpportunityTests {
 	
 	@Test
 	public void opporunityWithWrongFormatAvailableUntil() {
+		System.out.println("Test: opporunityWithWrongFormatAvailableUntil ");
+		
 		submitOpportunityWith("Volunter", "Kesha Shah", "06/11/2015", "06282015", "+91-9234512345", "additonal info here");
 	
 		List<WebElement> allErrors = driver.findElements(submit_page_ref.getErrorlog()); 
@@ -279,6 +295,8 @@ public class SubmitOpportunityTests {
 	
 	@Test
 	public void opporunitySubmitPass() {
+		System.out.println("Test: opporunitySubmitPass ");
+		
 		int rand = random_no.nextInt(1000);
 		String resource = "Volunter" + rand;
 		String pcv =  "KeshaShah" + rand;
@@ -292,6 +310,8 @@ public class SubmitOpportunityTests {
 	
 	@Test
 	public void returnToOpportunityAfterSuccessfullyAddingOpportunity() {
+		System.out.println("Test: returnToOpportunityAfterSuccessfullyAddingOpportunity ");
+		
 		int rand = random_no.nextInt(1000);
 		String resource = "Volunter" + rand;
 		String pcv =  "KeshaShah" + rand;
@@ -308,6 +328,8 @@ public class SubmitOpportunityTests {
 	
 	@Test
 	public void submitAnOpportunityAfterSuccessfullyAddingOpportunity() {
+		System.out.println("Test: submitAnOpportunityAfterSuccessfullyAddingOpportunity ");
+		
 		int rand = random_no.nextInt(1000);
 		String resource = "Volunter" + rand;
 		String pcv =  "KeshaShah" + rand;
@@ -324,6 +346,8 @@ public class SubmitOpportunityTests {
 	
 	@Test
 	public void isOpportunityAddedToDatabase() {
+		System.out.println("Test: isOpportunityAddedToDatabase ");
+		
 		int rand = random_no.nextInt(1000);
 		String resource = "Volunter" + rand;
 		String pcv =  "KeshaShah" + rand;
@@ -350,9 +374,7 @@ public class SubmitOpportunityTests {
 				found_resource = true;
 				break;
 			}
-		
 		}
-		
 		Assert.assertEquals(true, found_resource);
 	}
 	

@@ -48,8 +48,10 @@ public class ForgotPasswordTests {
 		driver.findElement(uipageref.getRegisteredemail_xpath()).click();
 	}
 
+	@Test
 	private void forgotpasswordofemail(String email) 
 	{
+		System.out.println("Test: forgotpasswordofemail ");
 		// Entering user email
 		WebElement email_temp = driver.findElements(pageref.getEmail()).get(2);
 		WebElement email_element = email_temp.findElement(pageref.getEmail_id());
@@ -62,8 +64,10 @@ public class ForgotPasswordTests {
 	
 	@Test
 	public void ExistingEmail_Success() {
+		System.out.println("Test: ExistingEmail_Success ");
 		// forgotpasswordofemail("kesha.shah1106@gmail.com");
 		// boolean condition = check in inbox if instructions recieved ?
+		
 		boolean condition = true;
 		assertTrue(condition);
 	}
