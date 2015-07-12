@@ -3,8 +3,6 @@
  */
 package ushahidi.testcases.opportunities;
 
-import static org.junit.Assert.*;
-
 import java.util.List;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -18,15 +16,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import com.gargoylesoftware.htmlunit.javascript.host.Element;
-
 import ushahidi.commons.ApplicationConstants;
 import ushahidi.commons.Driver;
 import ushahidi.commons.OpportunitiesPageConstants;
 import ushahidi.pages.homepage.MenubarPageReference;
 import ushahidi.pages.loginpage.LoginPageReference;
-import ushahidi.pages.loginpage.SignUpPageReference;
-import ushahidi.pages.loginpage.UIPageReference;
 import ushahidi.pages.opportunities.OpportunitiesPageReference;
 import ushahidi.pages.opportunities.SubmitOpportunityPageReference;
 import ushahidi.pages.opportunities.SuccessOpportunityPageReference;

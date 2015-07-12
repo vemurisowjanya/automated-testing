@@ -14,5 +14,5 @@ public class ApplicationConstants {
 	public static final String extlogin = "/login";
 	public static final String extopportunities = "/opportunities";
 	public static final String extopportunitiessubmit = "/opportunities/submit"; 
-	
+	public static final String extfaq="/page/index/1";
 }
