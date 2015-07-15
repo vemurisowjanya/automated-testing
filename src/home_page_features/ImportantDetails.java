@@ -14,7 +14,7 @@ public class ImportantDetails extends common.CommonCode {
 
 	@Test
 	public void ImportantDetailsTest() {
-		
+
 		//important details
 		driver.findElement(By.xpath("html/body/div[3]/div/font/a[3]")).click();
 		String actualURL= driver.getCurrentUrl();

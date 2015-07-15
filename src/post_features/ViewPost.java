@@ -28,4 +28,3 @@ public class ViewPost extends common.CommonCode {
 }
 
 
-

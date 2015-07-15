@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -28,6 +29,7 @@ public class CommonCode {
 		baseURL = "http://localhost:8001";			
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+	
 	
 	//public void login() {
 		expectedTitle = "Welcome !";
@@ -47,6 +49,32 @@ public class CommonCode {
 		//wait to load page to get title
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);		
 		Assert.assertEquals("Dashboard", driver.getTitle());
+	}
+	
+	@Test
+	public void addpost(String title, String description) {
+		
+		expectedTitle = "Malaria : infoHub";
+			
+		driver.get(baseURL + "/malaria/" );
+		String actualTitle = driver.getTitle();
+		//Assert.assertEquals(expectedTitle, actualTitle);
+	
+		
+		//TODO: input arbitrary values (more generic)perhaps from excel sheet.
+		
+		// click on new post
+		driver.findElement(By.xpath("html/body/div[2]/div/button")).click();
+		driver.findElement(By.xpath
+				("html/body/div[2]/div[1]/form/div[1]/div[3]/input")).sendKeys(title);
+		driver.findElement(By.xpath
+				("html/body/div[2]/div[1]/form/div[2]/div[3]/textarea")).sendKeys
+				(description);		
+
+		//click on submit
+		driver.findElement(By.xpath("html/body/div[2]/div[1]/form/center/div/div[2]/input")).click();
+		String result = driver.findElement(By.xpath("html/body/div[2]/center[1]/h4")).getText();
+		System.out.println(result);
 	}
 	
 	@After

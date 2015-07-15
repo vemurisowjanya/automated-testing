@@ -14,7 +14,8 @@ public class AboutPeaceCorps extends common.CommonCode {
 
 	@Test
 	public void PeaceCorpsTest() {
-				
+		
+		
 		//about peacecorps
 		driver.findElement(By.xpath("html/body/div[3]/div/font/a[1]")).click();
 		String actualURL = driver.getCurrentUrl();

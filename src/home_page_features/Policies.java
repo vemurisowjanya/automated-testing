@@ -15,7 +15,7 @@ public class Policies extends common.CommonCode {
 
 	@Test
 	public void PoliciesTest() {
-		
+
 		//policies
 		driver.findElement(By.xpath("html/body/div[3]/div/font/a[2]")).click();
 		String actualURL = driver.getCurrentUrl();
