@@ -13,62 +13,53 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.IOException;	
-import java.util.Iterator;
+
 
 
 public class ExcelLoginReader {
-	private XSSFSheet ExcelSheet;
-	private XSSFWorkbook ExcelBook;
-	private XSSFCell Cell;
-	private XSSFRow Row;
+	private static XSSFSheet ExcelSheet;
+	private static XSSFWorkbook ExcelBook;
+	private static XSSFCell Cell;
+	private static XSSFRow Row;
 
+	
 	//connects to Excel Worksheet and reads the data in each cell
-	public String[][] read(String path, String sheetName ) throws FileNotFoundException {
-			
-	File file = new File(path);
-			
-	FileInputStream inputStream = new FileInputStream(file);
-	try {
+	public static Object[][] read(String path, String sheetName ) throws Exception {	
+	
+		FileInputStream inputStream = new FileInputStream(path);
+
 		ExcelBook = new XSSFWorkbook(inputStream);
-	} catch (IOException e) {
-	// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
+	
 		ExcelSheet = ExcelBook.getSheet(sheetName);
 		
 		int startRow = 1;
 		int startCol = 1;
-		int totalRows = getNumRows();
-		int totalCols = getNumCols();
+		int totalRows = ExcelSheet.getLastRowNum();//get total rows
 		
-		String[][] cellValue = new String [totalRows][totalCols];
-		for (int i = startRow; i <= totalRows; i++ ) {
-			for (int j = startCol; j <= 2; j++) {
-				cellValue[i-1][j-1] = getData(i, j);
+		//assumes that each row has same number of columns.
+		int totalCols = ExcelSheet.getRow(0).getLastCellNum();//get total columns
+		
+		Object[][] cellValue = new String [totalRows][totalCols];
+		int ci = 0;
+		for (int i = startRow + 1; i <= totalRows ; i++ ) {
+			int cj = 0;
+			for (int j = startCol + 1; j <= totalCols; j++) {
+				cellValue[ci][cj] = getData(i, j);
 			}
 		}
-		return cellValue;
-			
-	}
-		
-	//gets the number  rows in sheet
-	public int getNumRows(){
-		return ExcelSheet.getLastRowNum();
-	}
 	
-	//gets the number of columns in sheet
-	//assumes there will be same number of columns for each row.
-	public int getNumCols() {
-		return Row.getLastCellNum();
+		return(cellValue);
 	}
 	
 	//gets the data in each cell
-	private String getData(int i, int j) {
-		String data = ExcelSheet.getRow(i).getCell(j).getStringCellValue();
-		return data;
+	private static Object getData(int i, int j) {
+		
+			Cell = ExcelSheet.getRow(i).getCell(j);//.getStringCellValue();
+			if (Cell.getCellType() == 0)
+				return Cell.getNumericCellValue();
+			else return Cell.getStringCellValue();
+			
 	}
 }
