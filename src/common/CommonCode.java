@@ -21,8 +21,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class CommonCode {
 	private String expectedTitle; 
 
-	protected String baseURL; 
-	protected WebDriver driver;		
+	protected static String baseURL; 
+	protected static WebDriver driver;		
 
 	@Before
 	public void start() {

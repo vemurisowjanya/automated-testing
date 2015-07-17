@@ -1,18 +1,25 @@
+/**
+ * This class contains the test case for login with TestNG Data Provider
+ * 
+ * @author daisy
+ */
 package common;
 
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
-import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+import org.testng.annotations.DataProvider;
 
-public class Login extends common.CommonCode{
-
-	private String expectedTitle; 
+public class LoginTest extends CommonCode {
+	private String expectedTitle;
 	
 	
-	public void login(String username, String password) {
+  @Test(dataProvider = "Authentication")
+  public void login(String username, String password) {
 		expectedTitle = "Welcome !";
 		driver.get(baseURL);
 		driver.manage().window().maximize();
@@ -31,4 +38,10 @@ public class Login extends common.CommonCode{
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);		
 		Assert.assertEquals("Dashboard", driver.getTitle());
 	}
+
+  @DataProvider (name = "Authentication")
+  public static Object[][] credentials() {
+	  //tests will be executed thrice using the excel sheet
+	  return new Object[][] {{"username", "password"}, {"username", "password"}, {"username", "password"}};
+  }
 }
