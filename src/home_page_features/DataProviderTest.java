@@ -1,6 +1,5 @@
 package home_page_features;
 
-import java.io.FileNotFoundException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -12,7 +11,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.DataProvider;
 
-import utilities.ExcelLoginReader;
 
 public class DataProviderTest {
 	
@@ -46,8 +44,8 @@ public class DataProviderTest {
 
 
   @DataProvider
-  public Object[][] Authentication() throws Exception {
-    Object[][] cellData = utilities.ExcelLoginReader.read("src/data/loginDetails.xlsx", "Sheet1");
+  public String[][] Authentication() throws Exception {
+    String[][] cellData = utilities.ExcelLoginReader.read("src/data/loginDetails.xlsx", "Sheet1");
 	return cellData;
 
     

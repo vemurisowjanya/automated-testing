@@ -8,25 +8,20 @@
 
 package utilities;
 
-import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-
 
 
 public class ExcelLoginReader {
 	private static XSSFSheet ExcelSheet;
 	private static XSSFWorkbook ExcelBook;
 	private static XSSFCell Cell;
-	private static XSSFRow Row;
-
 	
 	//connects to Excel Worksheet and reads the data in each cell
-	public static Object[][] read(String path, String sheetName ) throws Exception {	
+	public static String[][] read(String path, String sheetName ) throws Exception {	
 	
 		FileInputStream inputStream = new FileInputStream(path);
 
@@ -35,31 +30,33 @@ public class ExcelLoginReader {
 		ExcelSheet = ExcelBook.getSheet(sheetName);
 		
 		int startRow = 1;
-		int startCol = 1;
-		int totalRows = ExcelSheet.getLastRowNum();//get total rows
+		
+		int startCol = 0;
+		int totalRows = ExcelSheet.getLastRowNum() ;//0-based(0, 1, 2...)
 		
 		//assumes that each row has same number of columns.
-		int totalCols = ExcelSheet.getRow(0).getLastCellNum();//get total columns
+		int totalCols = ExcelSheet.getRow(0).getLastCellNum();//1-based(1, 2, 3...)
 		
-		Object[][] cellValue = new String [totalRows][totalCols];
+		String[][] cellValue = new String [totalRows][totalCols];
+		
 		int ci = 0;
-		for (int i = startRow + 1; i <= totalRows ; i++ ) {
+		for (int i = startRow; i <= totalRows ; i++) {
 			int cj = 0;
-			for (int j = startCol + 1; j <= totalCols; j++) {
+			for (int j = startCol; j < totalCols; j++) {
+				
 				cellValue[ci][cj] = getData(i, j);
+				cj++;
 			}
-		}
-	
+			ci++;
+		}	
 		return(cellValue);
 	}
 	
 	//gets the data in each cell
-	private static Object getData(int i, int j) {
-		
-			Cell = ExcelSheet.getRow(i).getCell(j);//.getStringCellValue();
-			if (Cell.getCellType() == 0)
-				return Cell.getNumericCellValue();
-			else return Cell.getStringCellValue();
-			
+	private static String getData(int i, int j) {
+		Cell = ExcelSheet.getRow(i).getCell(j);
+		if(Cell.getCellType() == 1)
+			return Cell.getStringCellValue();
+		else return "";
 	}
 }
