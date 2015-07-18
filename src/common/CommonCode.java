@@ -26,7 +26,7 @@ public class CommonCode {
 
 	@Before
 	public void start() {
-		baseURL = "http://localhost:8001";			
+		baseURL = utilities.Constants.baseURL;			
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 	
