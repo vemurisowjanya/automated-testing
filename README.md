@@ -1,4 +1,4 @@
-##**Testing Automation: Mobile App Control Centre - Malaria**
+###**Testing Automation: Mobile App Control Centre - Malaria**
 
 This repository aims at building a data driven test framework for the malaria part of the Mobile App Control Centre (MACC).
 
