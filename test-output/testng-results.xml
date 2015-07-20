@@ -1,109 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" total="0" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="67076" started-at="2015-07-18T05:50:05Z" finished-at="2015-07-18T05:51:12Z">
+  <suite name="Default suite" duration-ms="8" started-at="2015-07-20T06:46:00Z" finished-at="2015-07-20T06:46:00Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="67076" started-at="2015-07-18T05:50:05Z" finished-at="2015-07-18T05:51:12Z">
-      <class name="home_page_features.DataProviderTest">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:home_page_features.DataProviderTest@d072a9]" name="beforeMethod" is-config="true" duration-ms="16964" started-at="2015-07-18T06:50:06Z" finished-at="2015-07-18T06:50:23Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="f(java.lang.String, java.lang.String)[pri:0, instance:home_page_features.DataProviderTest@d072a9]" name="f" duration-ms="2196" started-at="2015-07-18T06:50:23Z" data-provider="Authentication" finished-at="2015-07-18T06:50:25Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[admin]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[mypassword]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- f -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:home_page_features.DataProviderTest@d072a9]" name="afterMethod" is-config="true" duration-ms="7169" started-at="2015-07-18T06:50:25Z" finished-at="2015-07-18T06:50:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:home_page_features.DataProviderTest@d072a9]" name="beforeMethod" is-config="true" duration-ms="16681" started-at="2015-07-18T06:50:32Z" finished-at="2015-07-18T06:50:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="f(java.lang.String, java.lang.String)[pri:0, instance:home_page_features.DataProviderTest@d072a9]" name="f" duration-ms="2032" started-at="2015-07-18T06:50:49Z" data-provider="Authentication" finished-at="2015-07-18T06:50:51Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[daisy]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[password]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- f -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:home_page_features.DataProviderTest@d072a9]" name="afterMethod" is-config="true" duration-ms="81" started-at="2015-07-18T06:50:51Z" finished-at="2015-07-18T06:50:51Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:home_page_features.DataProviderTest@d072a9]" name="beforeMethod" is-config="true" duration-ms="8523" started-at="2015-07-18T06:50:51Z" finished-at="2015-07-18T06:50:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="f(java.lang.String, java.lang.String)[pri:0, instance:home_page_features.DataProviderTest@d072a9]" name="f" duration-ms="2155" started-at="2015-07-18T06:50:59Z" data-provider="Authentication" finished-at="2015-07-18T06:51:02Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[hello]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[hi]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- f -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:home_page_features.DataProviderTest@d072a9]" name="afterMethod" is-config="true" duration-ms="98" started-at="2015-07-18T06:51:02Z" finished-at="2015-07-18T06:51:02Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:home_page_features.DataProviderTest@d072a9]" name="beforeMethod" is-config="true" duration-ms="8620" started-at="2015-07-18T06:51:02Z" finished-at="2015-07-18T06:51:10Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="f(java.lang.String, java.lang.String)[pri:0, instance:home_page_features.DataProviderTest@d072a9]" name="f" duration-ms="1277" started-at="2015-07-18T06:51:10Z" data-provider="Authentication" finished-at="2015-07-18T06:51:12Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- f -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:home_page_features.DataProviderTest@d072a9]" name="afterMethod" is-config="true" duration-ms="86" started-at="2015-07-18T06:51:12Z" finished-at="2015-07-18T06:51:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- home_page_features.DataProviderTest -->
+    <test name="Default test" duration-ms="8" started-at="2015-07-20T06:46:00Z" finished-at="2015-07-20T06:46:00Z">
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -4,7 +4,6 @@
  * @author Daisy Nkweteyim
  */
 
-
 package home_page_features;
 
 import org.junit.Assert;
@@ -15,11 +14,16 @@ public class Policies extends common.CommonCode {
 
 	@Test
 	public void PoliciesTest() {
+		
 
 		//policies
 		driver.findElement(By.xpath("html/body/div[3]/div/font/a[2]")).click();
 		String actualURL = driver.getCurrentUrl();
 		Assert.assertEquals(baseURL + "/policies/", actualURL);
+	}
+	
+	public Policies(){
+		
 	}
 
 }

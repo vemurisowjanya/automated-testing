@@ -51,7 +51,7 @@ public class CommonCode {
 		Assert.assertEquals("Dashboard", driver.getTitle());
 	}
 	
-	@Test
+	
 	public void addpost(String title, String description) {
 		
 		expectedTitle = "Malaria : infoHub";

@@ -13,7 +13,7 @@ import org.openqa.selenium.By;
 public class Help extends common.CommonCode {
 
 	@Test
-	public void ImportantDetailsTest() {
+	public void HelpTest() {
 		
 		//help
 		driver.findElement(By.xpath("html/body/div[3]/div/font/a[4]")).click();
