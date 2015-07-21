@@ -26,8 +26,7 @@ public class DataProviderTest {
 		WebElement submit = driver.findElement(By.name("submit"));
 		submit.click();
 	}
-	  
-	  
+	    
 	@BeforeMethod
 	public void beforeMethod() {		  	  
 		driver = new FirefoxDriver();
@@ -43,7 +42,8 @@ public class DataProviderTest {
 	
 	@DataProvider
 	  	public String[][] Authentication() throws Exception {
-	    String[][] cellData = utilities.ExcelLoginReader.read(utilities.Constants.pathLoginTestData, "Sheet1");
+	    String[][] cellData = utilities.ExcelLoginReader.read(utilities.Constants.pathLoginTestData, 
+	    		utilities.Constants.loginDataSheetName);
 		return cellData;
 	}
 }

@@ -42,6 +42,7 @@ public class LoginTest extends CommonCode {
   @DataProvider (name = "Authentication")
   public static Object[][] credentials() {
 	  //tests will be executed thrice using the excel sheet
-	  return new Object[][] {{"username", "password"}, {"username", "password"}, {"username", "password"}};
+	  Object[][] credentials = new Object[][] {{"username, password"}};
+	  return credentials;
   }
 }
