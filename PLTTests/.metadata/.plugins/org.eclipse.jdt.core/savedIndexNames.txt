@@ -1,0 +1,1 @@
+INDEX VERSION 1.126+/home/madi/automated-testing/PLTTests/.metadata/.plugins/org.eclipse.jdt.core
