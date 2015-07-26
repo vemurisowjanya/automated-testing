@@ -1,0 +1,15 @@
+package com.example.tests;
+
+import org.junit.*;
+import org.openqa.selenium.*;
+
+public class Languages extends common.CommonCode{
+  private WebDriver driver;
+  private String baseUrl;
+
+  @Test
+  public void mainTest() throws Exception {
+    driver.get(baseUrl + "/");
+    driver.findElement(By.linkText("Languages")).click();
+  }
+}
