@@ -8,15 +8,43 @@
 package post_features;
 
 import org.junit.Assert;
-import org.junit.Test;
 import org.openqa.selenium.By;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
 
-public class AddPost extends common.CommonCode {
+import common.DataProviderCommonCode;
+
+public class AddPost extends DataProviderCommonCode {
 		
-	@Test
-	public void addpostTest() {
+	private String expectedTitle; 
+	
+	@Test(dataProvider = "post")
+	public void addpostTest(String title, String description) {
 		
-		addpost("The Title", "This is a descripition of the post");
+		expectedTitle = "Malaria : infoHub";	
+		driver.get(utilities.Constants.baseURL + "/malaria/" );
+		String actualTitle = driver.getTitle();
+		Assert.assertEquals(expectedTitle, actualTitle);
+		
+		//click on new post
+		driver.findElement(By.xpath("html/body/div[2]/div/button")).click();
+		driver.findElement(By.xpath
+				("html/body/div[2]/div[1]/form/div[1]/div[3]/input")).sendKeys(title);
+		driver.findElement(By.xpath
+				("html/body/div[2]/div[1]/form/div[2]/div[3]/textarea")).sendKeys
+				(description);		
+
+		//click on submit
+		driver.findElement(By.xpath("html/body/div[2]/div[1]/form/center/div/div[2]/input")).click();
 	}
+	
+	@DataProvider(name = "post")
+	public Object[][] addpostDataProvider() throws Exception {
+		Object[][]connect = utilities.ExcelReader.connect(utilities.Constants.pathTestData,
+				utilities.Constants.postDataSheetName);
 		
+		Object[][] cellData = utilities.ExcelReader.read(connect);
+		return cellData;
+		
+	}		
 }
