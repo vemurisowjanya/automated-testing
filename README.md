@@ -39,7 +39,7 @@ In eclipse:
 * Clone the project.
    ```
    
-  git clone https://github.com/daisyab/testing-automation
+  git clone https://github.com/daisyab/testing-automation.git
     
    ```  
 In eclipse,
@@ -71,19 +71,18 @@ In eclipse:
 * In the Available Software window, click on Select All then on Next.
 * Click on Next.
 * Accept the License Agreement and click on Finish.  
-If security warnings come up about the validity of the software, click on OK.
 * Restart Eclipse.
 * After eclipse restarts, right click on the project name, hover over Build Path and click on Add Libraries...
 * Select TestNG and click Finish.
 	
-#####Download and install JUnit4
+#####Add JUnit4 as a Library
 
 In eclipse,
 * Right click on the project name, hover over Build Path and click on Add Libraries...
 * Select JUnit and click Next.
 * Click on Finish.
 
-#####Download Apache POI
+#####Download and add Apache POI
 
 * Go to [Apache POI's download page](http://poi.apache.org/download.html).
 * In the Binary Distribution section of the page, select a distribution of Apache POI.
@@ -91,9 +90,9 @@ In eclipse,
 * Once they are downloaded, unzip the folder.
 * In eclipse, right click on the project name, hover over Build Path and click on Configure Build Path...
 * Click on the Libraries tab and click on Add External JARs...
-* Add all the jar files found in the unzipped folder, the ooxml-lib subfolder and the lib subfolder as external JARs.
+* Add all the jar files found in the unzipped folder, and the ooxml-lib  and lib subfolders as external JARs.
 * Click on OK.
 
 Follow the installation instructions from the [MACC Installation Guide](https://github.com/Nerdylicious/app-web-server/blob/master/docs/Installation%20Guide.md) to get a copy of the code on your local machine.
 
-Run each test as a JUnit Test.
+Run each test as a JUnit/TestNG Test.
