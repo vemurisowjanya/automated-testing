@@ -1,12 +1,18 @@
+/**
+ * This class provides a template to connect and read test data from excel sheets.
+ * 
+ * @author daisy
+ */
+
 package utilities;
 
 import java.io.FileInputStream;
-
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ExcelReader {
+	
 	private static XSSFWorkbook ExcelBook;
 	private static XSSFSheet ExcelSheet;
 	private static XSSFCell Cell;
@@ -54,8 +60,12 @@ public class ExcelReader {
 	//gets the data in each cell
 	private static Object getData(int i, int j) {
 		Cell = ExcelSheet.getRow(i).getCell(j);
-		if(Cell.getCellType() == 1)
-		return Cell.getStringCellValue();
+		if(Cell.getCellType() == 0)
+			Cell.getNumericCellValue();
+		else if(Cell.getCellType() == 1)
+			return Cell.getStringCellValue();
+		else if (Cell.getCellType() == 3)
+			return "";
 		else if(Cell.getCellType() == 4)
 			return Cell.getBooleanCellValue();
 		return "";
