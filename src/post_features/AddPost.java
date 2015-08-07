@@ -1,7 +1,7 @@
 /**
  * This class tests the Add Post functionality.
  * 
- * @author Daisy Nkweteyim
+ * @author daisy
  */
 
 
@@ -9,6 +9,7 @@ package post_features;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -21,21 +22,20 @@ public class AddPost extends DataProviderCommonCode {
 	@Test(dataProvider = "post")
 	public void addpostTest(String title, String description) {
 		
-		expectedTitle = "Malaria : infoHub";	
-		driver.get(utilities.Constants.baseURL + "/malaria/" );
+		expectedTitle = "Malaria | infoHub";	
+		driver.get(utilities.Constants.list_of_posts);
 		String actualTitle = driver.getTitle();
 		Assert.assertEquals(expectedTitle, actualTitle);
 		
-		//click on new post
-		driver.findElement(By.xpath("html/body/div[2]/div/button")).click();
-		driver.findElement(By.xpath
-				("html/body/div[2]/div[1]/form/div[1]/div[3]/input")).sendKeys(title);
-		driver.findElement(By.xpath
-				("html/body/div[2]/div[1]/form/div[2]/div[3]/textarea")).sendKeys
-				(description);		
-
-		//click on submit
-		driver.findElement(By.xpath("html/body/div[2]/div[1]/form/center/div/div[2]/input")).click();
+		//add a new post
+		WebElement addpostButton = driver.findElement(By.linkText(utilities.Constants.addNewPost));
+		addpostButton.click();
+		WebElement titre = driver.findElement(By.name("title_post"));
+		titre.sendKeys(title);
+		WebElement description_post = driver.findElement(By.name("description_post"));
+		description_post.sendKeys(description);
+		WebElement submitButton = driver.findElement(By.xpath("html/body/div[2]/div/form/div[3]/div/button"));
+		submitButton.click();
 	}
 	
 	@DataProvider(name = "post")
