@@ -1,7 +1,7 @@
 /**
  * This class tests the cancel add post functionality. 
  * 
- * @author Daisy Nkweteyim
+ * @author daisy
  */
 
 package post_features;
@@ -9,26 +9,19 @@ package post_features;
 import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 public class CancelAddPost extends common.CommonCode {
 	private String expectedTitle; 
 
 	@Test
-	public void addpost() {
-		baseURL = "http://localhost:8001";
-		expectedTitle = "Malaria : infoHub";
-			
-		driver.get(baseURL + "/malaria/" );
-		driver.manage().window().maximize();
-		String actualTitle = driver.getTitle();
-		//Assert.assertEquals(expectedTitle, actualTitle);
+	public void canceladdpost() {
 		
-		// click on new post
-		driver.findElement(By.xpath("html/body/div[2]/div/button")).click();
-		
-		//cancel post
-		driver.findElement(By.xpath
-				("html/body/div[2]/div[1]/form/center/div/div[3]/button")).click();
-	}
-		
+		driver.get(utilities.Constants.list_of_posts);
+		WebElement addPost = driver.findElement(By.linkText(
+				utilities.Constants.addNewPost));
+		addPost.click();	
+		WebElement cancel = driver.findElement(By.linkText("Cancel"));
+		cancel.click();
+	}		
 }
