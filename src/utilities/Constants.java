@@ -10,6 +10,8 @@ public class Constants {
 	
 	public static final String baseURL = "http://localhost:8001";
 	
+	public static final String list_of_posts = baseURL + "/malaria/list_posts/";
+	
 	public static final String defaultUsername = "admin";
 	
 	public static final String defaultPassword = "mypassword";
