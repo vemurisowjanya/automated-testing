@@ -1,27 +1,31 @@
 /**
  * This class tests the edit post functionality.
  * 
- * @author Daisy Nkweteyim
+ * @author daisy
  */
 
 package post_features;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
+import common.CommonCode;
 
-public class EditPost extends common.CommonCode {
+public class EditPost extends CommonCode {
 	private String expectedTitle; 
 
 	@Test
-	public void addpost() {
-		baseURL = "http://localhost:8001";
-		expectedTitle = "Malaria : infoHub";
-			
-		driver.get(baseURL + "/malaria/" );
-		driver.manage().window().maximize();
-		String actualTitle = driver.getTitle();
-		Assert.assertEquals(expectedTitle, actualTitle);
+	public void editpost() {
 		
-		//TODO
+		driver.get(utilities.Constants.list_of_posts);
+		try {			
+			WebElement editButton = driver.findElement(By.linkText("Edit"));
+			editButton.click();
+			}
+			catch(NoSuchElementException e) {
+				System.out.println("No such element: Edit");
+			}
 	}
 }
