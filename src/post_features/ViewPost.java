@@ -1,30 +1,32 @@
 /**
  * This class tests the view posts functionality.
  * 
- * @author Daisy Nkweteyim
- */
-
+ * @author daisy
+*/
 
 package post_features;
 
-import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.WebElement;
 
-public class ViewPost extends common.CommonCode {
+import common.CommonCode;
+
+public class ViewPost extends CommonCode {
 		
 	String expectedTitle;
 		
 	@Test
 	public void viewpost() {
-	expectedTitle = "Notice";
-	driver.get(baseURL + "/post_new/");
-	driver.manage().window().maximize();
-	driver.findElement(By.xpath("html/body/center[2]/h4/a/u")).click();	
-	String actualTitle = driver.getTitle();
-	Assert.assertTrue("Not the expected title", expectedTitle.equals(actualTitle));
-			//TODO after that	
+		
+		driver.get(utilities.Constants.list_of_posts);
+		try {
+			WebElement viewButton = driver.findElement(By.linkText("View"));
+			viewButton.click();
+			}
+			catch(NoSuchElementException e) {
+				System.out.println("No such element: View");
+			}
 	}
 }
-
-
