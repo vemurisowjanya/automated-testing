@@ -15,13 +15,12 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class Driver
 {
 	public static WebDriver Instance;
-	private String screenshot= "Test";
 	
 	//Start webdriver
 	public static void Initialise()
 	{
 	   Instance= new FirefoxDriver();
-           Instance.manage().window().maximize();
+       Instance.manage().window().maximize();
 	   Instance.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 	

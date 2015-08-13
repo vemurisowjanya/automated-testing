@@ -1,5 +1,7 @@
 package MeetupLocationPageFeatures;
 import org.openqa.selenium.WebElement;
+
+import MeetupLocationPageFeatures.MeetupLocationAdminLogin;
 import WebDriver.Driver;
 import WebElements.PageObjModel;
 
@@ -14,10 +16,14 @@ public class MeetupLocationPage extends MeetupLocationAdminLogin
 {
 	
 	//Takes to the meetup location page
-	private static void GotoMeetupLocationPage()
+	public static void GotoMeetupLocationPage()
 	{
-		//Change
-		Driver.Instance.get(PageObjModel.baseURL+"meetup/"+PageObjModel.meetupLocationSlug+"/about/#");
+		//Meetup Locations Page
+		Driver.Instance.get(PageObjModel.baseURL+"meetup/locations/");
+		
+		//Select Meetup Location and goto that location page
+		WebElement ChooseLocation= Driver.Instance.findElement(PageObjModel.SelectLocation);
+		ChooseLocation.click();
 	}
 
 	//Validates About
@@ -31,8 +37,13 @@ public class MeetupLocationPage extends MeetupLocationAdminLogin
 		WebElement About= Driver.Instance.findElement(PageObjModel.MeetupLocAbout);
 		About.click();
 		
-		//Validate URL
-		if((Driver.Instance.getCurrentUrl()).equals(PageObjModel.baseURL+"meetup/"+PageObjModel.meetupLocationSlug+"/about/"))
+		//Extract About title
+		WebElement AboutTitle= Driver.Instance.findElement(PageObjModel.MeetupLocAboutTitle);
+		String Title= AboutTitle.getText();
+		
+		//Validate URL and tile 
+		if((Driver.Instance.getCurrentUrl()).equals(PageObjModel.baseURL+"meetup/"+PageObjModel.meetupLocationSlug+"/about/")
+			&& Title.equals("About"))
 			return true;
 		else
 			return false;
@@ -65,15 +76,23 @@ public class MeetupLocationPage extends MeetupLocationAdminLogin
 		AdminLogin();
 		GotoMeetupLocationPage();
 		
+		Driver.Instance.get(PageObjModel.baseURL+"meetup/"+PageObjModel.meetupLocationSlug+"/members/");
+		
 		//Click on members
-		WebElement Members= Driver.Instance.findElement(PageObjModel.MeetupLocMembers);
-		Members.click();
+		//WebElement Members= Driver.Instance.findElement(PageObjModel.MeetupLocMembers);
+		//Members.click();
+		
+		//Extracting Texts
+		WebElement Members, Organizers;
+		Members= Driver.Instance.findElement(PageObjModel.Members);
+		Organizers= Driver.Instance.findElement(PageObjModel.Organizers);
+		
+		String chk1, chk2;
+		chk1= Members.getText();
+		chk2= Organizers.getText();
 		
 		//Validate
-		/*
-		 * Change after UI is complete
-		 */
-		if((Driver.Instance.getCurrentUrl()).equals(PageObjModel.baseURL+"meetup/"+PageObjModel.meetupLocationSlug+"/members/"))
+		if(chk1.equals("Members") && chk2.equals("Organizers"))
 			return true;
 		else
 			return false;
