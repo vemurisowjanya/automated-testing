@@ -1,6 +1,7 @@
 package MeetupLocationPageTests;
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.junit.Test;
+import BaseTests.CommonTest;
 import MeetupLocationPageFeatures.MeetupLocationPage;
 
 /*
@@ -9,9 +10,9 @@ import MeetupLocationPageFeatures.MeetupLocationPage;
 
 /*
  * Checks navigation on clicking sponsors button on meetup location page.
- * This is a generic test which will be changed and implemented when the UI for meetup is complete
+ * This is a generic test which will we changed and implemented when the UI for meetup is complete
  */
-public class SponsorsMeetupLocationTest
+public class SponsorsMeetupLocationTest extends CommonTest
 {
 
 	@Test

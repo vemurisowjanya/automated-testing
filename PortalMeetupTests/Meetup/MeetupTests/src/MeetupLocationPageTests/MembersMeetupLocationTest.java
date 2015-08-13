@@ -1,6 +1,7 @@
 package MeetupLocationPageTests;
-import junit.framework.Assert;
+import org.junit.Assert;
 import org.junit.Test;
+import BaseTests.CommonTest;
 import MeetupLocationPageFeatures.MeetupLocationPage;
 
 /*
@@ -8,10 +9,9 @@ import MeetupLocationPageFeatures.MeetupLocationPage;
  */
 
 /*
- * Checks navigation on clicking members button on meetup location page.
- * This is a generic test which will be changed and implemented when the UI for meetup is complete
+ * Checks navigation to the members page of a Meetup location
  */
-public class MembersMeetupLocationTest 
+public class MembersMeetupLocationTest extends CommonTest
 {
 
 	@Test
