@@ -1,8 +1,4 @@
-/**
- * Common code for AdminTests.
- */
-package com.example.tests;
-
+package commons;
 import java.util.regex.Pattern;
 import java.util.concurrent.TimeUnit;
 import org.junit.*;
@@ -12,7 +8,12 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public abstract class CommonCode {
+/*
+ * @author Madi Paris
+ * Code to be used by other tests
+ */
+
+public class CommonCode {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -26,7 +27,7 @@ public abstract class CommonCode {
   }
 
   @Test
-  public abstract void mainTest(); // throws Exception
+  public abstract void test(); // throws Exception
 
   @After
   public void tearDown() throws Exception {

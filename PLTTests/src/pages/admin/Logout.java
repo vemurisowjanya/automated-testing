@@ -1,14 +1,14 @@
-package contributor;
+package admin;
 import commons.CommonCode;
 import org.junit.*;
 import org.openqa.selenium.*;
 
 /*
  * @author Madi Paris
- * Tests for LogOut UI feature
+ * Test for Log Out UI feature
  */
 
-public class LogOut extends CommonCode{
+public class Logout CommonCode{
   private WebDriver driver;
   private String baseUrl;
 
@@ -16,10 +16,10 @@ public class LogOut extends CommonCode{
   public void test() {
     driver.get(baseUrl + "/");
     if(driver.findElement(By.linkText("sign_out_link"))){
-      JUnit.AssertTrue("Found the sign out link", true);
+      JUnit.AssertTrue("Found the logout link", true);
     }
     else {
-      JUnit.fail("No sign out link found");
+      JUnit.fail("No logout link found");
     }
   }
 }
