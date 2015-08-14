@@ -3,13 +3,22 @@ package com.example.tests;
 import org.junit.*;
 import org.openqa.selenium.*;
 
+/*
+ * @author Madi Paris
+ */
+
 public class LogOut {
   private WebDriver driver;
   private String baseUrl;
 
   @Test
-  public void testLogOut() throws Exception {
+  public void test() throws Exception {
     driver.get(baseUrl + "/users/edit");
-    driver.findElement(By.id("sign_out_link")).click();
+    if(driver.findElement(By.linkText("sign out"))){
+      JUnit.AssertTrue("Found the sign out link", true);
+    }
+    else {
+      JUnit.fail("No sign out link found");
+    }
   }
 }
