@@ -1,20 +1,21 @@
-package com.example.tests;
-
+package admin;
+import commons.CommonCode;
 import org.junit.*;
 import org.openqa.selenium.*;
 
 /*
  * @author Madi Paris
+ * Test for Log Out UI feature
  */
 
-public class Logout commons.commonCode{
+public class Logout CommonCode{
   private WebDriver driver;
   private String baseUrl;
 
   @Test
-  public void test() throws Exception {
+  public void test() {
     driver.get(baseUrl + "/");
-    if(driver.findElement(By.linkText("Logout"))){
+    if(driver.findElement(By.linkText("sign_out_link"))){
       JUnit.AssertTrue("Found the logout link", true);
     }
     else {

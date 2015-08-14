@@ -1,5 +1,4 @@
-package com.example.tests;
-
+package admin;
 import org.junit.*;
 import org.openqa.selenium.*;
 

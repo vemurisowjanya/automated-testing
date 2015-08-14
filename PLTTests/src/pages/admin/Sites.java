@@ -1,18 +1,19 @@
 package com.example.tests;
-
+import commons.CommonCode;
 import org.junit.*;
 import org.openqa.selenium.*;
 
 /*
  * @author Madi Paris
+ * Test for Sites UI feature
  */
 
-public class Sites extends commons.commonCode{
+public class Sites extends CommonCode{
   private WebDriver driver;
   private String baseUrl;
 
   @Test
-  public void testSites() throws Exception {
+  public void test() {
     driver.get(baseUrl + "/");
     if(driver.findElement(By.linkText("Sites"))){
       JUnit.AssertTrue("Found the sites link", true);

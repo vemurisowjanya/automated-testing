@@ -1,13 +1,14 @@
-package com.example.tests;
-
+package admin;
+import commons.CommonCode;
 import org.junit.*;
 import org.openqa.selenium.*;
 
 /*
  * @author Madi Paris
+ * Test for New language UI feature on the Languages page
  */
 
-public class NewLanguage {
+public class NewLanguage extends CommonCode{
   private WebDriver driver;
   private String baseUrl;
 
