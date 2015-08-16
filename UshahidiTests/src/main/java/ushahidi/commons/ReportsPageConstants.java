@@ -26,7 +26,8 @@ public class ReportsPageConstants {
 	public static final String projectEnd_req = "The \"Project End Date\" field is required.";
 
 	public static final String invalid_email = "The email field does not appear to contain a valid email address.";
-			
+	public static final String invalid_newsSource = "The news source links field does not appear to contain a valid URL.";
+	public static final String invalid_videoLink = "The video links field does not appear to contain a valid URL.";
 	
 	//success message
 	public static final String successMessage = "Your Report has been submitted to our staff for review. We will get back to you shortly if necessary.";
