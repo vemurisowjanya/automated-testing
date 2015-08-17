@@ -1,4 +1,4 @@
-package com.example.tests;
+package admin;
 import commons.CommonCode;
 import org.junit.*;
 import org.openqa.selenium.*;
