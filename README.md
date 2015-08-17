@@ -24,3 +24,14 @@ This is an example of creating a brand new selenium test in Java on Mac OS X, st
 
 
 Many of the projects that Systers works on already have test code set up within the repository.  To extend one of them, you will want to import from git into your selenium workspace.
+
+
+Many of the projects also use JUnit.  Here's how you can add JUnit:
+
+1. go to JUnit and download the latest jar:  http://search.maven.org/#search|gav|1|g:"junit" AND a:"junit"
+2. save the jar someplace in your workspace
+3. open eclipse, right click (or on a mac, control-click) on the project and choose Properties from the menu
+4. Choose Java Build Path > Configure and then click the 'Add External Jars' button
+5. click Apply, then ok
+6. within your test file, add an import:  import org.junit.*;
+See also: http://www.tutorialspoint.com/junit/junit_plug_with_eclipse.htm
