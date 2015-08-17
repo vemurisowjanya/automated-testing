@@ -35,3 +35,4 @@ Many of the projects also use JUnit.  Here's how you can add JUnit:
 5. click Apply, then ok
 6. within your test file, add an import:  import org.junit.*;
 See also: http://www.tutorialspoint.com/junit/junit_plug_with_eclipse.htm
+And an example of using this with Selenium: http://www.toolsqa.com/java/junit-framework/junit-test-selenium-webdriver/
