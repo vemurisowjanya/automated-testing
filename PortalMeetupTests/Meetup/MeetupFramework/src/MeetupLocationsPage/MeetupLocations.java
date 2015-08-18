@@ -13,7 +13,11 @@ public class MeetupLocations
 	//Validates navigation to Meetup locations page
 	public static boolean IsAtMeetupLocationsPage()
 	{
-		Driver.Instance.get(PageObjModel.baseURL+"meetup/locations/");
+		//Choose Meetup Locations from homepage
+	    WebElement MeetupLocations= Driver.Instance.findElement(PageObjModel.MeetupLocations);
+	    
+	    //Click 
+	    MeetupLocations.click();
 		
 		//Extracting page title
 		WebElement MeetupLocationsPageTitle= Driver.Instance.findElement(PageObjModel.MeetupLocationsTitle);
@@ -22,7 +26,8 @@ public class MeetupLocations
 		WebElement Map= Driver.Instance.findElement(PageObjModel.Map);
 		
 		//Validate
-		if(Title.equals("Systers Meetup Locations") && Map.getText().startsWith("Terms of Use"))
+		if(Title.equals("Systers Meetup Locations") && Map.getText().startsWith("Terms of Use")
+				&& Driver.Instance.getCurrentUrl().equals(PageObjModel.baseURL+"meetup/locations/"))
 			return true;
 		else
 			return false;
@@ -30,8 +35,11 @@ public class MeetupLocations
 
 	public static boolean CanChooseLocation()
 	{
-		//Goto Meetup Locations
-		Driver.Instance.get(PageObjModel.baseURL+"meetup/locations/");
+		//Choose Meetup Locations from homepage
+	    WebElement MeetupLocations= Driver.Instance.findElement(PageObjModel.MeetupLocations);
+	    
+	    //Click 
+	    MeetupLocations.click();
 		
 		//Choose Location
 		WebElement ChooseLocation= Driver.Instance.findElement(PageObjModel.SelectLocation);

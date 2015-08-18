@@ -15,11 +15,8 @@ public class PageObjModel
 	
 	//Homepage
 	public static By Login= By.xpath("html/body/div[1]/div/div[2]/ul[2]/li[2]/a");
+	public static By MeetupLocations= By.xpath("html/body/div[1]/div/div[2]/ul[1]/li[3]/a");
 	
-	/*
-	 * Change
-	 */
-	public static By MeetupLocations= By.xpath("");
 	
 	//LoginPage
 	public static By username= By.id("id_login");
@@ -30,7 +27,6 @@ public class PageObjModel
 	//Meetup Locations
 	public static By MeetupLocationsTitle= By.xpath("html/body/div[2]/h2");
 	public static By Map= By.xpath(".//*[@id='map-canvas']");
-	//public static By Map= By.xpath("/html/body/div[2]/div[1]/div/div/div[2]");
 	public static By SelectLocation= By.xpath("html/body/div[2]/div[2]/div[1]/a");
 	
 	//Meetup Location
@@ -49,14 +45,19 @@ public class PageObjModel
 	
 	//Meetup Location Actions
 	
-	/*
-	 * To be changed after UI is complete
-	 */
-
-	public static By AddNewMeetup= By.linkText("Add New Meetup");
-	public static By AddNewMember= By.linkText("Add New Member");
-	public static By RemoveMembers= By.linkText("Remove Members");
-	public static By ShowJoinRequests= By.linkText("Show Join Requests");
+	//Add new Meetup
+	public static By AddNewMeetup= By.xpath("html/body/div[2]/div[2]/div[3]/div[1]/ol/li[1]/a");
+	public static By NewMeetupTitle= By.xpath(".//*[@id='id_title']");
+	public static By NewMeetupSlug= By.id("id_slug");
+	public static By NewMeetupDate= By.xpath(".//*[@id='id_date']");
+	public static By NewMeetupTime= By.xpath(".//*[@id='id_time']");
+	public static By NewMeetupVenue= By.xpath(".//*[@id='id_venue']");
+	public static By NewMeetupDescription= By.xpath("/html/body/div[2]/div[2]/div[2]/div[2]/div[2]/div/form/div[6]/div/div/div/div/div/iframe");
+	public static By NewMeetupSubmit= By.xpath(".//*[@id='submit-id-save']");
+	public static By NewMeetupHeading= By.xpath("html/body/div[2]/div[2]/div[2]/h2");
+	
+	//Delete Meetup
+	public static By DeleteMeetup= By.xpath("html/body/div[2]/div[2]/div[2]/div[2]/div[2]/form/input[2]");
 	
 	//Meetup Members Page
 	public static By Members= By.xpath("html/body/div[2]/div[2]/div[2]/div/div[2]/h2");

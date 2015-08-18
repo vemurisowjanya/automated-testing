@@ -18,9 +18,12 @@ public class MeetupLocationPage extends MeetupLocationAdminLogin
 	//Takes to the meetup location page
 	public static void GotoMeetupLocationPage()
 	{
-		//Meetup Locations Page
-		Driver.Instance.get(PageObjModel.baseURL+"meetup/locations/");
-		
+		//Choose Meetup Locations from homepage
+	    WebElement MeetupLocations= Driver.Instance.findElement(PageObjModel.MeetupLocations);
+	    
+	    //Click 
+	    MeetupLocations.click();
+	    
 		//Select Meetup Location and goto that location page
 		WebElement ChooseLocation= Driver.Instance.findElement(PageObjModel.SelectLocation);
 		ChooseLocation.click();
