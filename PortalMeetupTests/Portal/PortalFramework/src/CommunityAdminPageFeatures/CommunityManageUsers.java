@@ -7,6 +7,7 @@ import WebDriver.Driver;
 
 /*
  * @author Anjali
+ *Few users should be registered.
  */
 
 public class CommunityManageUsers extends CommunityAdminLogin

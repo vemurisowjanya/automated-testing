@@ -12,14 +12,16 @@ import WebDriver.Driver;
 */
 
 /*
- * Logs in as an admin for community before validating community page tests
+ *
+ * Logs in as an admin for community before validating community page tests. A dummy community should be created 
+ *before running this with an admin. Replace username n password with appropriate admin details for the created community.
  */
 public class CommunityAdminLogin 
 {
 	public static void login()
 	{
 		LoginPage.Goto();
-		LoginPage.LoginAs("anjali").WithPassword("anjali").Login();
+		LoginPage.LoginAs("dummyUsename").WithPassword("dummyPassword").Login();
 		WebElement DummyCommunityName=Driver.Instance.findElement(PageObjRef.DummyCommunityName);
 		DummyCommunityName.click();
 	}

@@ -20,8 +20,8 @@ public class PageObjRef
     public static By SignUp = By.xpath("html/body/div[1]/div/div[2]/ul[2]/li[1]/a");
     public static By JoinSysters= By.xpath("html/body/div[2]/div[1]/p[2]/a");
     public static By AboutUs= By.xpath("html/body/div[1]/div/div[2]/ul[1]/li[1]/a");
-    public static By Wiki= By.xpath("html/body/div[1]/div/div[2]/ul[1]/li[3]/a"); 
-    public static By Contact= By.xpath("html/body/div[1]/div/div[2]/ul[1]/li[4]/a");
+    public static By Wiki= By.xpath("html/body/div[1]/div/div[2]/ul[1]/li[4]/a"); 
+    public static By Contact= By.xpath("html/body/div[1]/div/div[2]/ul[1]/li[5]/a");
     
     //About Us Page
     public static By AboutTitle= By.xpath("html/body/div[2]/div/h1");

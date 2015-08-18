@@ -6,13 +6,13 @@ import Login.LoginPage;
 */
 
 /*
- * Logs in as a registered portal user before validating portal user tests
+ * Logs in as a registered portal user before validating portal user tests.
  */
 public class UserLogin 
 {
 	public static void Login()
 	{
 		LoginPage.Goto();
-		LoginPage.LoginAs("shally").WithPassword("shally").Login();
+		LoginPage.LoginAs("dummyUser").WithPassword("dummyPass").Login();
 	}
 }
