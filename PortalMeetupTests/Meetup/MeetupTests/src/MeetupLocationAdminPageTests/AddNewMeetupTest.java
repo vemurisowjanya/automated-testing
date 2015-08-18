@@ -9,7 +9,7 @@ import MeetupLocationAdminPageFeatures.MeetupLocationAdminPage;
  */
 
 /*
- * Checks if the Meetup Location admin is able to create a new meetup for that location. 
+ * Checks if the Meetup Location admin is able to create a new meetup for a chosen location. 
  */
 public class AddNewMeetupTest extends CommonTest
 {
