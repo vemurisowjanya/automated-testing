@@ -9,7 +9,8 @@ import MeetupLocationsPage.MeetupLocations;
  */
 
 /*
- * Validates choosing a selecting a location from Meetup locations page
+ * Validates choosing a selecting a location from Meetup locations page.
+ * Add a location to locations page prior to running this.
  */
 public class ChooseMeetupLocationTest extends CommonTest
 {

@@ -9,6 +9,7 @@ import MeetupLocationPageFeatures.MeetupLocationPage;
  */
 
 /*
+ * A meetup location should be added prior to this test.
  * Checks navigation on clicking about button on meetup location page
  */
 public class AboutMeetupLocationTest extends CommonTest
