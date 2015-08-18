@@ -8,7 +8,8 @@ import CommunityAdminPageFeatures.CommunityTransferOwnership;
 * @author Anjali
 */
 /*
- * Checks if the community admin is able to transfer community ownership to other existing community member
+ * Checks if the community admin is able to transfer community ownership to other existing community member.
+ For this test to pass there should be atleast one member in the community
  */
 public class TransferCommunityOwnershipTest extends CommonTests
 {

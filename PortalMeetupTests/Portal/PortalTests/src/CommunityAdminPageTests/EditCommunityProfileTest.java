@@ -24,7 +24,7 @@ public class EditCommunityProfileTest extends CommonTests
 		CommunityAdminPage.GotoEdit();
 		
 		//Pass new name and click submit
-		CommunityEditPage.UpdateCommunityNameTo("NewName");
+		CommunityEditPage.UpdateCommunityNameTo("dummyNewName");
 		CommunityUpdateCommand.Update();
 		
 		//Validate changes

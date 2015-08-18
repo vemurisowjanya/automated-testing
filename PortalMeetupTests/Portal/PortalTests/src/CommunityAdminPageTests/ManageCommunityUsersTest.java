@@ -10,6 +10,7 @@ import CommunityAdminPageFeatures.CommunityManageUsers;
 
 /*
  * Verifies whether the community admin is able to manage community users by changing current permission.
+ For this test few users should be part of the community.
  */
 public class ManageCommunityUsersTest extends CommonTests
 {
