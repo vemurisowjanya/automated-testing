@@ -7,14 +7,15 @@
 package post_features;
 
 import org.junit.Assert;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
-import common.CommonCode;
+import org.testng.annotations.Test;
+import common.DataProviderCommonCode;
 
-public class DeletePost extends CommonCode {
+public class DeletePost extends DataProviderCommonCode {
 	
+	private String expectedURL;
 	@Test
 	public void deletepost() {
 			
@@ -22,7 +23,9 @@ public class DeletePost extends CommonCode {
 		try {			
 			WebElement deleteButton = driver.findElement(By.linkText("Delete"));
 			deleteButton.click();
-			driver.findElement(By.xpath("html/body/div[1]/div/form/div[2]/div/button")).click();
+			driver.findElement(By.xpath("//button[contains(text(), 'Yes, delete this Post')]")).click();
+			expectedURL = utilities.Constants.list_of_posts;
+			Assert.assertEquals(expectedURL, driver.getCurrentUrl());
 			}
 			catch(NoSuchElementException e) {
 				System.out.println("No such element: Delete");

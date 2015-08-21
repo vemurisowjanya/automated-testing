@@ -7,19 +7,19 @@
 package home_page_features;
 
 import org.junit.Assert;
-import org.junit.Test;
 import org.openqa.selenium.By;
+import org.testng.annotations.Test;
 
-public class AboutPeaceCorps extends common.CommonCode {
+import common.DataProviderCommonCode;
+
+public class AboutPeaceCorps extends DataProviderCommonCode {
 
 	@Test
-	public void PeaceCorpsTest() {
+	public void peaceCorpsTest() {
 		
 		//about peacecorps
-		driver.findElement(By.xpath("html/body/div[3]/div/font/a[1]")).click();
+		driver.findElement(By.cssSelector("a[href='/aboutPC']")).click();
 		String actualURL = driver.getCurrentUrl();
 		Assert.assertEquals(baseURL + "/aboutPC/", actualURL);
 	}
-
 }
-

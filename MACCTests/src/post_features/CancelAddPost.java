@@ -7,12 +7,14 @@
 package post_features;
 
 import org.junit.Assert;
-import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+import common.DataProviderCommonCode;
 
-public class CancelAddPost extends common.CommonCode {
-	private String expectedTitle; 
+public class CancelAddPost extends DataProviderCommonCode {
+	
+	private String expectedURL; 
 
 	@Test
 	public void canceladdpost() {
@@ -23,5 +25,7 @@ public class CancelAddPost extends common.CommonCode {
 		addPost.click();	
 		WebElement cancel = driver.findElement(By.linkText("Cancel"));
 		cancel.click();
+		expectedURL = utilities.Constants.list_of_posts;
+		Assert.assertEquals(expectedURL, driver.getCurrentUrl());
 	}		
 }
