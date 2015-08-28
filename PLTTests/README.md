@@ -6,6 +6,4 @@ This repository contains all the code for Systers Photo Language Translation app
 * JUnit
 * Eclipse IDE
 * Maven
-* Travis CI
 
-##**Project Documentation**
