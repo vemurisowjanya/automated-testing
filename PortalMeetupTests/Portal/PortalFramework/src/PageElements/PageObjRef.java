@@ -64,7 +64,11 @@ public class PageObjRef
     public static By Edit= By.xpath("html/body/div[3]/div[2]/div[2]/div/div[2]/div[1]/a");
     public static By Lastname= By.id("id_last_name");
     public static By Submit= By.id("submit-id-save");
+    public static By Blog= By.id("id_blog_url");
+    public static By Homepage= By.id("id_homepage_url");
     public static By UpdatedName= By.xpath("html/body/div[1]/div/div[2]/ul[2]/li/a");
+    public static By UpdatedBlog= By.xpath("//div[@class='panel-body']/p[@class='profile-row'][2]/a");
+    public static By UpdatedHomepage= By.xpath("//div[@class='panel-body']/p[@class='profile-row'][3]/a");
     public static By AdminDropdown= By.xpath("html/body/div[1]/div/div[2]/ul[2]/li/a");
 
     public static By Logout= By.xpath("html/body/div[1]/div/div[2]/ul[2]/li/ul/li[4]/a");
