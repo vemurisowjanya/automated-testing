@@ -14,6 +14,7 @@ import AdminTests.*;
  */
 @RunWith(Suite.class)
 @SuiteClasses({CanChangePasswordTest.class, CanCreateCommunityProposalTest.class, CanEditTest.class,
+	           CanEditBlog.class, CanEditHomepage.class,
 	           CanGotoAdminPanelTest.class, CanViewProfileTest.class})
 public class AllAdminTest 
 {
