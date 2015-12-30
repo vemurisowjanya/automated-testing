@@ -22,5 +22,30 @@ public class ViewUpdate
 		  else
 			  return false;
 	}
+	
+	public static boolean BlogHasChangedto(String newBlog)
+	{
+		//Checks for updated blog and validates update
+		WebElement UpdatedBlog=Driver.Instance.findElement(PageObjRef.UpdatedBlog);
+		String check=UpdatedBlog.getText();
+		
+		//Validate
+		if(check.contains(newBlog))
+			return true;
+		else
+			return false;
+	}
 
+	public static boolean HomepageHasChangedto(String newHomepage)
+	{
+		//Checks for updated blogo and validates update
+		WebElement UpdatedHomepage=Driver.Instance.findElement(PageObjRef.UpdatedHomepage);
+		String check=UpdatedHomepage.getText();
+		
+		//Validate
+		if(check.contains(newHomepage))
+			return true;
+		else
+			return false;
+	}
 }
