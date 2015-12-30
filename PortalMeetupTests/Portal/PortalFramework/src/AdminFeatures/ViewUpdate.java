@@ -38,7 +38,7 @@ public class ViewUpdate
 
 	public static boolean HomepageHasChangedto(String newHomepage)
 	{
-		//Checks for updated blogo and validates update
+		//Checks for updated blog and validates update
 		WebElement UpdatedHomepage=Driver.Instance.findElement(PageObjRef.UpdatedHomepage);
 		String check=UpdatedHomepage.getText();
 		
