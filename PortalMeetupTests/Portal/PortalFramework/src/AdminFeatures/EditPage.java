@@ -24,5 +24,18 @@ public class EditPage
 		return new UpdateCommand(change);
 	}
 	
+	public static UpdateCommand ChangeBlogTo(String change)
+	{
+		
+		return new UpdateCommand(change);
+	}
+	
+	public static UpdateCommand ChangeHomepageTo(String change)
+	{
+		
+		return new UpdateCommand(change);
+	}
+	
+	
 
 }
