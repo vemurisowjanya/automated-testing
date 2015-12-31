@@ -16,8 +16,8 @@ public class CommunityFormCheck
 	 */
 	public static boolean IsForm() 
 	{
-		       //Store the current window handle
-				//String oldURL = Driver.Instance.getWindowHandle();
+		        //Store the current window handle
+				String oldURL = Driver.Instance.getWindowHandle();
 				
 				//Click operation
 				Driver.Instance.findElement(PageObjRef.CommunityTab).click();
@@ -35,10 +35,10 @@ public class CommunityFormCheck
 			    String check=FormTitle.getText();
 			    
 			    //Close the new window
-			   // Driver.Instance.close();
+			      Driver.Instance.close();
 
 			    //Switch back to original window
-		        //Driver.Instance.switchTo().window(oldURL);
+		          Driver.Instance.switchTo().window(oldURL);
 		        
 		        if(check.equals("Anita Borg Institute Community Proposal Form"))
 		        	return true;
