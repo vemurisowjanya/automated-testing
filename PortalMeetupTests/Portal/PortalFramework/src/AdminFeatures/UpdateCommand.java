@@ -62,4 +62,13 @@ public class UpdateCommand
 		Submit.click();
 	}
 
+	public void SetFirstName()
+	{
+		//Find first name
+		WebElement firstName = Driver.Instance.findElement(PageObjRef.Firstname);
+		firstName.clear();
+		
+		//Enter a new first name
+		firstName.sendKeys(change);
+	}
 }
