@@ -24,6 +24,11 @@ public class EditPage
 		return new UpdateCommand(change);
 	}
 	
+	public static UpdateCommand ChangeFirstNameTo(String change){
+		
+		return new UpdateCommand(change);
+	}
+	
 	public static UpdateCommand ChangeBlogTo(String change)
 	{
 		

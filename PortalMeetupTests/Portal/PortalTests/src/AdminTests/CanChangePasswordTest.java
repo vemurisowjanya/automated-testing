@@ -13,7 +13,7 @@ import BaseTests.CommonTests;
  */
 public class CanChangePasswordTest extends CommonTests
 {
-    private String OldPassword="anjali", NewPassword="anjali";
+    private String OldPassword="dummyPassword", NewPassword="dummyPassword";
 	@Test
 	public void test() 
 	{
