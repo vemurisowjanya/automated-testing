@@ -1,8 +1,9 @@
 package CommunityAdminPageFeatures;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-import Login.LoginPage;
 import PageElements.PageObjRef;
 import WebDriver.Driver;
 
@@ -26,12 +27,16 @@ public class CommunityTransferOwnership extends CommunityAdminLogin
 		WebElement NewCommunityList, ChooseNewAdmin, Submit;
 		NewCommunityList= Driver.Instance.findElement(PageObjRef.NewCommunityAdminLIst);
 		NewCommunityList.click();
+		
 		ChooseNewAdmin= Driver.Instance.findElement(PageObjRef.ChooseNewAdmin);
 		ChooseNewAdmin.click();
 		
+		WebDriverWait wait = new WebDriverWait(Driver.Instance, 10);
 		Submit= Driver.Instance.findElement(PageObjRef.NewAdminSubmit);
-		Submit.click();
-		Submit.click();
+		Submit.submit();
+		
+		//Wait until page loads the Edit Profile button in the profile dashboard
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(PageObjRef.Edit));
 		
 		//Validate
 		String check= Driver.Instance.findElement(PageObjRef.CheckNewAdmin).getText();
