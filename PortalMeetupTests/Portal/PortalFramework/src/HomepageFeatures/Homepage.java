@@ -1,4 +1,5 @@
 package HomepageFeatures;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import PageElements.PageObjRef;
 import WebDriver.Driver;
@@ -23,6 +24,11 @@ public class Homepage
 	public static boolean IsAtSystersCommunitiesPage() 
 	{
 		String mainWindowsHandle = Driver.Instance.getWindowHandle();
+		
+		//Align the button by scrolling 
+		JavascriptExecutor jse = (JavascriptExecutor) Driver.Instance;
+		jse.executeScript("window.scrollBy(0,500)", "");
+		
 	    ReadMore=Driver.Instance.findElement(PageObjRef.ReadMore1);
 		ReadMore.click();
 		
@@ -75,7 +81,12 @@ public class Homepage
 	public static boolean IsAtSystersInitiativesPage() 
 	{
 		String mainWindowsHandle = Driver.Instance.getWindowHandle();
-		ReadMore=Driver.Instance.findElement(PageObjRef.ReadMore3);
+		
+		//Scroll the screen so it doesn't click the Contact button
+		JavascriptExecutor jse = (JavascriptExecutor) Driver.Instance;
+		jse.executeScript("window.scrollBy(0,500)", "");
+
+		ReadMore= Driver.Instance.findElement(PageObjRef.ReadMore3);
 		ReadMore.click();
 			
 		for(String curURL : Driver.Instance.getWindowHandles())
