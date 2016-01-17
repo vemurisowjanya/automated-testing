@@ -1,10 +1,13 @@
 package LoginTests;
 import java.util.Arrays;
 import java.util.Collection;
-import org.junit.*;
+
+import org.junit.Assert;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
+
 import BaseTests.CommonTests;
 import Login.SignUpCheck;
 import Login.SignUpPage;
@@ -19,6 +22,7 @@ import Login.SignUpPage;
 @RunWith(Parameterized.class)
 public class SignUpTest extends CommonTests
 {
+
 	private String username;
 	private String Email;
 	private String password;
@@ -33,7 +37,7 @@ public class SignUpTest extends CommonTests
 				{"abc","",""}//fail, incomplete details
 		});
 	}
-
+	
 	public SignUpTest(String username, String Email, String pass)
 	{
 		this.username=username;
@@ -55,5 +59,4 @@ public class SignUpTest extends CommonTests
 		//Validate
 		Assert.assertEquals(true,SignUpCheck.HasSignedUp());
 	}
-
 }
