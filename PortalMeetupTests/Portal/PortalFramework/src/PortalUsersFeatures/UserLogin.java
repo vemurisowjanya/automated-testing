@@ -13,6 +13,6 @@ public class UserLogin
 	public static void Login()
 	{
 		LoginPage.Goto();
-		LoginPage.LoginAs("dummyUser").WithPassword("dummyPass").Login();
+		LoginPage.LoginAs("dummyPortalUsername").WithPassword("dummyPortalPassword").Login();
 	}
 }

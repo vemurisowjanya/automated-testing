@@ -1,5 +1,7 @@
 package AdminFeatures;
 import Login.LoginPage;
+import PageElements.PageObjRef;
+import WebDriver.Driver;
 
 /*
 * @author Anjali
@@ -15,5 +17,17 @@ public class AdminLogin
 	{
 		LoginPage.Goto();
 		LoginPage.LoginAs("dummyUsername").WithPassword("dummyPassword").Login();
+	}
+	
+	public static void dummyLogin(){
+		//Uses a different account
+		LoginPage.Goto();
+		LoginPage.LoginAs("henrydang").WithPassword("password").Login();
+	}
+	
+	public static void signOutUser(){
+		Driver.Instance.findElement(PageObjRef.AdminDropdown).click();
+		Driver.Instance.findElement(PageObjRef.Logout).click();
+		Driver.Instance.findElement(PageObjRef.ConfirmLogout).click();
 	}
 }

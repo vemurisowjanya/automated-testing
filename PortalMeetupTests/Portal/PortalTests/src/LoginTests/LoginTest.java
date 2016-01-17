@@ -27,7 +27,7 @@ public class LoginTest extends CommonTests
 	public static Collection<Object[]>data()
 	{
 		return Arrays.asList(new Object[][]{
-				{"anjali","anjali"},//pass
+				{"dummyUsername","dummyPassword"},//pass
 				{"abc","xyz"},//fail
 				{"random",""},//fail
 				{"",""} //fail

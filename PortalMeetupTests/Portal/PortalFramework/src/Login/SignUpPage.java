@@ -11,10 +11,10 @@ public class SignUpPage
 {
 
 	static WebElement  username, Email, password, Confirmpassword, Submit;
-	static WebElement signup = Driver.Instance.findElement(PageObjRef.SignUp);
+	
 	public static void GotoSignUp()
 	{
-	
+	    WebElement signup = Driver.Instance.findElement(PageObjRef.SignUp);
 		signup.click();
 	}
 	
@@ -60,6 +60,7 @@ public class SignUpPage
 	
 	public static boolean isAt()
 	{
+		WebElement signup = Driver.Instance.findElement(PageObjRef.SignUp);
 		String check=signup.getText();
 		if(check.equals("SIGN UP"))
 			return false;

@@ -21,8 +21,15 @@ public class CommunityAdminLogin
 	public static void login()
 	{
 		LoginPage.Goto();
-		LoginPage.LoginAs("dummyUsename").WithPassword("dummyPassword").Login();
+		LoginPage.LoginAs("dummyUsername").WithPassword("dummyPassword").Login();
 		WebElement DummyCommunityName=Driver.Instance.findElement(PageObjRef.DummyCommunityName);
 		DummyCommunityName.click();
+	}
+	
+	public static void dummyLogin()
+	{
+		//Uses a different account
+		LoginPage.Goto();
+		LoginPage.LoginAs("henrydang").WithPassword("password").Login();
 	}
 }
