@@ -19,7 +19,7 @@ public class LogoutTest extends CommonTests
 	public void test() 
 	{
 		//Login
-	    LoginPage.LoginAs("anjali").WithPassword("anjali").Login();
+	    LoginPage.LoginAs("dummyUsername").WithPassword("dummyPassword").Login();
 		
 	    //Validate logout
 	    Assert.assertEquals(true, LogoutCheck.HasLoggedOut());
