@@ -12,7 +12,8 @@ public class PageObjRef
 
 	//HomePage Elements
 	public static By CommunityTab = By.xpath("html/body/div[1]/div/div[2]/ul[1]/li[2]/a");
-	public static By ChooseCommunity = By.xpath("//ul[@class='dropdown-menu']/li[2]/a");
+	public static By DummyCommunity = By.xpath("//li[@class='dropdown open']/ul[@class='dropdown-menu']/li[1]/a");
+	public static By ChooseCommunity = By.xpath("//li[@class='dropdown open']/ul[@class='dropdown-menu']/li[3]/a");
     public static By ReadMore1 = By.xpath("html/body/div[2]/div[2]/div[1]/a");
     public static By ReadMore2 = By.xpath("html/body/div[2]/div[4]/div[1]/a");
     public static By ReadMore3 = By.xpath("html/body/div[2]/div[3]/div[2]/a");
@@ -154,8 +155,8 @@ public class PageObjRef
     
     //Community Transfer Ownership Page
     public static By NewCommunityAdminLIst= By.xpath(".//*[@id='id_new_admin']");
-    public static By ChooseNewAdmin= By.xpath(".//*[@id='id_new_admin']/option");
-    public static By NewAdminSubmit= By.xpath(".//*[@id='submit-id-save']");
+    public static By ChooseNewAdmin= By.xpath(".//*[@id='id_new_admin']/option[@value='1']");
+    public static By NewAdminSubmit= By.id("submit-id-save");
     public static By CheckNewAdmin= By.xpath("html/body/div[2]/div/div");
     
     //Community Join Requests Page
@@ -173,7 +174,8 @@ public class PageObjRef
     
     //Registered Portal User
     public static By CommunityToJoin= By.xpath("html/body/div[1]/div/div[2]/ul[1]/li[2]/ul/li[1]/a");
-    public static By JoinCommunity= By.xpath("html/body/div[2]/div[2]/div[3]/div[2]/a");  
+    public static By JoinCommunity= By.xpath("html/body/div[2]/div[2]/div[3]/div[2]/a"); 
+    public static By JoinCommunityButton = By.xpath("//div[5]/a[@class='btn btn-success btn-block']");
     public static By CheckJoinRequestSent= By.xpath("html/body/div[2]/div/div"); 
     public static By CancelRequest= By.xpath("html/body/div[2]/div[2]/div[3]/div[2]/a");  
     public static By CheckCancelRequest= By.xpath("html/body/div[2]/div/div"); 
