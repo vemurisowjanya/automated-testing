@@ -2,6 +2,7 @@ package CommunityAdminPageFeatures;
 
 import org.openqa.selenium.WebElement;
 
+import Login.LoginPage;
 import PageElements.PageObjRef;
 import WebDriver.Driver;
 
@@ -13,6 +14,7 @@ public class CommunityTransferOwnership extends CommunityAdminLogin
 
 	public static boolean CanTransferOwnership()
 	{
+		
 		//Login as community admin
 		login();
 		
@@ -26,7 +28,9 @@ public class CommunityTransferOwnership extends CommunityAdminLogin
 		NewCommunityList.click();
 		ChooseNewAdmin= Driver.Instance.findElement(PageObjRef.ChooseNewAdmin);
 		ChooseNewAdmin.click();
+		
 		Submit= Driver.Instance.findElement(PageObjRef.NewAdminSubmit);
+		Submit.click();
 		Submit.click();
 		
 		//Validate
@@ -36,5 +40,4 @@ public class CommunityTransferOwnership extends CommunityAdminLogin
 		else
 			return false;
 	}
-	
 }
