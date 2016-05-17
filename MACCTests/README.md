@@ -8,14 +8,14 @@ This repository aims at building a data driven test framework for the malaria pa
 #####Download and install Java
 
 * Go to [Oracle's download page](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
-* Click on JDK Download.
+* Click on JDK Download(JDK8 or 7 works fine).
 * Accept the License Agreement and select the version which is compatible with your operating system.
 * Click on the installer.
  
 #####Download and install eclipse
 
 * Got to [Eclipse's download page](http://www.eclipse.org/downloads/)
-* Click the version of eclipse that is compatible with your operating system.
+* Click the version of eclipse that is compatible with your operating system(Eclipse for JEE Developers is recommended).
 * Select a mirror and click on download.
 * Unzip the downloaded folder.
 * Locate and click on the executable.
@@ -47,7 +47,7 @@ In eclipse,
 * Click on Next.
 * Click Existing local repository.
 * Click on Next.
-* Add the local repository by browsing through your directory.
+* Add the local repository by browsing through your directory(Add only the  MACCTests repo from the automated-testing repo).
 * Click on Next.
 * Select Import as a General Project.
 * Click on Next.
@@ -58,10 +58,12 @@ In eclipse,
 * Go to [selenium's download page](http://www.seleniumhq.org/download/).
 * Download the Java client driver by clicking the download link adjacent to the text Java.
 * Unzip the contents of the downloaded folder.
-* In eclipse, right click on the project name, hover over Build Path and click on Configure Build Path...
+*Aternatively, you can also download the Selenium server, In which case you will have only one jar file after you unzip the folder.
+* In eclipse, right click on the project name, hover over Build Path and click on Configure Build Path...(If go can't see Build Path..., Go to Project root Select "Project facets" from Properties and Check "Java". This fixes the issue)
 * Click on the Libraries tab and click on Add External JARs...
-* Add all JARs located in the unzipped folder as well as in the libs subfolder.
+* Add all JARs located in the unzipped folder as well as in the libs subfolder if you are using selenium client. But if you are using selenium server add the lone jar file called "selenium-server-standlone-2.53.0.jar.
 * Click on OK.
+
 	
 #####Download and install TestNG in eclipse
 
@@ -98,3 +100,7 @@ In eclipse,
 Follow the installation instructions from the [MACC Installation Guide](https://github.com/Nerdylicious/app-web-server/blob/master/docs/Installation%20Guide.md) to get a copy of the code on your local machine.
 
 Run Main.java found in src/utilities to run all test cases.
+##### Running the Main.java
+* Right click on the "Main.java" which is located in "src/utilities" and select "Run as Java Application".
+
+* To see the tests in action, makes sure your server for the MACC application on your local machine is running. 
