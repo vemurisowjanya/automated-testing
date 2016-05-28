@@ -8,7 +8,7 @@ import login.*;
  */
 
  @RunWith(Suite.class)
- @SuiteClasses({CreateAccount.class, ForgotPassword.class, Login.class, PeaceCorpsLogo.class, SignIn.class})
+ @SuiteClasses({SignUp.class, ForgotPassword.class, Login.class, PeaceCorpsLogo.class, SignIn.class})
  public class AllLoginPageTests
  {
 

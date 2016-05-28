@@ -5,7 +5,7 @@ import org.openqa.selenium.*;
 
 /*
  * @author Madi Paris
- * Tests for CreateAccount UI feature
+ * Tests for Sign up UI feature
  */
 
 public class CreateAccount extends CommonCode{
@@ -14,8 +14,8 @@ public class CreateAccount extends CommonCode{
 
   @Test
   public void test() {
-    driver.get(baseUrl + "/");
-    if(driver.findElement(By.linkText("CREATE ACOUNT"))){
+    driver.get(baseUrl + "/login");
+    if(driver.findElement(By.linkText("Sign up"))){
       JUnit.AssertTrue("Found the create account link", true);
     }
     else {
