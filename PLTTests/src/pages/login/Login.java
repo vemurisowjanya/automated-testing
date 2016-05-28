@@ -13,12 +13,12 @@ public class Login extends CommonCode{
 
   @Test
   public void test() {
-    driver.get(baseUrl + "/users/sign_in");
-    if(driver.findElement(By.linkText("LOGIN"))){
-      JUnit.AssertTrue("Found the login link", true);
+    driver.get(baseUrl + "/login");
+    if(driver.findElement(By.linkText("Log in"))){
+      JUnit.AssertTrue("Found the log in link", true);
     }
     else {
-      JUnit.fail("No login link found");
+      JUnit.fail("No log in link found");
     }
   }
 }
