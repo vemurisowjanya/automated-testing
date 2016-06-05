@@ -15,7 +15,7 @@ public class CreateAccount extends CommonCode{
   @Test
   public void test() {
     driver.get(baseUrl + "/login");
-    if(driver.findElement(By.linkText("Sign up"))){
+    if(driver.findElement(By.linkText("Don't have an account? Sign up"))){
       JUnit.AssertTrue("Found the create account link", true);
     }
     else {

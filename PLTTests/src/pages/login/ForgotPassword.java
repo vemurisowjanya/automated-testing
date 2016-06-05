@@ -14,12 +14,18 @@ public class ForgotPassword extends CommonCode{
 
   @Test
   public void test() {
+    String email = "maditparis@gmail.com";
+
     driver.get(baseUrl + "/login");
-    if(driver.findElement(By.linkText("Forgot Password?"))){
-      JUnit.AssertTrue("Found the forgot password link", true);
+    if(driver.findElement("Forgot Password?")){
+      driver.findElement("Forgot Password?").click();
+      driver.findElement("Email");
+      driver.sendKeys(email);
+      driver.findElement("SendSuccessfully reset password").click();
+      JUnit.AssertTrue("Successfully reset password", true);
     }
     else {
-      JUnit.fail("No forgot password link found");
+      JUnit.fail("Did not successfully reset password");
     }
   }
 }
