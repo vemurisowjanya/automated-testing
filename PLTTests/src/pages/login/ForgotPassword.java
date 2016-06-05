@@ -17,15 +17,13 @@ public class ForgotPassword extends CommonCode{
     String email = "maditparis@gmail.com";
 
     driver.get(baseUrl + "/login");
-    if(driver.findElement("Forgot Password?")){
+
+      driver.findElement("Forgot Password?");
       driver.findElement("Forgot Password?").click();
       driver.findElement("Email");
       driver.sendKeys(email);
       driver.findElement("SendSuccessfully reset password").click();
+
       JUnit.AssertTrue("Successfully reset password", true);
-    }
-    else {
-      JUnit.fail("Did not successfully reset password");
-    }
   }
 }

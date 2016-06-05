@@ -17,15 +17,11 @@ public class Login extends CommonCode{
     String password = "test";
 
     driver.get(baseUrl + "/login");
-    if(driver.findElement("Log in")){
-      driver.sendKeys(username);
-      driver.sendKeys(password);
-      driver.findElement("Log in").click();
-      JUnit.AssertTrue("Successfully logged in", true);
-    }
+    driver.findElement("Log in");
+    driver.sendKeys(username);
+    driver.sendKeys(password);
+    driver.findElement("Log in").click();
 
-    else {
-      JUnit.fail("Failure logging in");
-    }
+    JUnit.AssertTrue("Successfully logged in", true);
   }
 }
