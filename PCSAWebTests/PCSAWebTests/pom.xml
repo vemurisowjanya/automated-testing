@@ -7,7 +7,6 @@
 	<build>
 		<sourceDirectory>src</sourceDirectory>
 		  <!-- testSourceDirectory>src/loginAndRegistrationTests</testSourceDirectory-->
- 
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
