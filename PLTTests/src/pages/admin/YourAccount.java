@@ -5,7 +5,7 @@ import org.openqa.selenium.*;
 
 /*
  * @author Madi Paris
- * Test for Log Out UI feature
+ * Test for Your Account
  */
 
 public class Logout CommonCode{
@@ -15,11 +15,11 @@ public class Logout CommonCode{
   @Test
   public void test() {
     driver.get(baseUrl);
-    if(driver.findElement(By.linkText("Logout"))){
-      JUnit.AssertTrue("Found the logout link", true);
+    if(driver.findElement(By.linkText("Your Account"))){
+      JUnit.AssertTrue("Found the your account link", true);
     }
     else {
-      JUnit.fail("No logout link found");
+      JUnit.fail("No your account link found");
     }
   }
 }
