@@ -14,7 +14,7 @@ public class Sites extends CommonCode{
 
   @Test
   public void test() {
-    driver.get(baseUrl + "/");
+    driver.get(baseUrl);
     if(driver.findElement(By.linkText("Sites"))){
       JUnit.AssertTrue("Found the sites link", true);
     }

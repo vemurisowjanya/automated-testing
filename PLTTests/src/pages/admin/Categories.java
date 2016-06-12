@@ -14,7 +14,7 @@ public class Categories extends CommonCode{
 
   @Test
   public void test() {
-    driver.get(baseUrl + "/");
+    driver.get(baseUrl);
     if(driver.findElement(By.linkText("Categories"))){
       JUnit.AssertTrue("Found the categories link", true);
     }

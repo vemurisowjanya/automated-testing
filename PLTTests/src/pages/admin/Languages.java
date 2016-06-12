@@ -14,7 +14,7 @@ public class Languages extends CommonCode{
 
   @Test
   public void test() {
-    driver.get(baseUrl + "/");
+    driver.get(baseUrl);
     if(driver.findElement(By.linkText("Languages"))){
       JUnit.AssertTrue("Found the languages link", true);
     }

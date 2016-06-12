@@ -14,7 +14,7 @@ public class Countries extends CommonCode{
 
   @Test
   public void test() throws Exception {
-    driver.get(baseUrl + "/");
+    driver.get(baseUrl);
     if(driver.findElement(By.linkText("Countries"))){
       JUnit.AssertTrue("Found the countries link", true);
     }

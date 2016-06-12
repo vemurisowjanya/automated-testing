@@ -5,21 +5,21 @@ import org.openqa.selenium.*;
 
 /*
  * @author Madi Paris
- * Test for Members UI feature
+ * Test for my organization test
  */
 
-public class Members extends CommonCode{
+public class MyOrganization extends CommonCode{
   private WebDriver driver;
   private String baseUrl;
 
   @Test
   public void test() {
     driver.get(baseUrl);
-    if(driver.findElement(By.linkText("Members"))){
-      JUnit.AssertTrue("Found the members link", true);
+    if(driver.findElement(By.linkText("My Organization"))){
+      JUnit.AssertTrue("Found the my organization link", true);
     }
     else {
-      JUnit.fail("No members link found");
+      JUnit.fail("No my organization link found");
     }
   }
 }
