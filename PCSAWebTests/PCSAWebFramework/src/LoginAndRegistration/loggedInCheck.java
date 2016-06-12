@@ -5,6 +5,8 @@
  */
 package LoginAndRegistration;
 import org.openqa.selenium.WebElement;
+
+import Logs.log4j;
 import PageObjectModel.constants;
 import WebDriver.driver;
 
@@ -16,12 +18,16 @@ public class loggedInCheck
 	public static boolean hasLogeedIn() 
 	{
 		WebElement title = driver.Instance.findElement(constants.welcomeTtile);
-		if((title.getText().equals("")) && (driver.Instance.getCurrentUrl().equals(constants.baseURL+"welcome.html")))
+		String URL = driver.Instance.getCurrentUrl();
+		log4j.Log.info("Title after login" + title.getText());
+		String pageTitle = title.getText();
+		System.out.println("url"+constants.baseURL+URL);
+		if((pageTitle.contains("Welcome to First Aide")) && (URL.contains(constants.baseURL+"welcome.html")))
 		{
 			return true;
 		}
 		else
-			return true;
+			return false;
 	}
 
 }
