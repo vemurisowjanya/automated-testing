@@ -22,7 +22,7 @@ public class loggedInCheck
 		log4j.Log.info("Title after login" + title.getText());
 		String pageTitle = title.getText();
 		System.out.println("url"+constants.baseURL+URL);
-		if((pageTitle.contains("Welcome to First Aide")) && (URL.contains(constants.baseURL+"welcome.html")))
+		if((pageTitle.contains(constants.pageTitleWelcome)) && (URL.contains(constants.baseURL+"welcome.html")))
 		{
 			return true;
 		}

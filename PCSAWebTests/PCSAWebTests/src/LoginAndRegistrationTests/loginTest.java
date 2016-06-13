@@ -20,11 +20,12 @@ public class loginTest extends commonTest
 {
 	/*
 	 * @return Data for test cases 
+	 * @throws Exception
 	 */
 	@DataProvider(name="Authentication")
 	public Object[][] loginData() throws Exception
 	{
-	       Object[][] testObjArray = excelUtil.getDataFromExcel("src//TestData//testData.xlsm",constants.loginSheet);
+	       Object[][] testObjArray = excelUtil.getDataFromExcel("src//TestData//TestsData.xlsm",constants.loginSheet);
 	       return (testObjArray);
 	  }
 	
