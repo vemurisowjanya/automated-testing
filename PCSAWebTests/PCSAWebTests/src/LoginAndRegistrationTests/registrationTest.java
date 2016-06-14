@@ -10,7 +10,6 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import BaseTests.commonTest;
-import LoginAndRegistration.loggedInCheck;
 import LoginAndRegistration.registration;
 import Logs.log4j;
 import PageObjectModel.constants;

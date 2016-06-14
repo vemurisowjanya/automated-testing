@@ -5,13 +5,11 @@
  */
 package LoginAndRegistration;
 import org.openqa.selenium.WebElement;
-
-import com.sun.org.apache.bcel.internal.classfile.ConstantObject;
-
 import Logs.log4j;
 import PageObjectModel.constants;
 import PageObjectModel.registrationPageElements;
-import WebDriver.driver;import sun.security.x509.IssuerAlternativeNameExtension;
+import WebDriver.driver;
+
 
 public class registration
 {
