@@ -1,11 +1,13 @@
 /*
  * @author Anjali
  * @since 2016-06-08
- * This class maintains page elements for Login and Registration page.
+ * This class maintains page elements for Login page.
  */
 package PageObjectModel;
 import org.openqa.selenium.WebElement;
+
 import WebDriver.driver;
+
 
 
 public class loginPageElements 
@@ -17,7 +19,7 @@ public class loginPageElements
 	 */
 	public static WebElement emailId()
 	{
-		element = driver.Instance.findElement(constants.EmailId);
+		element = driver.Instance.findElement(constants.signInEmailId);
 		return element;
 	}
 	
@@ -26,7 +28,7 @@ public class loginPageElements
 	 */
 	public static WebElement password()
 	{
-		element = driver.Instance.findElement(constants.password);
+		element = driver.Instance.findElement(constants.signInPassword);
 		return element;
 	}
 	
