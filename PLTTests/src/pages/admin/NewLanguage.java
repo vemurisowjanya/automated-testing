@@ -4,7 +4,13 @@ import commons.CommonCode;
 import org.junit.*;
 import org.openqa.selenium.*;
 
-public class NewLanguageAdmin extends CommonCode{
+/**
+ *
+ * Test for new language
+ * @author Madi Vachon
+ **/
+
+public class NewLanguage extends CommonCode{
   private WebDriver driver;
   private String baseUrl;
 

@@ -4,6 +4,12 @@ import commons.CommonCode;
 import org.junit.*;
 import org.openqa.selenium.*;
 
+/**
+ *
+ * Test for new site
+ * @author Madi Vachon
+ **/
+
 public class NewSite extends CommonCode {
   private WebDriver driver;
   private String baseUrl;

@@ -4,7 +4,13 @@ import commons.CommonCode;
 import org.junit.*;
 import org.openqa.selenium.*;
 
-public class NewArticleAdmin {
+/**
+ *
+ * Test for new article
+ * @author Madi Vachon
+ **/
+
+public class NewArticle extends CommonCode {
   private WebDriver driver;
   private String baseUrl;
 

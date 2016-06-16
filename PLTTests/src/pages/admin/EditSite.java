@@ -4,7 +4,13 @@ import commons.CommonCode;
 import org.junit.*;
 import org.openqa.selenium.*;
 
-public class EditSite {
+/**
+ *
+ * Test to edit site
+ * @author Madi Vachon
+ **/
+
+public class EditSite extends CommonCode{
   private WebDriver driver;
   private String baseUrl;
 

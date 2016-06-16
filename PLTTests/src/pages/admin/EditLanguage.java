@@ -4,7 +4,13 @@ import commons.CommonCode;
 import org.junit.*;
 import org.openqa.selenium.*;
 
-public class EditLanguageAdmin {
+/**
+ *
+ * Test to edit language
+ * @author Madi Vachon
+ **/
+
+public class EditLanguage extends CommonCode{
   private WebDriver driver;
   private String baseUrl;
 

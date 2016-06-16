@@ -4,7 +4,13 @@ import commons.CommonCode;
 import org.junit.*;
 import org.openqa.selenium.*;
 
-public class EditCategory {
+/**
+ *
+ * Test to edit category
+ * @author Madi Vachon
+ **/
+
+public class EditCategory extends CommonCode{
   private WebDriver driver;
   private String baseUrl;
 

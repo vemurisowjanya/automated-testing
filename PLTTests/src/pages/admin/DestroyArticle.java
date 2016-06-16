@@ -4,6 +4,12 @@ import commons.CommonCode;
 import org.junit.*;
 import org.openqa.selenium.*;
 
+/**
+ *
+ * Test to destroy article
+ * @author Madi Vachon
+ **/
+
 public class DestroyArticle extends CommonCode {
   private WebDriver driver;
   private String baseUrl;

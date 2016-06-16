@@ -4,6 +4,12 @@ import commons.CommonCode;
 import org.junit.*;
 import org.openqa.selenium.*;
 
+/**
+ *
+ * Test to destroy category
+ * @author Madi Vachon
+ **/
+
 public class DestroyCategory extends CommonCode {
   private WebDriver driver;
   private String baseUrl;

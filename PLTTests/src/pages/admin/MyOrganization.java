@@ -3,17 +3,18 @@ import commons.CommonCode;
 import org.junit.*;
 import org.openqa.selenium.*;
 
-/*
- * @author Madi Paris
- * Test for my organization test
- */
+/**
+ *
+ * Test for my organization page
+ * @author Madi Vachon
+ **/
 
 public class MyOrganization extends CommonCode{
   private WebDriver driver;
   private String baseUrl;
 
   @Test
-  public void test() {
+  public void test() throws Exception{
     driver.get(baseUrl);
     if(driver.findElement(By.linkText("My Organization"))){
       JUnit.AssertTrue("Found the my organization link", true);

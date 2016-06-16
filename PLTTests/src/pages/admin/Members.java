@@ -4,7 +4,13 @@ import commons.CommonCode;
 import org.junit.*;
 import org.openqa.selenium.*;
 
-public class MembersAdmin extends CommonCode{
+/**
+ *
+ * Test for members
+ * @author Madi Vachon
+ **/
+
+public class Members extends CommonCode{
   private WebDriver driver;
   private String baseUrl;
 

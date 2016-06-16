@@ -4,7 +4,13 @@ import commons.CommonCode;
 import org.junit.*;
 import org.openqa.selenium.*;
 
-public class NewCountryAdmin extends CommonCode{
+/**
+ *
+ * Test for new country
+ * @author Madi Vachon
+ **/
+
+public class NewCountry extends CommonCode{
   private WebDriver driver;
   private String baseUrl;
 

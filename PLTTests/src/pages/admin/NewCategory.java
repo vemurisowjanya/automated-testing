@@ -4,6 +4,12 @@ import commons.CommonCode;
 import org.junit.*;
 import org.openqa.selenium.*;
 
+/**
+ *
+ * Test for new category
+ * @author Madi Vachon
+ **/
+
 public class NewCategoryAdmin extends CommonCode{
   private WebDriver driver;
   private String baseUrl;

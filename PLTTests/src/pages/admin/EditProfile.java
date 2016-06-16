@@ -3,17 +3,18 @@ import commons.CommonCode;
 import org.junit.*;
 import org.openqa.selenium.*;
 
-/*
- * @author Madi Paris
- * Test for the edit profile
- */
+/**
+ *
+ * Test to edit profile
+ * @author Madi Vachon
+ **/
 
 public class EditProfile extends CommonCode{
   private WebDriver driver;
   private String baseUrl;
 
   @Test
-  public void test() {
+  public void test() throws Exception{
     driver.get(baseUrl);
     if(driver.findElement(By.linkText("Edit profile"))){
       JUnit.AssertTrue("Found edit profile link", true);
