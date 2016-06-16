@@ -17,7 +17,7 @@ public class safetyStrategiesHelplineTest extends commonTest
 	{
 		log4j.Log.info("Starting safetyStrategiesHelplineTest");
 		recommendedPage.gotoRecommendedPage();
-		Assert.assertEquals(true, recommendedPage.isAtSafetyStrategiesHelpline(), "Landing Page Navigation Failed");
-		log4j.Log.info("Test completed");
+		Assert.assertEquals(true, recommendedPage.isAtSafetyStrategiesHelpline(), "safetyStrategiesHelplineTest Failed");
+		log4j.Log.info("safetyStrategiesHelplineTest completed");
 	}
 }
