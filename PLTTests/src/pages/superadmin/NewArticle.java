@@ -1,25 +1,25 @@
-package com.example.tests;
+package admin;
 import commons.CommonCode;
 import org.junit.*;
 import org.openqa.selenium.*;
 
 /*
  * @author Madi Paris
- * Test for Sites UI feature
+ * Test for NewArticle
  */
 
-public class Sites extends CommonCode{
+public class NewArticle extends CommonCode{
   private WebDriver driver;
   private String baseUrl;
 
   @Test
   public void test() {
     driver.get(baseUrl);
-    if(driver.findElement(By.linkText("Sites"))){
-      JUnit.AssertTrue("Found the sites link", true);
+    if(driver.findElement(By.linkText("Logout"))){
+      JUnit.AssertTrue("Found the logout link", true);
     }
     else {
-      JUnit.fail("No sites link found");
+      JUnit.fail("No logout link found");
     }
   }
 }
