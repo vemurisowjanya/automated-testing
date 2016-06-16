@@ -46,6 +46,15 @@ public class constants
 	public static By setPreferences = By.xpath(".//*[@id='bt-peerst']");
 	
 	//Side In Menu Bar
-
+	public static By firstAideTab= By.xpath(".//*[@id='accordian']/ul/li[1]/h3[1]/a");
+	public static By circleOfTrustTab = By.xpath(".//*[@id='accordian']/ul/li[1]/h3[2]/a");
+	public static By safetyToolsTab = By.xpath(".//*[@id='accordian']/ul/li[2]/h3");
+	public static By supportServicesTab = By.xpath(".//*[@id='accordian']/ul/li[3]/h3");
+	public static By sexualAssaultAwarenesstTab = By.xpath(".//*[@id='accordian']/ul/li[4]/h3");
+	public static By policiesAndGlossaryTab = By.xpath(".//*[@id='accordian']/ul/li[5]/h3");
+	public static By settingsTab = By.xpath(".//*[@id='accordian']/ul/li[6]/h3[1]/a");
+	public static By loggedInAsTab = By.xpath(".//*[@id='accordian']/ul/li[6]/h3[2]/a");
+	
+	//Safety Tools
 	
 }

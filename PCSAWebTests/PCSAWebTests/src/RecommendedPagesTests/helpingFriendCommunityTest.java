@@ -1,7 +1,7 @@
 /*
  * @author Anjali
  * @since 2016-06-09
- * This script tests the navigation to the Helping a Friend or Community memeber Page on click of the button  on Recommended Pages.
+ * This script tests the navigation to the Helping a Friend or Community member Page on click of the button  on Recommended Pages.
  */
 package RecommendedPagesTests;
 
@@ -18,7 +18,7 @@ public class helpingFriendCommunityTest
 	{
 		log4j.Log.info("Starting helpingFriendCommunityTest");
 		recommendedPage.gotoRecommendedPage();
-		Assert.assertEquals(true, recommendedPage.isAtHelpingFriendCommunity(), "Landing Page Navigation Failed");
-		log4j.Log.info("Test completed");
+		Assert.assertEquals(true, recommendedPage.isAtHelpingFriendCommunity(), "helpingFriendCommunity Failed");
+		log4j.Log.info("helpingFriendCommunityTest completed");
 	}
 }
