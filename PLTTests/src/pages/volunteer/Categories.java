@@ -1,25 +1,22 @@
-package admin;
+package volunteer;
+
 import commons.CommonCode;
 import org.junit.*;
 import org.openqa.selenium.*;
 
-/*
- * @author Madi Paris
- * Test for Categories UI Feature
- */
+/**
+ *
+ * Test for categories
+ * @author Madi Vachon
+ **/
 
-public class Categories extends CommonCode{
+public class Categories extends CommonCode {
   private WebDriver driver;
   private String baseUrl;
 
   @Test
-  public void test() {
-    driver.get(baseUrl);
-    if(driver.findElement(By.linkText("Categories"))){
-      JUnit.AssertTrue("Found the categories link", true);
-    }
-    else {
-      JUnit.fail("No categories link found");
-    }
+  public void test() throws Exception {
+    driver.get(baseUrl + "/articles");
+    driver.findElement(By.linkText("Categories")).click();
   }
 }

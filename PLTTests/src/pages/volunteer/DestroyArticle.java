@@ -6,17 +6,19 @@ import org.openqa.selenium.*;
 
 /**
  *
- * Test for members
+ * Test to destroy article
  * @author Madi Vachon
  **/
 
-public class Members extends CommonCode {
+public class DestroyArticle extends CommonCode {
   private WebDriver driver;
   private String baseUrl;
 
   @Test
   public void test() throws Exception {
     driver.get(baseUrl + "/articles");
-    driver.findElement(By.linkText("Members")).click();
+    driver.findElement(By.cssSelector("i.icon-action")).click();
+    driver.findElement(By.linkText("Delete")).click();
+    assertTrue(closeAlertAndGetItsText().matches("^Are you sure[\\s\\S]$"));
   }
 }
