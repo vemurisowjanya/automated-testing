@@ -4,8 +4,13 @@
  */
 package LoginAndRegistration;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebElement;
+
+import PageObjectModel.constants;
 import PageObjectModel.loginPageElements;
+import WebDriver.driver;
 
 public class loginCommand 
 {
@@ -34,6 +39,7 @@ public class loginCommand
 		email.sendKeys(emailId);
 		passwrd.sendKeys(password);
 		loginButton.click();
+		//driver.Instance.manage().timeouts().pageLoadTimeout(100, TimeUnit.SECONDS);
 	}
 
 }

@@ -5,9 +5,16 @@
  */
 package RecommendedPagesFeatures;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import LoginAndRegistration.existingUserLogin;
 import Logs.log4j;
 import PageObjectModel.constants;
+import PageObjectModel.logoutPageElements;
 import PageObjectModel.recommendedPagesElements;
 import WebDriver.driver;
 
@@ -19,15 +26,17 @@ public class recommendedPage
 	public static void gotoRecommendedPage() 
 	{
 		// TODO Auto-generated method stub
+		existingUserLogin.login();
 		log4j.Log.info("Navigating to Recommended Pages");
-		driver.Instance.get(constants.baseURL+"welcome.html");
+		
+		//driver.Instance.get(constants.baseURL+"welcome.php");
 		log4j.Log.info("On Recommended Pages");
 	}
 	
 	public static boolean isAtRecommendedPages()
 	{
 		url = driver.Instance.getCurrentUrl();
-		if(url.contains(constants.baseURL+"welcome.html"))
+		if(url.contains(constants.baseURL+"welcome.php"))
 		{
 			return true;
 		}

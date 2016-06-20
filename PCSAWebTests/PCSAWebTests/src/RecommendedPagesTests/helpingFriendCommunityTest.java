@@ -8,10 +8,11 @@ package RecommendedPagesTests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import BaseTests.commonTest;
 import Logs.log4j;
 import RecommendedPagesFeatures.recommendedPage;
 
-public class helpingFriendCommunityTest
+public class helpingFriendCommunityTest extends commonTest
 {
 	@Test
 	public static void test()

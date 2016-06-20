@@ -5,7 +5,12 @@
  * It serves as a prerequisite for validating other functions after successful login.
  */
 package LoginAndRegistration;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import PageObjectModel.constants;
+import PageObjectModel.logoutPageElements;
 import WebDriver.driver;
 
 public class existingUserLogin 
@@ -16,5 +21,7 @@ public class existingUserLogin
 		loginPage.loginAs(constants.existingEmailId)
 		.withPassword(constants.existingPassword)
 		.login();
+		WebDriverWait wait = new WebDriverWait(driver.Instance, 10);
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(logoutPageElements.logoutButton()));
 	}
 }

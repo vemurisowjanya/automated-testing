@@ -43,7 +43,7 @@ public class constants
 	public static By safetyStrategyButton = By.xpath(".//*[@id='bt-safetystg']");
 	public static By helpButton = By.xpath(".//*[@id='bt-helping']");
 	public static By thingsToKnowButton = By.xpath(".//*[@id='bt-ghana']");
-	public static By setPreferences = By.xpath(".//*[@id='bt-peerst']");
+	public static By setPreferences = By.xpath(".//*[@id='bt-peerstng']");
 	
 	//Side In Menu Bar
 	public static By firstAideTab= By.xpath(".//*[@id='accordian']/ul/li[1]/h3[1]/a");
