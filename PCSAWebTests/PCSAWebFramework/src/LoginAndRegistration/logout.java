@@ -5,7 +5,11 @@
  */
 package LoginAndRegistration;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import PageObjectModel.constants;
 import PageObjectModel.logoutPageElements;
@@ -18,8 +22,10 @@ public class logout
 	public static boolean isAtWelcome()
 	{
 		existingUserLogin.login();
+		
 		URL = driver.Instance.getCurrentUrl();
-		if(URL.contains(constants.baseURL+"welcome.html"))
+		System.out.println(URL);
+		if(URL.contains(constants.baseURL+"welcome.php"))
 		{
 			return true;
 		}
