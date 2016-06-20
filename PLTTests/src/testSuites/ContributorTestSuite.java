@@ -5,10 +5,10 @@ public class Contributor {
 
   public static Test suite() {
     TestSuite suite = new TestSuite();
-    suite.addTestSuite(Untitled.class);
-    suite.addTestSuite(Untitled 2.class);
-    suite.addTestSuite(Untitled 3.class);
-    suite.addTestSuite(Untitled 4.class);
+    suite.addTestSuite(EditAccount.class);
+    suite.addTestSuite(EditPost.class);
+    suite.addTestSuite(Login.class);
+    suite.addTestSuite(NewArticle.class);
     return suite;
   }
 
