@@ -1,0 +1,34 @@
+<!-- Specifying Test Directories -->
+<suite name="PCSA Web Tests" verbose="1" >
+  <!-- Login Test -->
+  <test name="Login Test" >
+    <classes>
+       <class name="LoginAndRegistrationTests.loginTest" />
+    </classes>
+  </test>
+  
+  <!-- Logout Test -->
+  <test name="Logout Test" >
+    <classes>
+       <class name="LoginAndRegistrationTests.logoutTest" />
+    </classes>
+  </test>
+  
+  <!-- Registration Test
+  <test name="Registration Test" >
+    <classes>
+       <class name="LoginAndRegistrationTests.registrationTest" />
+    </classes>
+  </test> -->
+  
+   <!-- Recommended Pages Tests -->
+  <test name="Recommended Pages Tests" >
+    <classes>
+       <class name="RecommendedPagesTests.helpingFriendCommunityTest" />
+       <class name="RecommendedPagesTests.safetyStrategiesHelplineTest" />
+       <class name="RecommendedPagesTests.setPreferencesTest" />
+       <class name="RecommendedPagesTests.thingsToKnowTest" />
+    </classes>
+  </test>
+
+</suite>
