@@ -1,29 +1,29 @@
 package login;
+
 import commons.CommonCode;
 import org.junit.*;
 import org.openqa.selenium.*;
 
-/*
- * @author Madi Paris
- * Tests for ForgotPassword UI feature
- */
+/**
+ *
+ * Test to reset password
+ * @author Madi Vachon
+ **/
 
-public class ForgotPassword extends CommonCode{
+public class ForgotPassword extends CommonCode {
   private WebDriver driver;
   private String baseUrl;
 
   @Test
-  public void test() {
-    String email = "maditparis@gmail.com";
-
+  public void test() throws Exception {
     driver.get(baseUrl + "/login");
-
-      driver.findElement("Forgot Password?");
-      driver.findElement("Forgot Password?").click();
-      driver.findElement("Email");
-      driver.sendKeys(email);
-      driver.findElement("SendSuccessfully reset password").click();
-
-      JUnit.AssertTrue("Successfully reset password", true);
+    driver.findElement(By.id("username")).clear();
+    driver.findElement(By.id("username")).sendKeys("test");
+    driver.findElement(By.id("user_password")).clear();
+    driver.findElement(By.id("user_password")).sendKeys("t");
+    driver.findElement(By.linkText("Forgot Password?")).click();
+    driver.findElement(By.id("user_email")).clear();
+    driver.findElement(By.id("user_email")).sendKeys("test@gmail.com");
+    driver.findElement(By.name("commit")).click();
   }
 }
