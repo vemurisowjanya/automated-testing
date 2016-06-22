@@ -4,6 +4,8 @@
  * This class navigates to the registration page and validates against user registration in the application.
  */
 package LoginAndRegistration;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebElement;
 import Logs.log4j;
 import PageObjectModel.constants;
@@ -84,10 +86,19 @@ public class registration
 	 */
 	public static boolean hasRegistered() 
 	{	
-		URL = driver.Instance.getCurrentUrl();
-		WebElement title = driver.Instance.findElement(constants.welcomeTtile);
+		System.out.println(driver.Instance.getCurrentUrl());
+		if(driver.Instance.getCurrentUrl().contains(constants.baseURL+"progressBar.php"))
+		{
+			System.out.println("inside progressBar");
+			driver.Instance.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		}
 		
-		if(title.getText().contains(constants.pageTitleWelcome) && URL.contains(constants.baseURL+"welcome.html"))
+		WebElement title = driver.Instance.findElement(constants.welcomeTtile);
+		URL = driver.Instance.getCurrentUrl();
+		System.out.println(URL);
+	
+		
+		if(title.getText().contains(constants.pageTitleWelcome) && URL.contains(constants.baseURL+"welcome.php"))
 			return true;
 		else
 			return false;

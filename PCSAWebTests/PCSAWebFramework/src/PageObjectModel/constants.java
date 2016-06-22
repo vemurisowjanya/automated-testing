@@ -46,7 +46,8 @@ public class constants
 	public static By setPreferences = By.xpath(".//*[@id='bt-peerstng']");
 	
 	//Side In Menu Bar
-	public static By firstAideTab= By.xpath(".//*[@id='accordian']/ul/li[1]/h3[1]/a");
+	public static By firstAideTab= By.xpath(".//*[@id='accordian']/ul/li[1]/h2/a");
+	public static By getHelpNowTab = By.xpath(".//*[@id='accordian']/ul/li[1]/h3[1]/a");
 	public static By circleOfTrustTab = By.xpath(".//*[@id='accordian']/ul/li[1]/h3[2]/a");
 	public static By safetyToolsTab = By.xpath(".//*[@id='accordian']/ul/li[2]/h3");
 	public static By supportServicesTab = By.xpath(".//*[@id='accordian']/ul/li[3]/h3");
@@ -63,7 +64,7 @@ public class constants
 	public static By commonalitiesofSexualPredatorsTab = By.xpath(".//*[@id='accordian']/ul/li[2]/ul/li[5]/a");
 	public static By bystanderInterventionTab = By.xpath(".//*[@id='accordian']/ul/li[2]/ul/li[6]/a");
 	public static By safetyPlanBasicsTab = By.xpath(".//*[@id='accordian']/ul/li[2]/ul/li[7]/a");
-	public static By sfetyPlanWorksheetTab = By.xpath(".//*[@id='accordian']/ul/li[2]/ul/li[8]/a");
+	public static By safetyPlanWorksheetTab = By.xpath(".//*[@id='accordian']/ul/li[2]/ul/li[8]/a");
 	
 	//Support services
 	public static By supportServicesMainTab = By.xpath(".//*[@id='accordian']/ul/li[3]/ul/li[1]/a");
@@ -85,4 +86,17 @@ public class constants
 	public static By policySummarySheetTab = By.xpath(".//*[@id='accordian']/ul/li[5]/ul/li[1]/a");
 	public static By glossaryTab = By.xpath(".//*[@id='accordian']/ul/li[5]/ul/li[2]/a");
 	public static By furtherResourcesTab = By.xpath(".//*[@id='accordian']/ul/li[5]/ul/li[3]/a");
+	
+	//Get Help Now
+	public static By gethelpPageTitle = By.xpath("html/body/center/div/div[1]/h1");
+	public static String getHelpTitle = "Get Help Now";
+	public static By contactPCMO = By.xpath(".//*[@id='bt-PCMO']");
+	public static By contactSSM = By.xpath(".//*[@id='bt-SSM']");
+	public static By contactSARL = By.xpath(".//*[@id='bt-SARL']");
+	public static By toGetHelpPage2 = By.xpath(".//*[@id='tr-2']/td[2]/a/img");
+	public static By pcSavesAnonymousHelpline = By.xpath(".//*[@id='bt-PCSaves']");
+	public static By officeOfVictimAdvocacy = By.xpath(".//*[@id='bt-offVA']");
+	public static By officeOfInspectorGeneral = By.xpath(".//*[@id='bt-offIG']");
+	public static By officeOfCivilRightsAndDiversity = By.xpath(".//*[@id='bt-offCRD']");
+	public static By toGetHelpPage1fromPage2 = By.xpath(".//*[@id='bw-arrow']/a/img");
 }

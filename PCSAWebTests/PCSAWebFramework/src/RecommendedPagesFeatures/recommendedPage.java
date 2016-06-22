@@ -1,7 +1,7 @@
 /*
  * @author Anjali
  * @since 2016-06-09
- * This class maintains page elements for Recommended Pages.
+ * This class maintains validation steps carried out for Recommended Pages.
  */
 package RecommendedPagesFeatures;
 
