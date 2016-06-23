@@ -99,4 +99,6 @@ public class constants
 	public static By officeOfInspectorGeneral = By.xpath(".//*[@id='bt-offIG']");
 	public static By officeOfCivilRightsAndDiversity = By.xpath(".//*[@id='bt-offCRD']");
 	public static By toGetHelpPage1fromPage2 = By.xpath(".//*[@id='bw-arrow']/a/img");
+	public static By changeLocationDropdown = By.xpath(".//*[@id='location']");
+	public static By chooseLocationText = By.xpath(".//*[@id='loc']");
 }
