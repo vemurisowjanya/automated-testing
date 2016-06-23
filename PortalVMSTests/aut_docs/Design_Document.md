@@ -9,7 +9,7 @@ The QA process is divided as follows:
 ## Few important points regarding CI:
 
 - `.travis.yml` is the config file to run the travis build
-- Build can be viewed at `http://travis.org/jayesh92/vms`
+- Build can be viewed at `https://travis-ci.org/systers/vms`
 - Status would be reflected in the badge in `README.md`
 
 ## Few important points regarding Functional Testing:
@@ -40,17 +40,38 @@ The QA process is divided as follows:
 ## Steps to run tests:
 
 - Currently, used `python 2.7`
-- Clone project: `git clone https://github.com/jayesh92/vms.git`
+- Clone project: `git clone https://github.com/systers/vms.git`
 - In the root folder of the project, startup a new virtual environment
   `virtualenv -p /usr/bin/python2.7 venv`
 - Activate virtualenv, `source venv/bin/activate`
 - Install dependencies: `pip install -r requirements.txt`
 - `cd vms`
 - To run, `python manage.py runserver`. Browse 
-  `http://127.0.0.1:8000/home`
+  `http://127.0.0.1:8000`
 - To execute tests `python manage.py test`. This will run all unit-tests and
   all functional-tests across all apps. To execute tests of only a particular
   app, run `python manage.py test <app_name>`
 - If all tests pass, `OK` will be received at the end.
 - For functional tests, a firefox window for each test will open up
   automatically and close after simulation of tests.
+
+## Tests Failing
+
+There are 8 Failures. These are due to issue [#327](https://github.com/systers/vms/issues/327) :
+
+- test_report_with_empty_fields
+- test_job_field
+- test_intersection_of_fields
+- test_event_field
+- test_date_field
+- test_admin_cannot_access_volunteer_urls
+- test_cancel_assigned_shift
+- test_null_values_with_dataset
+- test_check_intersection_of_fields
+
+one error
+- in test_volunteer_cannot_access_admin_urls
+
+once [#325](https://github.com/systers/vms/issues/325) gets fixed this will automatically pass.
+
+Note: The current setup uses one of the latest versions of Selenium. You will run into errors if the this version is incompatible with your firefox version and does not support it. In that case, follow [this](https://support.mozilla.org/en-US/kb/find-what-version-firefox-you-are-using) guide to find out your browser version and accordingly install a Selenium version compatible with it.
