@@ -21,4 +21,24 @@ public class getHelpNowPageElements
 		element = driver.Instance.findElement(constants.gethelpPageTitle);
 		return element;
 	}
+	
+	/*
+	 * @return Dropdown for 'Change Location' on the Get Help Page.
+	 */
+	public static WebElement changeLocationDropdown()
+	{
+		element = driver.Instance.findElement(constants.changeLocationDropdown);
+		return element;
+	}
+	
+	/*
+	 * @return Text display for 'Change Location' on the Get Help Page.
+	 */
+	public static WebElement chooseLocationText()
+	{
+		element = driver.Instance.findElement(constants.chooseLocationText);
+		return element;
+	}
+	
+	
 }
