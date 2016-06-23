@@ -23,7 +23,7 @@ Installations
 
 #####Eclipse
 1. Go to [Eclipse's Download site](https://www.eclipse.org/downloads/).
-1. Download the Eclipse IDE for EE Developer's (preferably) as it comes with Maven, Git and TestNG plugin already installed or download the Eclipse IDE for Java Developers.
+1. Download the Eclipse IDE for EE Developers (preferably) as it comes with Maven, Git and TestNG plugin already installed or download the Eclipse IDE for Java Developers.
 1. Select a mirror and install.
 
 #####Egit Plugin for Eclipse
