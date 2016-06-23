@@ -72,9 +72,8 @@ Steps for running tests
      * Repeat steps 2 and 3 from above.
      * Right click on the `pom.xml` file of PCSAWebTests and run as `Maven test`.
 1. To generate test reports using surefire-repots available in Maven.
-     * Open the terminal and navigate inside PCSAWebTests to the `pom.xml` file.
-     * Run `mvn compile`.
-     * Then run `mvn site`.
+     * Repeat steps 2 and 3 of point 1 from above.
+     * Right click on the `pom.xml` of PCSAWebTests and then run as `Maven build`and give the Goals as `site`.
      * A test report will be generated inside the site folder which is inside the target directory.
 
 Project documentation
