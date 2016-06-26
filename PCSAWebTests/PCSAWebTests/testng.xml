@@ -14,20 +14,32 @@
     </classes>
   </test>
   
-  <!-- Registration Test
+  <!--Registration Test-->
   <test name="Registration Test" >
     <classes>
        <class name="LoginAndRegistrationTests.registrationTest" />
     </classes>
-  </test> -->
+  </test> 
   
-   <!-- Recommended Pages Tests -->
+  <!-- Recommended Pages Tests -->
   <test name="Recommended Pages Tests" >
     <classes>
        <class name="RecommendedPagesTests.helpingFriendCommunityTest" />
        <class name="RecommendedPagesTests.safetyStrategiesHelplineTest" />
        <class name="RecommendedPagesTests.setPreferencesTest" />
        <class name="RecommendedPagesTests.thingsToKnowTest" />
+    </classes>
+  </test>
+  
+   <!-- Side in Menu Bar Tests -->
+  <test name="Side in Menu Bar Tests" >
+    <classes>
+       <class name="SideInMenuBarTests.circleOfTrustNavigationTest" />
+       <class name="SideInMenuBarTests.firstAideNavigationTest" />
+       <class name="SideInMenuBarTests.policiesAndGlossaryTest" />
+       <class name="SideInMenuBarTests.safetyToolsNavigationTest" />
+       <class name="SideInMenuBarTests.sexualAssaultAwarenessTest" />
+       <class name="SideInMenuBarTests.supportServicesNavigationTest" />
     </classes>
   </test>
 
