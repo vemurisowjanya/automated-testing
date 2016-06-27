@@ -31,7 +31,7 @@
     </classes>
   </test>
   
-   <!-- Side in Menu Bar Tests -->
+  <!-- Side in Menu Bar Tests -->
   <test name="Side in Menu Bar Tests" >
     <classes>
        <class name="SideInMenuBarTests.circleOfTrustNavigationTest" />
@@ -40,6 +40,20 @@
        <class name="SideInMenuBarTests.safetyToolsNavigationTest" />
        <class name="SideInMenuBarTests.sexualAssaultAwarenessTest" />
        <class name="SideInMenuBarTests.supportServicesNavigationTest" />
+    </classes>
+  </test>
+  
+  <!-- Side in Menu Bar Tests -->
+  <test name="Get Help Now Tests" >
+    <classes>
+       <class name="GetHelpNowTests.getHelpNavigationTest" />
+       <class name="GetHelpNowTests.selectCountryTest" />
+       <class name="GetHelpNowTests.pcmoCallTest" />
+       <class name="GetHelpNowTests.pcmoSMSTest" />
+       <class name="GetHelpNowTests.sarlCallTest" />
+       <class name="GetHelpNowTests.sarlSMSTest" />
+       <class name="GetHelpNowTests.ssmCallTest" />
+       <class name="GetHelpNowTests.ssmSMSTest" />
     </classes>
   </test>
 
