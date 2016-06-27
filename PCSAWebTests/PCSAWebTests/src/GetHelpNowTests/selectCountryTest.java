@@ -1,5 +1,5 @@
 /*
- * @suthor Anjali
+ * @author Anjali
  * @since 2016-06-23
  * This script tests if the user is able to select the county from the dropdown on the Get Help Now.
  */

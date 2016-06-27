@@ -40,5 +40,102 @@ public class getHelpNowPageElements
 		return element;
 	}
 	
+	/*
+	 * @return Button for 'Contact PCMO' on the Get Help Page.
+	 */
+	public static WebElement contactPCMO()
+	{
+		element = driver.Instance.findElement(constants.contactPCMO);
+		return element;
+	}
 	
+	/*
+	 * @return Button for 'Contact SSM' on the Get Help Page.
+	 */
+	public static WebElement contactSSM()
+	{
+		element = driver.Instance.findElement(constants.contactSSM);
+		return element;
+	}
+	
+	/*
+	 * @return Button for 'Contact SARL' on the Get Help Page.
+	 */
+	public static WebElement contactSARL()
+	{
+		element = driver.Instance.findElement(constants.contactSARL);
+		return element;
+	}
+	
+	/*
+	 * @return Voice Call Button for Contact PCMO
+	 */
+	public static WebElement pcmoCallButton()
+	{
+		element = driver.Instance.findElement(constants.pcmoCallButton);
+		return element;
+	}
+	
+	/*
+	 * @return Send Message Button for Contact PCMO
+	 */
+	public static WebElement pcmoSMSButton()
+	{
+		element = driver.Instance.findElement(constants.pcmoSMSButton);
+		return element;
+	}
+	
+	/*
+	 * @return Voice Call Button for Contact SSM
+	 */
+	public static WebElement ssmCallButton()
+	{
+		element = driver.Instance.findElement(constants.ssmCallButton);
+		return element;
+	}
+	
+	/*
+	 * @return Send Message Button for Contact SSM
+	 */
+	public static WebElement ssmSMSButton()
+	{
+		element = driver.Instance.findElement(constants.ssmSMSButton);
+		return element;
+	}
+	
+	/*
+	 * @return Voice Call Button for Contact SARL
+	 */
+	public static WebElement sarlCallButton()
+	{
+		element = driver.Instance.findElement(constants.sarlCallButton);
+		return element;
+	}
+	
+	/*
+	 * @return Send Message Button for Contact SARL
+	 */
+	public static WebElement sarlSMSButton()
+	{
+		element = driver.Instance.findElement(constants.sarlSMSButton);
+		return element;
+	}
+	
+	/*
+	 * @return Text Box for Send Message
+	 */
+	public static WebElement smsBodyTextBox()
+	{
+		element = driver.Instance.findElement(constants.smsBodyTextBox);
+		return element;
+	}
+	
+	/*
+	 * @return Send SMS Button
+	 */
+	public static WebElement sendSMSButton()
+	{
+		element = driver.Instance.findElement(constants.sendSMSButton);
+		return element;
+	}
 }
