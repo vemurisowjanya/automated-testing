@@ -11,7 +11,7 @@ import GetHelpNowFeatures.getHelpNow;
 import LoginAndRegistration.loggedInCheck;
 import Logs.log4j;
 
-public class selectCountry extends commonTest
+public class selectCountryTest extends commonTest
 {
   @Test
   public void test()
