@@ -101,4 +101,13 @@ public class constants
 	public static By toGetHelpPage1fromPage2 = By.xpath(".//*[@id='bw-arrow']/a/img");
 	public static By changeLocationDropdown = By.xpath(".//*[@id='location']");
 	public static By chooseLocationText = By.xpath(".//*[@id='loc']");
+	public static By pcmoCallButton = By.xpath(".//*[@id='PCMO-call']");
+	public static By pcmoSMSButton = By.xpath(".//*[@id='PCMO-msg']");
+	public static By ssmCallButton = By.xpath(".//*[@id='SSM-call']");
+	public static By ssmSMSButton = By.xpath(".//*[@id='SSM-msg']");
+	public static By sarlCallButton = By.xpath(".//*[@id='SARL-call']");
+	public static By sarlSMSButton = By.xpath(".//*[@id='SARL-msg']");
+	public static By makeCallButton = By.xpath(".//*[@id='submit']");
+	public static By smsBodyTextBox = By.xpath(".//*[@id='SMS-body']");
+	public static By sendSMSButton = By.xpath(".//*[@id='bt-SMS']");
 }
