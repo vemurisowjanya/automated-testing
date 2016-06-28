@@ -10,12 +10,15 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Properties;
 
+import com.mysql.cj.api.jdbc.Statement;
+
 import PageObjectModel.databaseConstants;
 
 public class connectToDB
 {
-	static Connection connection = null;
-	static Properties p = null;
+	public static Connection connection = null;
+	public static Properties p = null;
+	public static Statement stmt;
 	public static void initConnectionToDB()
 	{
 		
@@ -23,7 +26,8 @@ public class connectToDB
 		{
 			Class.forName(databaseConstants.jdbcDriver).newInstance();
 			connection = DriverManager.getConnection(databaseConstants.connectionURL+"?"+"user="+ databaseConstants.dbUsername+"&password="+databaseConstants.dbPassword);
-			
+			stmt = (Statement)connection.createStatement();
+			 
 			if(connection != null)
 				System.out.println("connection successfull");
 		}
