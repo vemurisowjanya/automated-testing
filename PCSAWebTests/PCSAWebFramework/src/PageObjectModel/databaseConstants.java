@@ -4,7 +4,6 @@
  * This class maintains all the constants required to start a DB connection.
  */
 package PageObjectModel;
-
 import java.util.Properties;
 
 public class databaseConstants
