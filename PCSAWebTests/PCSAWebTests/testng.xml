@@ -4,6 +4,7 @@
   <test name="Login Test" >
     <classes>
        <class name="LoginAndRegistrationTests.loginTest" />
+       <class name="LoginAndRegistrationTests.parameterisedLoginTest" />
     </classes>
   </test>
   
@@ -55,6 +56,13 @@
        <class name="GetHelpNowTests.ssmCallTest" />
        <class name="GetHelpNowTests.ssmSMSTest" />
     </classes>
+  </test>
+  
+  <!-- Database Tests -->
+  <test name="Database Tests" >
+  	<classes>
+  		<class name="DatabaseTests.loginDBCheckTest"/>
+  	</classes>
   </test>
 
 </suite>
