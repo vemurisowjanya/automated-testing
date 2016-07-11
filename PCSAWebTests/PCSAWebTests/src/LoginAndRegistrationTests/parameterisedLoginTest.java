@@ -12,7 +12,6 @@ import org.testng.annotations.Test;
 import BaseTests.commonTest;
 import LoginAndRegistration.loggedInCheck;
 import LoginAndRegistration.loginPage;
-import Logs.log4j;
 
 public class parameterisedLoginTest extends commonTest
 {
