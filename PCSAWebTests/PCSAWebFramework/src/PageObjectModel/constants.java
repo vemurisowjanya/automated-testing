@@ -110,4 +110,7 @@ public class constants
 	public static By makeCallButton = By.xpath(".//*[@id='submit']");
 	public static By smsBodyTextBox = By.xpath(".//*[@id='SMS-body']");
 	public static By sendSMSButton = By.xpath(".//*[@id='bt-SMS']");
+	
+	//Circle of Trust
+	public static By circleOfTrustTitle = By.xpath("html/body/center/div/div[1]/h1");
 }

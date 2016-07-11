@@ -4,10 +4,8 @@
  * This class validates test steps for Side in Menu Bar.
  */
 package SideInMenuBarFeatures;
-
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
-
 import LoginAndRegistration.existingUserLogin;
 import Logs.log4j;
 import PageObjectModel.constants;
@@ -70,9 +68,14 @@ public class sideInMenu
 	{
 		WebElement circleOfTrustTab = sideInMenuBarElements.circleOfTrustTab();
 		circleOfTrustTab.click();
+		WebElement circleOfTrustTitle = driver.Instance.findElement(constants.circleOfTrustTitle);
+		if(circleOfTrustTitle.getText().contains("Circle of Trust") && driver.Instance.getCurrentUrl().contains(constants.baseURL+"circleOfTrust.php"))
+		{
+			return true;
+		}
 		
-		//TBA validation steps
-		return true;
+		else
+			return false;
 	}
 
 	/*
