@@ -1,5 +1,5 @@
 /*
- * @suthor Anjali
+ * @author Anjali
  * @since 2016-06-08
  * This class initializes the driver before a test run and closed it after a test
  */
@@ -15,7 +15,14 @@ public class commonTest
 	@BeforeMethod
 	public static void startDriver()
 	{
-		driver.initalizeDriver();
+		try 
+		{
+			driver.initalizeDriver();
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
 	}
 	
 	@AfterMethod
