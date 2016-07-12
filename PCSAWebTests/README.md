@@ -91,6 +91,7 @@ Steps for running tests on BrowserStack
 1. Right click on any test script and choose `Run as TestNG Test`. Check the status on your BrowserStack dashboard.
 1. To run all the tests at one, right click on testng.xml file under PCSAWebTests and choose `Run as TestNG Suite`.
 1. Please refer to sample TestNG scripts [here](https://www.browserstack.com/automate/java#testng) for better understanding.
+
 Project documentation
 ---------------------
 TBA
