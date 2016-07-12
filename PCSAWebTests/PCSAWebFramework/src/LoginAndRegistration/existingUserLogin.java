@@ -21,7 +21,7 @@ public class existingUserLogin
 		loginPage.loginAs(constants.existingEmailId)
 		.withPassword(constants.existingPassword)
 		.login();
-		WebDriverWait wait = new WebDriverWait(driver.Instance, 10);
+		WebDriverWait wait = new WebDriverWait(driver.Instance, 20);
 		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(logoutPageElements.logoutButton()));
 	}
 }
