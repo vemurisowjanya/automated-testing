@@ -30,7 +30,6 @@ public class excelUtil
 	public static Object [][] getDataFromExcel(String filePath, String SheetName) throws Exception
 	{
 		Object [][] data= null;
-		//String data [][] = null;
 		try
 		{
 			FileInputStream ExcelFile = new FileInputStream(filePath);
@@ -41,8 +40,7 @@ public class excelUtil
 			int ci, cj;
 			int totalRows = ExcelWSheet.getLastRowNum();
 			System.out.println("Number of rows "+totalRows);
-			//function to get the total no of cols
-			//int totalCols = 3;
+			//function to get the total no of columns
 			int totalCols = ExcelWSheet.getRow(0).getLastCellNum();
 			System.out.println("Number of columns"+totalCols);
 			data = new String[totalRows][totalCols];
@@ -54,7 +52,7 @@ public class excelUtil
 				{
 					System.out.println("cell no " + i +","+j);
 					data[ci][cj]=getCellData(i,j);
-					System.out.println(data[ci][cj].toString());  
+					System.out.println(data[ci][cj]);  
 					cj++;
 				}
 				ci++;
@@ -86,25 +84,27 @@ public class excelUtil
 		 
 		try
 		{
-			//Cell.setCellType(Cell.CELL_TYPE_STRING);
+			
 			Cell = ExcelWSheet.getRow(RowNum).getCell(ColNum);
-			//int dataType = Cell.getCellType();
-			if(Cell.getCellType() == 0)
+		
+			if(Cell.getCellType() == org.apache.poi.ss.usermodel.Cell.CELL_TYPE_NUMERIC)
 				return NumberToTextConverter.toText(Cell.getNumericCellValue());
 				//return Cell.getNumericCellValue()+"";
-			else if(Cell.getCellType() == 1)
+			else if(Cell.getCellType() == org.apache.poi.ss.usermodel.Cell.CELL_TYPE_STRING)
 				return Cell.getStringCellValue();
-			else if (Cell.getCellType() == 3)
+			else if (Cell.getCellType() == org.apache.poi.ss.usermodel.Cell.CELL_TYPE_BLANK || Cell == null) 
 				return "";
-			else if(Cell.getCellType() == 4)
+			else if(Cell.getCellType() == org.apache.poi.ss.usermodel.Cell.CELL_TYPE_BOOLEAN)
 				return Cell.getBooleanCellValue();
+			else if(Cell.getCellType() == org.apache.poi.ss.usermodel.Cell.CELL_TYPE_FORMULA)
+				return Cell.getCellFormula().toString();
 		}
-			catch (Exception e)
-			{
-				System.out.println(e.getMessage());
-			    throw (e);
+		catch (Exception e)
+		{
+			System.out.println(e.getMessage());
+			throw (e);
 
-			}
+		}
 		return "";
 
 		}
