@@ -9,9 +9,9 @@ public class cloudServiceConstants
 {
 	/*
 	 * Create an account with BrowserStack to get the username and accessKey.
-	 * Edit these fields after creation
+	 * update these fields after creation
 	 */
-	public static final String USERNAME = "anjali65";
-	public static final String AUTOMATE_KEY = "yo9vPJpaaGZTfhUjH9AQ";
+	public static final String USERNAME = "";//fill username here
+	public static final String AUTOMATE_KEY = "";//fill access_key here
 	public static final String URL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
 }
