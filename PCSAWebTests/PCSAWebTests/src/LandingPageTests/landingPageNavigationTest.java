@@ -1,5 +1,5 @@
 /*
- * @suthor Anjali
+ * @author Anjali
  * @since 2016-06-08
  * This script tests navigation to the landing page by entering URL in the browser.
  */

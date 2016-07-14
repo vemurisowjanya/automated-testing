@@ -16,12 +16,12 @@ public class landingPageNavigation
 	public static void navigateToURL() 
 	{
 		// TODO Auto-generated method stub
-		driver.Instance.get(constants.baseURL+"login.php");
+		driver.Instance.get(constants.baseURL);
 	}
 
 	public static boolean isAtLanding() 
 	{
-		if(driver.Instance.getCurrentUrl().contains(constants.baseURL+"login.php"))
+		if(driver.Instance.getCurrentUrl().contains(constants.baseURL))
 			return true;
 		else 
 			return false;
