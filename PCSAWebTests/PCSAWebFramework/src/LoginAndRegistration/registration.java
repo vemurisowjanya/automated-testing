@@ -5,10 +5,12 @@
  */
 package LoginAndRegistration;
 import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import Logs.log4j;
 import PageObjectModel.constants;
+import PageObjectModel.logoutPageElements;
 import PageObjectModel.registrationPageElements;
 import WebDriver.driver;
 
@@ -70,10 +72,17 @@ public class registration
 			emlID.sendKeys(emailId);
 			createAccount.click();
 			
+			
+			if(driver.Instance.getCurrentUrl().contains(constants.baseURL+"registration.php"))
+			{
+				return;
+			}
+			
 			//After successful registration, it goes to the log in page
 			loginPage.loginAs(emailId)
 			 .withPassword(password)
-			 .login();
+			 .login();	
+			
 		}
 		else
 			return;
@@ -90,15 +99,17 @@ public class registration
 		if(driver.Instance.getCurrentUrl().contains(constants.baseURL+"progressBar.php"))
 		{
 			System.out.println("inside progressBar");
-			driver.Instance.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+			//wait for the page to load until it finds the logout button
+			WebDriverWait wait = new WebDriverWait(driver.Instance, 20);
+			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(logoutPageElements.logoutButton()));
 		}
 		
-		WebElement title = driver.Instance.findElement(constants.welcomeTtile);
+	
 		URL = driver.Instance.getCurrentUrl();
 		System.out.println(URL);
 	
 		
-		if(title.getText().contains(constants.pageTitleWelcome) && URL.contains(constants.baseURL+"welcome.php"))
+		if(URL.contains(constants.baseURL+"welcome.php") && driver.Instance.findElement(constants.welcomeTtile).getText().contains(constants.pageTitleWelcome)  )
 			return true;
 		else
 			return false;
