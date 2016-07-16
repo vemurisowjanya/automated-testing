@@ -4,13 +4,13 @@
  * This class maintains validation steps carried out for Get Help Now Feature.
  */
 package GetHelpNowFeatures;
-import java.util.List;
 
+import java.util.List;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import LoginAndRegistration.existingUserLogin;
-import Logs.log4j;
 import PageObjectModel.constants;
 import PageObjectModel.getHelpNowPageElements;
 import PageObjectModel.sideInMenuBarElements;
@@ -25,9 +25,32 @@ public class getHelpNow
 		WebElement getHelpTab = sideInMenuBarElements.getHelpNowTab();
 		getHelpTab.click();
 	}
+	
+	/*
+	 * This function navigates to the second page of Get Help Now
+	 */
+	public static void gotoHelp2()
+	{
+		gotoGetHelp();
+		WebElement getHelpNow2Button = getHelpNowPageElements.toGetHelpPage2();
+		getHelpNow2Button.click();
+		System.out.println(driver.Instance.getCurrentUrl());
+	}
+	
+	/*
+	 * Common function for switching to an alert on voice call and send sms available in Get Help Now.
+	 * @return alert text for alerts that appear on making a call and sending message.
+	 */
+	public static String goToAlert()
+	{
+		Alert simpleAlert = driver.Instance.switchTo().alert();
+		String alertText = simpleAlert.getText();
+		simpleAlert.accept();
+		return alertText;
+	}
 
 	/*
-	 * Checks if the user is at Get Help Now
+	 * Checks if the user is at Page 1 of Get Help Now
 	 */
 	public static boolean isAtGetHelpNow() 
 	{
@@ -42,7 +65,41 @@ public class getHelpNow
 			return false;
 		}
 	}
+	
+	/*
+	 * Checks if the user is at Page 2 of Get Help Now
+	 */
+	public static boolean isAtGetHelpNow2() 
+	{
+		URL = driver.Instance.getCurrentUrl();
+		WebElement gethelpPageTitle = getHelpNowPageElements.gethelpPageTitle();
+		if(URL.contains(constants.baseURL+"getHelpNow2.html")&& gethelpPageTitle.getText().contains(constants.getHelpTitle))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
 
+	/*
+	 * Function for making a voice call.
+	 */
+	public static void makeVoiceCall(WebElement callButton)
+	{
+		callButton.click();
+	}
+	
+	/*
+	 * Function for sending text message
+	 */
+	public static void sendSMS(WebElement SmsTextBox, WebElement SMSButton, String message)
+	{
+		SmsTextBox.sendKeys(message);
+		SMSButton.click();
+	}
+	
 	/*
 	 * Checks if the user is able to select the country from the dropdown
 	 */
@@ -79,6 +136,9 @@ public class getHelpNow
 		
 	}
 
+	/*
+	 * @return true if voice call is successful otherwise false
+	 */
 	public static boolean canCallPCMO()
 	{
 		if(isAtGetHelpNow())
@@ -86,23 +146,36 @@ public class getHelpNow
 			WebElement contactPCMO = getHelpNowPageElements.contactPCMO();
 			contactPCMO.click();
 			WebElement pcmoCallButton = getHelpNowPageElements.pcmoCallButton();
-			pcmoCallButton.click();
+			makeVoiceCall(pcmoCallButton);
 			
-			//Switch for alert pop up for Voice Call
-			Alert simpleAlert = driver.Instance.switchTo().alert();
+			
+			/*Alert simpleAlert = driver.Instance.switchTo().alert();
 			String alertText = simpleAlert.getText();
-			simpleAlert.accept();
-			System.out.println("Alert text is " + alertText);
-			System.out.println("URL " + driver.Instance.getCurrentUrl());
-			if(alertText.contains("Call started")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioCall.php?phone="))
+			simpleAlert.accept();*/
+			
+			
+			try
 			{
-				return true;
+				//Switch for alert pop up for Voice Call 
+				String alertText = goToAlert();
+				if(alertText.contains("Call started")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioCall.php?phone="))
+				{
+					return true;
+				}
+			}
+			//if alert does not appear, case of test failure
+			catch(NoAlertPresentException Ex)
+			{
+				return false;
 			}
 			
 		}
 			return false;
 	}
 
+	/*
+	 * @return true if message is sent successfully otherwise false
+	 */
 	public static boolean canMessagePCMO()
 	{
 		if(isAtGetHelpNow())
@@ -112,24 +185,34 @@ public class getHelpNow
 			WebElement pcmoSMSButton = getHelpNowPageElements.pcmoSMSButton();
 			pcmoSMSButton.click();
 			WebElement smsBodyTextBox = getHelpNowPageElements.smsBodyTextBox();
-			smsBodyTextBox.sendKeys("Test");
 			WebElement sendSMSButton = getHelpNowPageElements.sendSMSButton();
-			sendSMSButton.click();
-			
-			//Switch for alert pop up for SMS
-			Alert simpleAlert = driver.Instance.switchTo().alert();
+			sendSMS(smsBodyTextBox, sendSMSButton, "Test");
+
+			/*Alert simpleAlert = driver.Instance.switchTo().alert();
 			String alertText = simpleAlert.getText();
-			simpleAlert.accept();
-			System.out.println("Alert text is " + alertText);
-			System.out.println("URL " + driver.Instance.getCurrentUrl());
-			if(alertText.contains("SMS Sent Successfully")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioSMS.php?phone="))
+			simpleAlert.accept();*/
+			try
 			{
-				return true;
+				//Got to Alert 
+				String alertText = goToAlert();
+				if(alertText.contains("SMS Sent Successfully")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioSMS.php?phone="))
+				{
+					return true;
+				}
+				
+			}
+			//if alert does not appear, case of test failure
+			catch(NoAlertPresentException Ex)
+			{
+				return false;
 			}
 		}
 		return false;
 	}
 
+	/*
+	 * @return true if voice call is successful otherwise false
+	 */
 	public static boolean canCallSSM()
 	{
 		if(isAtGetHelpNow())
@@ -137,23 +220,34 @@ public class getHelpNow
 			WebElement contactSSM = getHelpNowPageElements.contactSSM();
 			contactSSM.click();
 			WebElement ssmCallButton = getHelpNowPageElements.ssmCallButton();
-			ssmCallButton.click();
+			makeVoiceCall(ssmCallButton);
 			
-			//Switch for alert pop up for Voice Call
-			Alert simpleAlert = driver.Instance.switchTo().alert();
+			
+			/*Alert simpleAlert = driver.Instance.switchTo().alert();
 			String alertText = simpleAlert.getText();
-			simpleAlert.accept();
-			System.out.println("Alert text is " + alertText);
-			System.out.println("URL " + driver.Instance.getCurrentUrl());
-			if(alertText.contains("Call started")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioCall.php?phone="))
+			simpleAlert.accept();*/
+			try
 			{
-				return true;
+				//Switch for alert pop up for Voice Call 
+				String alertText = goToAlert();
+				if(alertText.contains("Call started")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioCall.php?phone="))
+				{
+					return true;
+				}
+			}
+			//if alert does not appear, case of test failure
+			catch(NoAlertPresentException Ex)
+			{
+				return false;
 			}
 			
 		}
 			return false;
 	}
 
+	/*
+	 * @return true if voice call is successful otherwise false
+	 */
 	public static boolean canCallSarl()
 	{
 		if(isAtGetHelpNow())
@@ -161,23 +255,33 @@ public class getHelpNow
 			WebElement contactSARL = getHelpNowPageElements.contactSARL();
 			contactSARL.click();
 			WebElement sarlCallButton = getHelpNowPageElements.sarlCallButton();
-			sarlCallButton.click();
+			makeVoiceCall(sarlCallButton);
 			
-			//Switch for alert pop up for Voice Call
-			Alert simpleAlert = driver.Instance.switchTo().alert();
+			/*Alert simpleAlert = driver.Instance.switchTo().alert();
 			String alertText = simpleAlert.getText();
-			simpleAlert.accept();
-			System.out.println("Alert text is " + alertText);
-			System.out.println("URL " + driver.Instance.getCurrentUrl());
-			if(alertText.contains("Call started")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioCall.php?phone="))
+			simpleAlert.accept();*/
+			try
 			{
-				return true;
+				//Switch for alert pop up for Voice Call 
+				String alertText = goToAlert();
+				if(alertText.contains("Call started")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioCall.php?phone="))
+				{
+					return true;
+				}
+			}
+			//if alert does not appear, case of test failure
+			catch(NoAlertPresentException Ex)
+			{
+				return false;
 			}
 			
 		}
 			return false;
 	}
 
+	/*
+	 * @return true if message is sent successfully otherwise false
+	 */
 	public static boolean canMessageSARL() 
 	{
 		if(isAtGetHelpNow())
@@ -187,24 +291,35 @@ public class getHelpNow
 			WebElement sarlSMSButton = getHelpNowPageElements.sarlSMSButton();
 			sarlSMSButton.click();
 			WebElement smsBodyTextBox = getHelpNowPageElements.smsBodyTextBox();
-			smsBodyTextBox.sendKeys("Test");
 			WebElement sendSMSButton = getHelpNowPageElements.sendSMSButton();
-			sendSMSButton.click();
 			
-			//Switch for alert pop up for SMS
-			Alert simpleAlert = driver.Instance.switchTo().alert();
+			sendSMS(smsBodyTextBox, sendSMSButton, "Test");
+			
+			/*Alert simpleAlert = driver.Instance.switchTo().alert();
 			String alertText = simpleAlert.getText();
-			simpleAlert.accept();
-			System.out.println("Alert text is " + alertText);
-			System.out.println("URL " + driver.Instance.getCurrentUrl());
-			if(alertText.contains("SMS Sent Successfully")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioSMS.php?phone="))
+			simpleAlert.accept();*/
+			try
 			{
-				return true;
+				//Got to Alert 
+				String alertText = goToAlert();
+				if(alertText.contains("SMS Sent Successfully")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioSMS.php?phone="))
+				{
+					return true;
+				}
+				
+			}
+			//if alert does not appear, case of test failure
+			catch(NoAlertPresentException Ex)
+			{
+				return false;
 			}
 		}
 		return false;
 	}
 
+	/*
+	 * @return true if message is sent successfully otherwise false
+	 */
 	public static boolean canMessageSSM() 
 	{
 		if(isAtGetHelpNow())
@@ -214,20 +329,316 @@ public class getHelpNow
 			WebElement ssmSMSButton = getHelpNowPageElements.ssmSMSButton();
 			ssmSMSButton.click();
 			WebElement smsBodyTextBox = getHelpNowPageElements.smsBodyTextBox();
-			smsBodyTextBox.sendKeys("Test");
 			WebElement sendSMSButton = getHelpNowPageElements.sendSMSButton();
-			sendSMSButton.click();
+			sendSMS(smsBodyTextBox, sendSMSButton, "Test");
 			
-			//Switch for alert pop up for SMS
-			Alert simpleAlert = driver.Instance.switchTo().alert();
+			/*Alert simpleAlert = driver.Instance.switchTo().alert();
 			String alertText = simpleAlert.getText();
-			simpleAlert.accept();
-			System.out.println("Alert text is " + alertText);
-			System.out.println("URL " + driver.Instance.getCurrentUrl());
-			if(alertText.contains("SMS Sent Successfully")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioSMS.php?phone="))
+			simpleAlert.accept();*/
+			try
 			{
-				return true;
+				//Got to Alert 
+				String alertText = goToAlert();
+				if(alertText.contains("SMS Sent Successfully")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioSMS.php?phone="))
+				{
+					return true;
+				}
+				
 			}
+			//if alert does not appear, case of test failure
+			catch(NoAlertPresentException Ex)
+			{
+				return false;
+			}
+		}
+		return false;
+	}
+
+	/*
+	 * @return true if voice call is successful otherwise false
+	 */
+	public static boolean canVoiceCallPC() 
+	{
+		if(isAtGetHelpNow2())
+		{
+			WebElement PCHelpline, contactNow, voiceCall;
+		    PCHelpline = getHelpNowPageElements.PCHelpline();
+			PCHelpline.click();
+			contactNow = getHelpNowPageElements.contactNowPCHelpline();
+			contactNow.click();
+			voiceCall = getHelpNowPageElements.voiceCallButton();
+			makeVoiceCall(voiceCall);
+			
+			try
+			{
+				//Got to Alert 
+				String alertText = goToAlert();
+				if(alertText.contains("Call started")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioCall.php?phone="))
+				{
+					return true;
+				}
+			}
+			//if alert does not appear, case of test failure
+			catch(NoAlertPresentException Ex)
+			{
+				return false;
+			}
+		}
+		return false;
+	}
+
+	/*
+	 * @return true if message is sent successfully otherwise false
+	 */
+	public static boolean canMessagePC() 
+	{
+		if(isAtGetHelpNow2())
+		{
+			WebElement PCHelpline, contactNow, sendMessage;
+		    PCHelpline = getHelpNowPageElements.PCHelpline();
+			PCHelpline.click();
+			contactNow = getHelpNowPageElements.contactNowPCHelpline();
+			contactNow.click();
+			sendMessage = getHelpNowPageElements.sendMessageButton();
+			sendMessage.click();
+			WebElement smsBodyTextBox = getHelpNowPageElements.smsBodyTextBox();
+			WebElement sendSMSButton = getHelpNowPageElements.sendSMSButton();
+			sendSMS(smsBodyTextBox, sendSMSButton, "Test");
+			try
+			{
+				//Got to Alert 
+				String alertText = goToAlert();
+				if(alertText.contains("SMS Sent Successfully")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioSMS.php?phone="))
+				{
+					return true;
+				}
+				
+			}
+			//if alert does not appear, case of test failure
+			catch(NoAlertPresentException Ex)
+			{
+				return false;
+			}
+		}
+		return false;
+	}
+
+	/*
+	 * @return true if voice call is successful otherwise false
+	 */
+	public static boolean canVoiceOfficeofVA() 
+	{
+		if(isAtGetHelpNow2())
+		{
+			WebElement officeOfVictimAdvocacy, contactNow, voiceCall;
+			officeOfVictimAdvocacy = getHelpNowPageElements.officeOfVictimAdvocacy();
+			officeOfVictimAdvocacy.click();
+			System.out.println("Page title"+ driver.Instance.getTitle());
+			contactNow = getHelpNowPageElements.contactNowButtonOfficeOfVictimAdvocacy();
+			contactNow.click();
+			voiceCall = getHelpNowPageElements.voiceCallButton();
+			
+			makeVoiceCall(voiceCall);
+			
+			try
+			{
+				//Got to Alert 
+				String alertText = goToAlert();
+				if(alertText.contains("Call started")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioCall.php?phone="))
+				{
+					return true;
+				}
+			}
+			//if alert does not appear, case of test failure
+			catch(NoAlertPresentException Ex)
+			{
+				return false;
+			}
+			
+		}
+		return false;
+	}
+
+	/*
+	 * @return true if message is sent successfully otherwise false
+	 */
+	public static boolean canMessageOfficeofVA() 
+	{
+		if(isAtGetHelpNow2())
+		{
+			WebElement officeOfVictimAdvocacy, contactNow, sendMessage;
+			officeOfVictimAdvocacy = getHelpNowPageElements.officeOfVictimAdvocacy();
+			officeOfVictimAdvocacy.click();
+			contactNow = getHelpNowPageElements.contactNowButtonOfficeOfVictimAdvocacy();
+			contactNow.click();
+			sendMessage = getHelpNowPageElements.sendMessageButton();
+			sendMessage.click();
+			WebElement smsBodyTextBox = getHelpNowPageElements.smsBodyTextBox();
+			WebElement sendSMSButton = getHelpNowPageElements.sendSMSButton();
+			sendSMS(smsBodyTextBox, sendSMSButton, "Test");
+			
+			try
+			{
+				//Got to Alert 
+				String alertText = goToAlert();
+				if(alertText.contains("SMS Sent Successfully")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioSMS.php?phone="))
+				{
+					return true;
+				}
+				
+			}
+			//if alert does not appear, case of test failure
+			catch(NoAlertPresentException Ex)
+			{
+				return false;
+			}
+		}
+		return false;
+	}
+
+	/*
+	 * @return true if voice call is successful otherwise false
+	 */
+	public static boolean canVoiceOfficeofIG()
+	{
+
+		if(isAtGetHelpNow2())
+		{
+			WebElement officeOfInspectorGeneral, contactNow, voiceCall;
+			officeOfInspectorGeneral = getHelpNowPageElements.officeOfInspectorGeneral();
+			officeOfInspectorGeneral.click();
+			
+			contactNow = getHelpNowPageElements.contactNowButtonOfficeOfInspectorGeneral();
+			contactNow.click();
+			voiceCall = getHelpNowPageElements.voiceCallButton();
+			
+			makeVoiceCall(voiceCall);
+			try
+			{
+				//Got to Alert 
+				String alertText = goToAlert();
+				if(alertText.contains("Call started")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioCall.php?phone="))
+				{
+					return true;
+				}
+			}
+			//if alert does not appear, case of test failure
+			catch(NoAlertPresentException Ex)
+			{
+				return false;
+			}
+			
+		}
+		return false;
+	}
+
+	/*
+	 * @return true if message is sent successfully otherwise false
+	 */
+	public static boolean canMessageOfficeofIG() 
+	{
+		if(isAtGetHelpNow2())
+		{
+			WebElement officeOfInspectorGeneral, contactNow, sendMessage;
+			officeOfInspectorGeneral = getHelpNowPageElements.officeOfInspectorGeneral();
+			officeOfInspectorGeneral.click();
+			contactNow = getHelpNowPageElements.contactNowButtonOfficeOfInspectorGeneral();
+			contactNow.click();
+			sendMessage = getHelpNowPageElements.sendMessageButton();
+			sendMessage.click();
+			WebElement smsBodyTextBox = getHelpNowPageElements.smsBodyTextBox();
+			WebElement sendSMSButton = getHelpNowPageElements.sendSMSButton();
+			sendSMS(smsBodyTextBox, sendSMSButton, "Test");
+			
+			try
+			{
+				//Got to Alert 
+				String alertText = goToAlert();
+				if(alertText.contains("SMS Sent Successfully")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioSMS.php?phone="))
+				{
+					return true;
+				}
+				
+			}
+			//if alert does not appear, case of test failure
+			catch(NoAlertPresentException Ex)
+			{
+				return false;
+			}
+
+		}
+		return false;
+	}
+
+	/*
+	 * @return true if voice call is successful otherwise false
+	 */
+	public static boolean canVoiceOfficeofCivilRights() 
+	{
+		if(isAtGetHelpNow2())
+		{
+			WebElement officeOfCivilRightsAndDiversity, contactNow, voiceCall;
+			officeOfCivilRightsAndDiversity = getHelpNowPageElements.officeOfCivilRightsAndDiversity();
+			officeOfCivilRightsAndDiversity.click();
+			
+			contactNow = getHelpNowPageElements.contactNowButtonoOfficeOfCivilRightsAndDiversity();
+			contactNow.click();
+			voiceCall = getHelpNowPageElements.voiceCallButton();
+			
+			makeVoiceCall(voiceCall);
+			try
+			{
+				//Got to Alert 
+				String alertText = goToAlert();
+				if(alertText.contains("Call started")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioCall.php?phone="))
+				{
+					return true;
+				}
+			}
+			//if alert does not appear, case of test failure
+			catch(NoAlertPresentException Ex)
+			{
+				return false;
+			}
+			
+		}
+		return false;
+	}
+
+	/*
+	 * @return true if message is sent successfully otherwise false
+	 */
+	public static boolean canMessageOfficeofCivilRights() 
+	{
+		if(isAtGetHelpNow2())
+		{
+			WebElement officeOfCivilRightsAndDiversity, contactNow, sendMessage;
+			officeOfCivilRightsAndDiversity = getHelpNowPageElements.officeOfCivilRightsAndDiversity();
+			officeOfCivilRightsAndDiversity.click();
+			contactNow = getHelpNowPageElements.contactNowButtonoOfficeOfCivilRightsAndDiversity();
+			contactNow.click();
+			sendMessage = getHelpNowPageElements.sendMessageButton();
+			sendMessage.click();
+			WebElement smsBodyTextBox = getHelpNowPageElements.smsBodyTextBox();
+			WebElement sendSMSButton = getHelpNowPageElements.sendSMSButton();
+			sendSMS(smsBodyTextBox, sendSMSButton, "Test");
+			
+			try
+			{
+				//Got to Alert 
+				String alertText = goToAlert();
+				if(alertText.contains("SMS Sent Successfully")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioSMS.php?phone="))
+				{
+					return true;
+				}
+				
+			}
+			//if alert does not appear, case of test failure
+			catch(NoAlertPresentException Ex)
+			{
+				return false;
+			}
+
 		}
 		return false;
 	}

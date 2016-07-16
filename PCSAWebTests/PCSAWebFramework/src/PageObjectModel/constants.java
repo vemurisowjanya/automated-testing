@@ -93,7 +93,7 @@ public class constants
 	public static By contactPCMO = By.xpath(".//*[@id='bt-PCMO']");
 	public static By contactSSM = By.xpath(".//*[@id='bt-SSM']");
 	public static By contactSARL = By.xpath(".//*[@id='bt-SARL']");
-	public static By toGetHelpPage2 = By.xpath(".//*[@id='tr-2']/td[2]/a/img");
+	public static By toGetHelpPage2 = By.xpath(".//*[@id='tr-2']/td[2]/a");
 	public static By pcSavesAnonymousHelpline = By.xpath(".//*[@id='bt-PCSaves']");
 	public static By officeOfVictimAdvocacy = By.xpath(".//*[@id='bt-offVA']");
 	public static By officeOfInspectorGeneral = By.xpath(".//*[@id='bt-offIG']");
@@ -110,6 +110,16 @@ public class constants
 	public static By makeCallButton = By.xpath(".//*[@id='submit']");
 	public static By smsBodyTextBox = By.xpath(".//*[@id='SMS-body']");
 	public static By sendSMSButton = By.xpath(".//*[@id='bt-SMS']");
+	public static By contactNowButtonPCSavesAnonymousHelpline = By.xpath(".//*[@id='bt-cntPC']");
+	public static By contactNowButtonOfficeOfVictimAdvocacy = By.xpath(".//*[@id='bt-cntnw']");
+	public static By contactNowButtonOfficeOfInspectorGeneral = By.xpath(".//*[@id='bt-cntnw']");
+	public static By contactNowButtonoOfficeOfCivilRightsAndDiversity = By.xpath(".//*[@id='bt-cntnw']");
+	public static By sendMessageButton = By.xpath(".//*[@id='msg']");
+	public static By voiceCallButton = By.xpath(".//*[@id='call']");
+	public static By pcSavesLearnMoreLink = By.xpath("html/body/center/div/div[3]/a");
+	public static By officeOfVictimAdvocacyEmailLink = By.xpath("html/body/center/div/div[3]/a");
+	public static By officeOfInspectorGeneralLearnMoreLink = By.xpath("html/body/center/div/div[3]/a");
+	public static By officeOfCivilRightsAndDiversityEmailLink = By.xpath("html/body/center/div/div[3]/a");
 	
 	//Circle of Trust
 	public static By circleOfTrustTitle = By.xpath("html/body/center/div/div[1]/h1");
