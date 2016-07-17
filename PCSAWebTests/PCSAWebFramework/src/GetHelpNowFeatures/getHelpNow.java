@@ -5,8 +5,11 @@
  */
 package GetHelpNowFeatures;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -193,7 +196,7 @@ public class getHelpNow
 			simpleAlert.accept();*/
 			try
 			{
-				//Got to Alert 
+				//Go to Alert 
 				String alertText = goToAlert();
 				if(alertText.contains("SMS Sent Successfully")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioSMS.php?phone="))
 				{
@@ -300,7 +303,7 @@ public class getHelpNow
 			simpleAlert.accept();*/
 			try
 			{
-				//Got to Alert 
+				//Go to Alert 
 				String alertText = goToAlert();
 				if(alertText.contains("SMS Sent Successfully")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioSMS.php?phone="))
 				{
@@ -337,7 +340,7 @@ public class getHelpNow
 			simpleAlert.accept();*/
 			try
 			{
-				//Got to Alert 
+				//Go to Alert 
 				String alertText = goToAlert();
 				if(alertText.contains("SMS Sent Successfully")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioSMS.php?phone="))
 				{
@@ -371,7 +374,7 @@ public class getHelpNow
 			
 			try
 			{
-				//Got to Alert 
+				//Go to Alert 
 				String alertText = goToAlert();
 				if(alertText.contains("Call started")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioCall.php?phone="))
 				{
@@ -406,7 +409,7 @@ public class getHelpNow
 			sendSMS(smsBodyTextBox, sendSMSButton, "Test");
 			try
 			{
-				//Got to Alert 
+				//Go to Alert 
 				String alertText = goToAlert();
 				if(alertText.contains("SMS Sent Successfully")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioSMS.php?phone="))
 				{
@@ -442,7 +445,7 @@ public class getHelpNow
 			
 			try
 			{
-				//Got to Alert 
+				//Go to Alert 
 				String alertText = goToAlert();
 				if(alertText.contains("Call started")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioCall.php?phone="))
 				{
@@ -479,7 +482,7 @@ public class getHelpNow
 			
 			try
 			{
-				//Got to Alert 
+				//Go to Alert 
 				String alertText = goToAlert();
 				if(alertText.contains("SMS Sent Successfully")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioSMS.php?phone="))
 				{
@@ -515,7 +518,7 @@ public class getHelpNow
 			makeVoiceCall(voiceCall);
 			try
 			{
-				//Got to Alert 
+				//Go to Alert 
 				String alertText = goToAlert();
 				if(alertText.contains("Call started")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioCall.php?phone="))
 				{
@@ -552,7 +555,7 @@ public class getHelpNow
 			
 			try
 			{
-				//Got to Alert 
+				//Go to Alert 
 				String alertText = goToAlert();
 				if(alertText.contains("SMS Sent Successfully")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioSMS.php?phone="))
 				{
@@ -625,7 +628,7 @@ public class getHelpNow
 			
 			try
 			{
-				//Got to Alert 
+				//Go to Alert 
 				String alertText = goToAlert();
 				if(alertText.contains("SMS Sent Successfully")&&driver.Instance.getCurrentUrl().contains(constants.baseURL+"twilioSMS.php?phone="))
 				{
@@ -639,6 +642,83 @@ public class getHelpNow
 				return false;
 			}
 
+		}
+		return false;
+	}
+
+	/*
+	 * @return true if navigation is successful on clicking "Learn more" from PC Saves otherwise false
+	 */
+	public static boolean canGotoLearnMorePCSaves()
+	{
+		if(isAtGetHelpNow2())
+		{
+			WebElement PCHelpline, pcSavesLearnMoreLink;
+		    PCHelpline = getHelpNowPageElements.PCHelpline();
+			PCHelpline.click();
+			pcSavesLearnMoreLink = getHelpNowPageElements.pcSavesLearnMoreLink();
+			pcSavesLearnMoreLink.click();
+			
+			//for getting no of open tabs
+			ArrayList<String> tabs = new ArrayList<String> (driver.Instance.getWindowHandles());
+			 
+			//Switch to Peace corps HELPLINE tab
+			driver.Instance.switchTo().window(tabs.get(1));
+			String URL = driver.Instance.getCurrentUrl();
+			String pageTitle = driver.Instance.getTitle();
+			System.out.println("Title is "+driver.Instance.getTitle());
+			//close the second tab
+			driver.Instance.close();
+			 
+			//Switch to the main tab
+			driver.Instance.switchTo().window(tabs.get(0));
+			//Validate
+			if(URL.contains("https://pcsaveshelpline.org/")&& pageTitle.contains("Peace Corps"))
+			{
+				return true;
+			}
+			else
+				return false;
+			
+		}
+		return false;
+	}
+
+	/*
+	 * @return true if navigation is successful on clicking "Learn more" from Office of Inspector General false
+	 */
+	public static Object canGotoLearnMoreOfficeOfIG() 
+	{
+		if(isAtGetHelpNow2())
+		{
+			WebElement officeOfInspectorGeneral, officeOfInspectorGeneralLearnMoreLink;
+			officeOfInspectorGeneral = getHelpNowPageElements.officeOfInspectorGeneral();
+			officeOfInspectorGeneral.click();
+			officeOfInspectorGeneralLearnMoreLink = getHelpNowPageElements.pcSavesLearnMoreLink();
+			officeOfInspectorGeneralLearnMoreLink.click();
+			
+			//for getting no of open tabs
+			ArrayList<String> tabs = new ArrayList<String> (driver.Instance.getWindowHandles());
+			 
+			//Switch to Office of Inspector General tab
+			driver.Instance.switchTo().window(tabs.get(1));
+			String URL = driver.Instance.getCurrentUrl();
+			String pageTitle = driver.Instance.getTitle();
+			System.out.println("Title is "+driver.Instance.getTitle());
+			System.out.println("URL is "+URL);
+			//close the second tab
+			driver.Instance.close();
+			 
+			//Switch to the main tab
+			driver.Instance.switchTo().window(tabs.get(0));
+			//Validate
+			if(URL.contains("https://www.peacecorps.gov/about/inspector-general/")&& pageTitle.contains("Office of Inspector General"))
+			{
+				return true;
+			}
+			else
+				return false;
+			
 		}
 		return false;
 	}
