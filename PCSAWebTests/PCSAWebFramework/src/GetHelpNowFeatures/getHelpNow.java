@@ -179,7 +179,7 @@ public class getHelpNow
 	/*
 	 * @return true if message is sent successfully otherwise false
 	 */
-	public static boolean canMessagePCMO()
+	public static boolean canMessagePCMO(String msg)
 	{
 		if(isAtGetHelpNow())
 		{
@@ -189,7 +189,7 @@ public class getHelpNow
 			pcmoSMSButton.click();
 			WebElement smsBodyTextBox = getHelpNowPageElements.smsBodyTextBox();
 			WebElement sendSMSButton = getHelpNowPageElements.sendSMSButton();
-			sendSMS(smsBodyTextBox, sendSMSButton, "Test");
+			sendSMS(smsBodyTextBox, sendSMSButton, msg);
 
 			/*Alert simpleAlert = driver.Instance.switchTo().alert();
 			String alertText = simpleAlert.getText();
@@ -285,7 +285,7 @@ public class getHelpNow
 	/*
 	 * @return true if message is sent successfully otherwise false
 	 */
-	public static boolean canMessageSARL() 
+	public static boolean canMessageSARL(String msg) 
 	{
 		if(isAtGetHelpNow())
 		{
@@ -296,7 +296,7 @@ public class getHelpNow
 			WebElement smsBodyTextBox = getHelpNowPageElements.smsBodyTextBox();
 			WebElement sendSMSButton = getHelpNowPageElements.sendSMSButton();
 			
-			sendSMS(smsBodyTextBox, sendSMSButton, "Test");
+			sendSMS(smsBodyTextBox, sendSMSButton, msg);
 			
 			/*Alert simpleAlert = driver.Instance.switchTo().alert();
 			String alertText = simpleAlert.getText();
@@ -323,7 +323,7 @@ public class getHelpNow
 	/*
 	 * @return true if message is sent successfully otherwise false
 	 */
-	public static boolean canMessageSSM() 
+	public static boolean canMessageSSM(String msg) 
 	{
 		if(isAtGetHelpNow())
 		{
@@ -333,7 +333,7 @@ public class getHelpNow
 			ssmSMSButton.click();
 			WebElement smsBodyTextBox = getHelpNowPageElements.smsBodyTextBox();
 			WebElement sendSMSButton = getHelpNowPageElements.sendSMSButton();
-			sendSMS(smsBodyTextBox, sendSMSButton, "Test");
+			sendSMS(smsBodyTextBox, sendSMSButton, msg);
 			
 			/*Alert simpleAlert = driver.Instance.switchTo().alert();
 			String alertText = simpleAlert.getText();
@@ -393,7 +393,7 @@ public class getHelpNow
 	/*
 	 * @return true if message is sent successfully otherwise false
 	 */
-	public static boolean canMessagePC() 
+	public static boolean canMessagePC(String msg) 
 	{
 		if(isAtGetHelpNow2())
 		{
@@ -406,7 +406,7 @@ public class getHelpNow
 			sendMessage.click();
 			WebElement smsBodyTextBox = getHelpNowPageElements.smsBodyTextBox();
 			WebElement sendSMSButton = getHelpNowPageElements.sendSMSButton();
-			sendSMS(smsBodyTextBox, sendSMSButton, "Test");
+			sendSMS(smsBodyTextBox, sendSMSButton, msg);
 			try
 			{
 				//Go to Alert 
@@ -465,7 +465,7 @@ public class getHelpNow
 	/*
 	 * @return true if message is sent successfully otherwise false
 	 */
-	public static boolean canMessageOfficeofVA() 
+	public static boolean canMessageOfficeofVA(String msg) 
 	{
 		if(isAtGetHelpNow2())
 		{
@@ -478,7 +478,7 @@ public class getHelpNow
 			sendMessage.click();
 			WebElement smsBodyTextBox = getHelpNowPageElements.smsBodyTextBox();
 			WebElement sendSMSButton = getHelpNowPageElements.sendSMSButton();
-			sendSMS(smsBodyTextBox, sendSMSButton, "Test");
+			sendSMS(smsBodyTextBox, sendSMSButton, msg);
 			
 			try
 			{
@@ -538,7 +538,7 @@ public class getHelpNow
 	/*
 	 * @return true if message is sent successfully otherwise false
 	 */
-	public static boolean canMessageOfficeofIG() 
+	public static boolean canMessageOfficeofIG(String msg) 
 	{
 		if(isAtGetHelpNow2())
 		{
@@ -551,7 +551,7 @@ public class getHelpNow
 			sendMessage.click();
 			WebElement smsBodyTextBox = getHelpNowPageElements.smsBodyTextBox();
 			WebElement sendSMSButton = getHelpNowPageElements.sendSMSButton();
-			sendSMS(smsBodyTextBox, sendSMSButton, "Test");
+			sendSMS(smsBodyTextBox, sendSMSButton, msg);
 			
 			try
 			{
@@ -611,7 +611,7 @@ public class getHelpNow
 	/*
 	 * @return true if message is sent successfully otherwise false
 	 */
-	public static boolean canMessageOfficeofCivilRights() 
+	public static boolean canMessageOfficeofCivilRights(String msg) 
 	{
 		if(isAtGetHelpNow2())
 		{
@@ -624,7 +624,7 @@ public class getHelpNow
 			sendMessage.click();
 			WebElement smsBodyTextBox = getHelpNowPageElements.smsBodyTextBox();
 			WebElement sendSMSButton = getHelpNowPageElements.sendSMSButton();
-			sendSMS(smsBodyTextBox, sendSMSButton, "Test");
+			sendSMS(smsBodyTextBox, sendSMSButton, msg);
 			
 			try
 			{
