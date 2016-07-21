@@ -14,6 +14,7 @@ import Logs.log4j;
 
 public class OfficeofVictimAdvocacyContactNowTest extends commonTest
 {
+	public String msg= "";
 
 	@Test(priority = 0)
 	public void voiceCallTest() 
@@ -23,11 +24,27 @@ public class OfficeofVictimAdvocacyContactNowTest extends commonTest
 		Assert.assertEquals(getHelpNow.canVoiceOfficeofVA(), true, "OfficeofVictimAdvocacyContactNowTest failed");
 	}
 
+	/*
+	 * This is the case when sms is sent with message. It will pass
+	 */
 	@Test(priority = 1)
-	public void sendMessageTest() 
+	public void sendSMSTestWithMessage() 
 	{
 		log4j.Log.info("stating send message for OfficeofVictimAdvocacyContactNowTest");
+		msg="Test";
 		getHelpNow.gotoHelp2();
-		Assert.assertEquals(getHelpNow.canMessageOfficeofVA(), true, "OfficeofVictimAdvocacyContactNowTest failed");
+		Assert.assertEquals(getHelpNow.canMessageOfficeofVA(msg), true, "OfficeofVictimAdvocacyContactNowTest failed");
+	}
+	
+	/*
+	 * This is the case when sms is sent without message. It will fail
+	 */
+	@Test(priority = 2)
+	public void sendSMSTestWithoutMessage() 
+	{
+		log4j.Log.info("stating send message for OfficeofVictimAdvocacyContactNowTest");
+		msg="";
+		getHelpNow.gotoHelp2();
+		Assert.assertEquals(getHelpNow.canMessageOfficeofVA(msg), true, "OfficeofVictimAdvocacyContactNowTest failed");
 	}
 }

@@ -12,12 +12,31 @@ import Logs.log4j;
 
 public class sarlSMSTest extends commonTest
 {
+	public String msg= "";
+	
+	/*
+	 * This is the case when sms is sent with message. It will pass
+	 */
 	@Test
-	public void test()
+	public void testWithMessage()
 	{
 		log4j.Log.info("Starting sarlSMSTest");
+		msg="Test";
 		getHelpNow.gotoGetHelp();
-		Assert.assertEquals(getHelpNow.canMessageSARL(), true, "sarlSMSTest failed");
+		Assert.assertEquals(getHelpNow.canMessageSARL(msg), true, "sarlSMSTest failed");
+		log4j.Log.info("sarlSMSTest over");
+	}
+	
+	/*
+	 * This is the case when sms is sent without any message. It will fail
+	 */
+	@Test
+	public void testWithoutMessage()
+	{
+		log4j.Log.info("Starting sarlSMSTest");
+		msg="";
+		getHelpNow.gotoGetHelp();
+		Assert.assertEquals(getHelpNow.canMessageSARL(msg), true, "sarlSMSTest failed");
 		log4j.Log.info("sarlSMSTest over");
 	}
 }

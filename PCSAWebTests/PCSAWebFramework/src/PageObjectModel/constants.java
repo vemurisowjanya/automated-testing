@@ -123,4 +123,9 @@ public class constants
 	
 	//Circle of Trust
 	public static By circleOfTrustTitle = By.xpath("html/body/center/div/div[1]/h1");
+	
+	//Sweet Alert Components
+	public static By alertHeading = By.xpath("html/body/div[3]/h2");
+	public static By alertText = By.xpath("html/body/div[3]/p");
+	public static By alertButton = By.cssSelector("button.confirm");
 }
