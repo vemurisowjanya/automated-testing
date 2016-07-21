@@ -3,8 +3,9 @@
  * @since 2016-06-13
  * This class navigates to the registration page and validates against user registration in the application.
  */
+
 package LoginAndRegistration;
-import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -45,6 +46,14 @@ public class registration
 		else 
 			return false;
 	}
+	
+	public static String checkForAlert()
+	{
+		Alert simpleAlert = driver.Instance.switchTo().alert();
+		String alertText = simpleAlert.getText();
+		simpleAlert.accept();
+		return alertText;
+	}
     
 	/*
 	 * @param Username for registration is the first parameter
@@ -54,6 +63,7 @@ public class registration
 	 */
 	public static void registerWith(String username, String password, String hostCountry, String emailId)
 	{
+		
 		if(isAtRegistrationPage())
 		{
 			WebElement usrnm, passwrd, hostCntry, emlID, createAccount;
@@ -71,17 +81,33 @@ public class registration
 			emlID.clear();
 			emlID.sendKeys(emailId);
 			createAccount.click();
+			//System.out.println("reaching here");
+			if(driver.Instance.findElements(constants.alertButton).size()!=0)
+			{
+				try
+				{
+					//accept button
+					driver.Instance.findElement(constants.alertButton).click();
+					//driver.Instance.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+					WebDriverWait wait = new WebDriverWait(driver.Instance, 10);
+					wait.until(ExpectedConditions.urlContains(constants.baseURL+"login.php"));
+					//driver.Instance.get(constants.baseURL+"login.php");
+					//After successful registration, it goes to the log in page
+					loginPage.loginAs(emailId)
+					 .withPassword(password)
+					 .login();
+				}
+				catch(Exception e)
+				{
+					e.printStackTrace();
+					return;
+				}
+			}
 			
-			
-			if(driver.Instance.getCurrentUrl().contains(constants.baseURL+"registration.php"))
+			else
 			{
 				return;
 			}
-			
-			//After successful registration, it goes to the log in page
-			loginPage.loginAs(emailId)
-			 .withPassword(password)
-			 .login();	
 			
 		}
 		else
@@ -95,7 +121,9 @@ public class registration
 	 */
 	public static boolean hasRegistered() 
 	{	
+		System.out.println("inside hasRegistered");
 		System.out.println(driver.Instance.getCurrentUrl());
+		
 		if(driver.Instance.getCurrentUrl().contains(constants.baseURL+"progressBar.php"))
 		{
 			System.out.println("inside progressBar");
