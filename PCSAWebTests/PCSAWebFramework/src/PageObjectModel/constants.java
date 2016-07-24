@@ -10,11 +10,15 @@ public class constants
 {
 	public static String baseURL = "localhost:8080/PCSA-web/";
 	
-	//Existing User credentials for carrying out tests which requires login
+	/*
+	 * Existing User credentials for carrying out tests which requires login
+	 */
 	public static String existingEmailId = "test@gmail.com";
 	public static String existingPassword = "test";
 	
-	//Login page
+	/*
+	 * Login page
+	 */
 	public static By signInEmailId = By.xpath(".//*[@id='email']");
 	public static By signInPassword = By.xpath(".//*[@id='password']");
 	public static By signInButton = By.xpath(".//*[@id='submit']");
@@ -23,14 +27,20 @@ public class constants
 	public static String loginTitle = "First Aide";
 	public static String loginSheet="Sheet2";
 	
-	//Logout
+	/*
+	 * Logout
+	 */
 	public static By logoutButton = By.xpath(".//*[@id='accordian']/ul/li[6]/h3[3]/a");
 	
-	//Welcome Page
+	/*
+	 * Welcome Page
+	 */
 	public static By welcomeTtile = By.xpath("html/body/center/div/div/h1");
 	public static String pageTitleWelcome = "Welcome to First Aide";
 	
-	//Registration page
+	/*
+	 * Registration page
+	 */
 	public static By gotoCreateAccountButton = By.xpath("html/body/form/center/div[3]/a");
 	public static By username = By.xpath(".//*[@id='uname']");
 	public static By signUpPassword = By.xpath(".//*[@id='password']");
@@ -39,13 +49,17 @@ public class constants
 	public static By createAccount = By.xpath("html/body/form/center/div[3]/input");
 	public static String registrationSheet = "Sheet3";
 	
-	//Recommended Pages
+	/*
+	 * Recommended Pages
+	 */
 	public static By safetyStrategyButton = By.xpath(".//*[@id='bt-safetystg']");
 	public static By helpButton = By.xpath(".//*[@id='bt-helping']");
 	public static By thingsToKnowButton = By.xpath(".//*[@id='bt-ghana']");
 	public static By setPreferences = By.xpath(".//*[@id='bt-peerstng']");
 	
-	//Side In Menu Bar
+	/*
+	 * Side In Menu Bar
+	 */
 	public static By firstAideTab= By.xpath(".//*[@id='accordian']/ul/li[1]/h2/a");
 	public static By getHelpNowTab = By.xpath(".//*[@id='accordian']/ul/li[1]/h3[1]/a");
 	public static By circleOfTrustTab = By.xpath(".//*[@id='accordian']/ul/li[1]/h3[2]/a");
@@ -56,7 +70,9 @@ public class constants
 	public static By settingsTab = By.xpath(".//*[@id='accordian']/ul/li[6]/h3[1]/a");
 	public static By loggedInAsTab = By.xpath(".//*[@id='accordian']/ul/li[6]/h3[2]/a");
 	
-	//Safety Tools
+	/*
+	 * Safety Tools
+	 */
 	public static By safetyToolsMainTab = By.xpath(".//*[@id='accordian']/ul/li[2]/ul/li[1]/a");
 	public static By personalSecurityStrategiesTab = By.xpath(".//*[@id='accordian']/ul/li[2]/ul/li[2]/a");
 	public static By radarTab = By.xpath(".//*[@id='accordian']/ul/li[2]/ul/li[3]/a");
@@ -66,7 +82,9 @@ public class constants
 	public static By safetyPlanBasicsTab = By.xpath(".//*[@id='accordian']/ul/li[2]/ul/li[7]/a");
 	public static By safetyPlanWorksheetTab = By.xpath(".//*[@id='accordian']/ul/li[2]/ul/li[8]/a");
 	
-	//Support services
+	/*
+	 * Support services
+	 */
 	public static By supportServicesMainTab = By.xpath(".//*[@id='accordian']/ul/li[3]/ul/li[1]/a");
 	public static By benefitsofSeekingStaffSupportTab = By.xpath(".//*[@id='accordian']/ul/li[3]/ul/li[2]/a");
 	public static By availableServicesAfterASexualAssaultTab = By.xpath(".//*[@id='accordian']/ul/li[3]/ul/li[3]/a");
@@ -74,7 +92,9 @@ public class constants
 	public static By whatToDoAfterAnAssaultTab = By.xpath(".//*[@id='accordian']/ul/li[3]/ul/li[5]/a");
 	public static By mythbustersAssumptionsandFactsTab = By.xpath(".//*[@id='accordian']/ul/li[3]/ul/li[6]/a");
 	
-	//Sexual Assault Awareness
+	/*
+	 * Sexual Assault Awareness
+	 */
 	public static By sexualAssaultMainTab = By.xpath(".//*[@id='accordian']/ul/li[4]/ul/li[1]/a");
 	public static By wasItSexualAssaultTab = By.xpath(".//*[@id='accordian']/ul/li[4]/ul/li[2]/a");
 	public static By sexualAssaultCommonQuestionsTab = By.xpath(".//*[@id='accordian']/ul/li[4]/ul/li[3]/a");
@@ -82,12 +102,16 @@ public class constants
 	public static By sexualHarrasmentTab = By.xpath(".//*[@id='accordian']/ul/li[4]/ul/li[5]/a");
 	public static By HelpingAFriendOrCommunityMemberTab = By.xpath(".//*[@id='accordian']/ul/li[4]/ul/li[6]/a");
 	
-	//Policies and Glossary
+	/*
+	 * Policies and Glossary
+	 */
 	public static By policySummarySheetTab = By.xpath(".//*[@id='accordian']/ul/li[5]/ul/li[1]/a");
 	public static By glossaryTab = By.xpath(".//*[@id='accordian']/ul/li[5]/ul/li[2]/a");
 	public static By furtherResourcesTab = By.xpath(".//*[@id='accordian']/ul/li[5]/ul/li[3]/a");
 	
-	//Get Help Now
+	/*
+	 * Get Help Now
+	 */
 	public static By gethelpPageTitle = By.xpath("html/body/center/div/div[1]/h1");
 	public static String getHelpTitle = "Get Help Now";
 	public static By contactPCMO = By.xpath(".//*[@id='bt-PCMO']");
@@ -121,10 +145,34 @@ public class constants
 	public static By officeOfInspectorGeneralLearnMoreLink = By.xpath("html/body/center/div/div[3]/a");
 	public static By officeOfCivilRightsAndDiversityEmailLink = By.xpath("html/body/center/div/div[3]/a");
 	
-	//Circle of Trust
+	/*
+	 * Circle of Trust
+	 */
 	public static By circleOfTrustTitle = By.xpath("html/body/center/div/div[1]/h1");
+	public static By circleOfTrustEditButton = By.xpath(".//*[@id='ic-edit']");
+	public static By circleOfTrusHelpMeButton = By.xpath(".//*[@id='help_me']");
 	
-	//Sweet Alert Components
+	//Button for the message "Come Get me"
+	public static By msg1_Button = By.xpath(".//*[@id='msg']");
+	
+	//Button for the message "Call I need an interruption"
+	public static By msg2_Button = By.xpath(".//*[@id='msg2']");
+	
+	//Button for the message "I need to talk"
+	public static By msg3_Button = By.xpath(".//*[@id='msg3']");
+	
+	public static By comrade1_TextBox = By.xpath(".//*[@id='comrade1']");
+	public static By comrade2_TextBox = By.xpath(".//*[@id='comrade2']");
+	public static By comrade3_TextBox = By.xpath(".//*[@id='comrade3']");
+	public static By comrade4_TextBox = By.xpath(".//*[@id='comrade4']");
+	public static By comrade5_TextBox = By.xpath(".//*[@id='comrade5']");
+	public static By comrade6_TextBox = By.xpath(".//*[@id='comrade6']");
+	public static By circleOfTrusSaveComradeButton = By.xpath("html/body/form/center/div/input");
+	
+	
+	/*
+	 * Sweet Alert Components
+	 */
 	public static By alertHeading = By.xpath("html/body/div[3]/h2");
 	public static By alertText = By.xpath("html/body/div[3]/p");
 	public static By alertButton = By.cssSelector("button.confirm");
