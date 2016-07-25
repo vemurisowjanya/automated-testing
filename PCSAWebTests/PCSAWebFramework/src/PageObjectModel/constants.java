@@ -74,6 +74,20 @@ public class constants
 	 * Safety Tools
 	 */
 	public static By safetyToolsMainTab = By.xpath(".//*[@id='accordian']/ul/li[2]/ul/li[1]/a");
+	public static By personalSecurityStrategiesButton = By.xpath(".//*[@id='bt-personalstrategies']");
+	public static By radarButton = By.xpath(".//*[@id='bt-radar']");
+	public static By copingwithUnwantedAttentionButton = By.xpath(".//*[@id='bt-coping']");
+	public static By commonalitiesofSexualPredatorsButton = By.xpath(".//*[@id='bt-commonalities']");
+	public static By bystanderInterventionButton = By.xpath(".//*[@id='bt-bystander']");
+	public static By safetyPlanBasicsButton = By.xpath(".//*[@id='bt-safetyBasic']");
+	public static By safetyPlanWorksheetButton = By.xpath(".//*[@id='bt-safetyWorksheet']");
+	public static By safetyToolsPageTitle = By.xpath("html/body/center/div/div[1]/h1");
+	public static By personalSecurityStrategiesTitle = By.xpath("html/body/center/div/div[1]/h1");
+	public static By radarTitle = By.xpath("html/body/center/div/div[1]/h1");
+	
+	public static By toSafetyToolsPage2 = By.xpath(".//*[@id='fw-arrow']/a");
+	public static By toSafetyToolsPage1fromPage2 = By.xpath(".//*[@id='bw-arrow']/a");
+	
 	public static By personalSecurityStrategiesTab = By.xpath(".//*[@id='accordian']/ul/li[2]/ul/li[2]/a");
 	public static By radarTab = By.xpath(".//*[@id='accordian']/ul/li[2]/ul/li[3]/a");
 	public static By copingwithUnwantedAttentionTab = By.xpath(".//*[@id='accordian']/ul/li[2]/ul/li[4]/a");
@@ -122,7 +136,7 @@ public class constants
 	public static By officeOfVictimAdvocacy = By.xpath(".//*[@id='bt-offVA']");
 	public static By officeOfInspectorGeneral = By.xpath(".//*[@id='bt-offIG']");
 	public static By officeOfCivilRightsAndDiversity = By.xpath(".//*[@id='bt-offCRD']");
-	public static By toGetHelpPage1fromPage2 = By.xpath(".//*[@id='bw-arrow']/a/img");
+	public static By toGetHelpPage1fromPage2 = By.xpath(".//*[@id='bw-arrow']/a");
 	public static By changeLocationDropdown = By.xpath(".//*[@id='location']");
 	public static By chooseLocationText = By.xpath(".//*[@id='loc']");
 	public static By pcmoCallButton = By.xpath(".//*[@id='PCMO-call']");

@@ -3,6 +3,9 @@
 
 	<!-- Landing Test -->
 	<test name="Landing Page Test">
+	   <classes>
+			<class name=" LandingPageTests.landingPageNavigationTest" />
+		</classes>
 	</test>
 
 	<!-- Login Test -->
@@ -49,7 +52,7 @@
 		</classes>
 	</test>
 
-	<!-- Side in Menu Bar Tests -->
+	<!-- Get Help Now Tests -->
 	<test name="Get Help Now Tests">
 		<classes>
 			<class name="GetHelpNowTests.getHelpNavigationTest" />
@@ -66,10 +69,24 @@
 			<class name="GetHelpNowTests.officeoOfInspectorGeneralLearnMoreNavigationTest" />
 			<class name="GetHelpNowTests.PCSaveAnonymousHelplineContactNowTest" />
 			<class name="GetHelpNowTests.pcSavesLearnMoreNavigationTest" />
-
 		</classes>
 	</test>
 
+	<!-- Circle of Trust Tests -->
+	<test name="Circle Of Trust Tests">
+		<classes>
+			<class name="CircleOfTrustTests.editComradeNavigationTest" />
+			<class name="CircleOfTrustTests.sendRequestTest" />
+		</classes>
+	</test>
+	
+	<!-- Safety Tools Tests -->
+	<test name="Safety Tools Tests">
+		<classes>
+			<class name="SafetyToolsTests.safetyToolsNavigationsTest" />
+		</classes>
+	</test>
+	
 	<!-- Database Tests -->
 	<test name="Database Tests">
 		<classes>
