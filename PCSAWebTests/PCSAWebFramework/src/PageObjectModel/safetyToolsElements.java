@@ -82,4 +82,95 @@ public class safetyToolsElements
 		element = driver.Instance.findElement(constants.safetyPlanWorksheetTab);
 		return element;
 	}
+	
+	/*
+	 * @return 'Personal Security Strategies' Button on the first page of "Safety Tools"
+	 */
+	public static WebElement personalSecurityStrategiesButton()
+	{
+		element = driver.Instance.findElement(constants.personalSecurityStrategiesButton);
+		return element;
+	}
+	
+	/*
+	 * @return 'RADAR' Button on the first page of "Safety Tools"
+	 */
+	public static WebElement radarButton()
+	{
+		element = driver.Instance.findElement(constants.radarButton);
+		return element;
+	}
+	
+	/*
+	 * @return 'Coping with unwanted attention' Button on the first page of "Safety Tools"
+	 */
+	public static WebElement copingwithUnwantedAttentionButton()
+	{
+		element = driver.Instance.findElement(constants.copingwithUnwantedAttentionButton);
+		return element;
+	}
+	
+	/*
+	 * @return 'Commonalities of Sexual Predators' Button on the first page of "Safety Tools"
+	 */
+	public static WebElement commonalitiesofSexualPredatorsButton()
+	{
+		element = driver.Instance.findElement(constants.commonalitiesofSexualPredatorsButton);
+		return element;
+	}
+	
+	/*
+	 * @return 'Bystander Intervention' Button on the second page of "Safety Tools"
+	 */
+	public static WebElement bystanderInterventionButton()
+	{
+		element = driver.Instance.findElement(constants.bystanderInterventionButton);
+		return element;
+	}
+	
+	/*
+	 * @return 'Safety Plan Basics' Button on the second page of "Safety Tools"
+	 */
+	public static WebElement safetyPlanBasicsButton()
+	{
+		element = driver.Instance.findElement(constants.safetyPlanBasicsButton);
+		return element;
+	}
+	
+	/*
+	 * @return 'Safety Plan Worksheet' Button on the second page of "Safety Tools"
+	 */
+	public static WebElement safetyPlanWorksheetButton()
+	{
+		element = driver.Instance.findElement(constants.safetyPlanWorksheetButton);
+		return element;
+	}
+	
+	/*
+	 * @return Page title of the 'Safety Tools' 
+	 */
+	public static WebElement safetyToolsPageTitle()
+	{
+		element = driver.Instance.findElement(constants.safetyToolsPageTitle);
+		return element;
+	}
+	
+	
+	/*
+	 * @return Page title of the 'Personal Security Strategies' page
+	 */
+	public static WebElement personalSecurityStrategiesTitle()
+	{
+		element = driver.Instance.findElement(constants.personalSecurityStrategiesTitle);
+		return element;
+	}
+	
+	/*
+	 * @return Page title of the 'RADAR' page
+	 */
+	public static WebElement radarTitle()
+	{
+		element = driver.Instance.findElement(constants.radarTitle);
+		return element;
+	}
 }
