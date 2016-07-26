@@ -4,7 +4,7 @@
 	<!-- Landing Test -->
 	<test name="Landing Page Test">
 	   <classes>
-			<class name=" LandingPageTests.landingPageNavigationTest" />
+			<class name="LandingPageTests.landingPageNavigationTest" />
 		</classes>
 	</test>
 
