@@ -8,7 +8,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import BaseTests.commonTest;
 import GetHelpNowFeatures.getHelpNow;
-import LoginAndRegistration.loggedInCheck;
 import Logs.log4j;
 
 public class selectCountryTest extends commonTest
