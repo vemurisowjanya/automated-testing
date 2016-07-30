@@ -46,7 +46,7 @@
 			<class name="SideInMenuBarTests.circleOfTrustNavigationTest" />
 			<class name="SideInMenuBarTests.firstAideNavigationTest" />
 			<class name="SideInMenuBarTests.policiesAndGlossaryTest" />
-			<class name="SideInMenuBarTests.safetyToolsNavigationTest" />
+			<class name="SideInMenuBarTests.safetyToolsNavigationsTest" />
 			<class name="SideInMenuBarTests.sexualAssaultAwarenessTest" />
 			<class name="SideInMenuBarTests.supportServicesNavigationTest" />
 		</classes>

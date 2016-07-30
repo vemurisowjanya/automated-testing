@@ -4,11 +4,16 @@
  * This class validates test steps for Side in Menu Bar.
  */
 package SideInMenuBarFeatures;
+import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import LoginAndRegistration.existingUserLogin;
 import Logs.log4j;
 import PageObjectModel.constants;
+import PageObjectModel.logoutPageElements;
 import PageObjectModel.policiesAndGlossaryElements;
 import PageObjectModel.safetyToolsElements;
 import PageObjectModel.sexualAssaultAwarenessElements;
@@ -81,31 +86,12 @@ public class sideInMenu
 	/*
 	 * @return true if the user is able to successfully navigate after clicking on "Safety Tools" on the side in menu 
 	 */
-	public static boolean canNavigateToSafetyTools() 
+	public static void gotoSafetyToolsOptions() 
 	{
-		WebElement safetyToolsTab = sideInMenuBarElements.safetyToolsTab();
-		safetyToolsTab.click();
 		
-		if(isAtWelcome())
-		{
-			//checks if the safety tools menu become visible after clicking on "Safety Tools"
-			 try 
-			 {
-			        WebElement safetyToolsMainTab = safetyToolsElements.safetyToolsMainTab();
-			        System.out.println("Element Present");
-			    
-			 } 
-			 catch (NoSuchElementException e) 
-			 {
-			        return false;
-			 }
-			    return true;
-		}
+			WebElement safetyToolsTab = sideInMenuBarElements.safetyToolsTab();
+			safetyToolsTab.click();
 		
-		else
-		{
-			return false;
-		}
 	
 	}
 
@@ -198,5 +184,125 @@ public class sideInMenu
 		{
 			return false;
 		}
+	}
+
+	public static boolean canNavigateToSafetyToolsMain() 
+	{
+		WebElement safetyToolsTab = sideInMenuBarElements.safetyToolsTab();
+		safetyToolsTab.click();
+		WebElement safetyToolsMainTab = safetyToolsElements.safetyToolsMainTab();
+		safetyToolsMainTab.click();
+		
+		if(driver.Instance.getCurrentUrl().contains(constants.baseURL+"safetyTools1.php") && safetyToolsElements.safetyToolsPageTitle().getText().contains("Safety Tools"))
+		{
+			return true;
+		}
+		
+		return false;
+	}
+
+	public static boolean canNavigateToPersonalSecurityStrategies()
+	{
+		WebElement safetyToolsTab = sideInMenuBarElements.safetyToolsTab();
+		safetyToolsTab.click();
+		
+		WebDriverWait wait = new WebDriverWait(driver.Instance, 5);
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(safetyToolsElements.personalSecurityStrategiesTab()));
+		WebElement personalSecurityStrategiesTab = safetyToolsElements.personalSecurityStrategiesTab();
+		personalSecurityStrategiesTab.click();
+		
+		if(driver.Instance.getCurrentUrl().contains(constants.baseURL+"personalSecurityStrategies.php") && safetyToolsElements.personalSecurityStrategiesTitle().getText().contains("Personal Security Strategies"))
+		{
+			return true;
+		}
+		
+		return false;
+	}
+
+	public static boolean canNavigateToRADAR() 
+	{
+		WebElement safetyToolsTab = sideInMenuBarElements.safetyToolsTab();
+		safetyToolsTab.click();
+		WebDriverWait wait = new WebDriverWait(driver.Instance, 5);
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(safetyToolsElements.radarTab()));
+		WebElement radarTab = safetyToolsElements.radarTab();
+		radarTab.click();
+		
+		if(driver.Instance.getCurrentUrl().contains(constants.baseURL+"radar.php") && safetyToolsElements.radarTitle().getText().contains("RADAR"))
+		{
+			return true;
+		}
+		
+		return false;
+	}
+
+	public static boolean canNavigateToCopingwithUnwantedAttention() 
+	{
+		WebElement safetyToolsTab = sideInMenuBarElements.safetyToolsTab();
+		safetyToolsTab.click();
+		WebDriverWait wait = new WebDriverWait(driver.Instance, 5);
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(safetyToolsElements.copingwithUnwantedAttentionTab()));
+		WebElement copingwithUnwantedAttentionTab = safetyToolsElements.copingwithUnwantedAttentionTab();
+		copingwithUnwantedAttentionTab.click();
+		
+		if(driver.Instance.getCurrentUrl().contains(constants.baseURL+"copingWithUnwantedAttentionStrategies.php") && safetyToolsElements.copingwithUnwantedAttentionTitle().getText().contains("Coping With Unwanted Attention Strategies"))
+		{
+			return true;
+		}
+		
+		return false;
+	}
+
+	public static boolean canNavigateToCommonalitiesofSexualPredators() 
+	{
+		WebElement safetyToolsTab = sideInMenuBarElements.safetyToolsTab();
+		safetyToolsTab.click();
+		
+		WebDriverWait wait = new WebDriverWait(driver.Instance, 5);
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(safetyToolsElements.commonalitiesofSexualPredatorsTab()));
+		WebElement commonalitiesofSexualPredatorsTab = safetyToolsElements.commonalitiesofSexualPredatorsTab();
+		commonalitiesofSexualPredatorsTab.click();
+		
+		if(driver.Instance.getCurrentUrl().contains(constants.baseURL+"commonalitiesOfSexualPredators.php") && safetyToolsElements.commonalitiesofSexualPredatorsTitle().getText().contains("Commonalities Of Sexual Predators"))
+		{
+			return true;
+		}
+		
+		return false;
+	}
+
+	public static boolean canNavigateToBystanderIntervention() 
+	{
+		WebElement safetyToolsTab = sideInMenuBarElements.safetyToolsTab();
+		safetyToolsTab.click();
+		
+		WebDriverWait wait = new WebDriverWait(driver.Instance, 5);
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(safetyToolsElements.bystanderInterventionTab()));
+		WebElement bystanderInterventionTab = safetyToolsElements.bystanderInterventionTab();
+		bystanderInterventionTab.click();
+		
+		if(driver.Instance.getCurrentUrl().contains(constants.baseURL+"bystanderIntervention.php") && safetyToolsElements.bystanderInterventionTitle().getText().contains("Bystander Intervention"))
+		{
+			return true;
+		}
+		
+		return false;
+	}
+
+	public static boolean canNavigateToSafetyPlanBasics()
+	{
+		WebElement safetyToolsTab = sideInMenuBarElements.safetyToolsTab();
+		safetyToolsTab.click();
+		WebDriverWait wait = new WebDriverWait(driver.Instance, 5);
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(safetyToolsElements.safetyPlanBasicsTab()));
+		WebElement safetyPlanBasicsTab = safetyToolsElements.safetyPlanBasicsTab();
+		safetyPlanBasicsTab.click();
+		
+		if(driver.Instance.getCurrentUrl().contains(constants.baseURL+"safetyPlanBasics.php") && safetyToolsElements.safetyPlanBasicsTitle().getText().contains("Safety Plan Basics"))
+		{
+			return true;
+		}
+		
+		return false;
 	}
 }

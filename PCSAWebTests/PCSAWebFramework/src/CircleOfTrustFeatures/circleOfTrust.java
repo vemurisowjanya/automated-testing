@@ -11,6 +11,7 @@ import org.openqa.selenium.WebElement;
 import LoginAndRegistration.existingUserLogin;
 import PageObjectModel.circleOfTrustPageElements;
 import PageObjectModel.constants;
+import PageObjectModel.getHelpNowPageElements;
 import PageObjectModel.sideInMenuBarElements;
 import WebDriver.driver;
 
@@ -140,6 +141,73 @@ public class circleOfTrust
 			{
 				return false;
 			}
+		}
+		return false;
+	}
+
+	public static Object canAddComradesNumbers(String[] phNumbers) 
+	{
+		if(isAtEditComrade())
+		{
+			WebElement comrade1_TextBox, comrade2_TextBox, comrade3_TextBox, comrade4_TextBox, comrade5_TextBox, comrade6_TextBox;
+			comrade1_TextBox = circleOfTrustPageElements.comrade1_TextBox();
+			comrade2_TextBox = circleOfTrustPageElements.comrade2_TextBox();
+			comrade3_TextBox = circleOfTrustPageElements.comrade3_TextBox();
+			comrade4_TextBox = circleOfTrustPageElements.comrade4_TextBox();
+			comrade5_TextBox = circleOfTrustPageElements.comrade5_TextBox();
+			comrade6_TextBox = circleOfTrustPageElements.comrade6_TextBox();
+			
+			//check if number already exists and is not the same number which already exists
+			if(comrade1_TextBox.getText() != "" && !(phNumbers[0].equals(comrade1_TextBox.getText())))
+			{
+				comrade1_TextBox.sendKeys(phNumbers[0]);
+			}
+			
+			//check if number already exists and is not the same number which already exists
+			if(comrade2_TextBox.getText() != "" && !(phNumbers[0].equals(comrade2_TextBox.getText())))
+			{
+				comrade2_TextBox.sendKeys(phNumbers[1]);
+			}
+			
+			//check if number already exists and is not the same number which already exists
+			if(comrade3_TextBox.getText() != "" && !(phNumbers[0].equals(comrade3_TextBox.getText())))
+			{
+				comrade3_TextBox.sendKeys(phNumbers[2]);
+			}
+			
+			//check if number already exists and is not the same number which already exists
+			if(comrade4_TextBox.getText() != "" && !(phNumbers[0].equals(comrade4_TextBox.getText())))
+			{
+				comrade4_TextBox.sendKeys(phNumbers[3]);
+			}
+			
+			//check if number already exists and is not the same number which already exists
+			if(comrade5_TextBox.getText() != "" && !(phNumbers[0].equals(comrade5_TextBox.getText())))
+			{
+				comrade5_TextBox.sendKeys(phNumbers[4]);
+			}
+			
+			//check if number already exists and is not the same number which already exists
+			if(comrade6_TextBox.getText() != "" && !(phNumbers[0].equals(comrade6_TextBox.getText())))
+			{
+				comrade6_TextBox.sendKeys(phNumbers[5]);
+			}
+			
+			WebElement circleOfTrusSaveComradeButton = circleOfTrustPageElements.circleOfTrusSaveComradeButton();
+			circleOfTrusSaveComradeButton.click();
+			
+			try
+			{
+				WebElement okButton = driver.Instance.findElement(constants.alertButton);
+				okButton.click();
+				System.out.println("inside save comrade");
+				return true;
+			}
+		    catch(NoSuchElementException e)
+			{
+		    	return false;
+			}
+			
 		}
 		return false;
 	}
