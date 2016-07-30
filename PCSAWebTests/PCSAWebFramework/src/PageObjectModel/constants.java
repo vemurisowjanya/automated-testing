@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 
 public class constants 
 {
-	public static String baseURL = "localhost:8080/PCSA-web/";
+	public static String baseURL = "http://localhost:8080/PCSA-web/";
 	
 	/*
 	 * Existing User credentials for carrying out tests which requires login
@@ -81,9 +81,15 @@ public class constants
 	public static By bystanderInterventionButton = By.xpath(".//*[@id='bt-bystander']");
 	public static By safetyPlanBasicsButton = By.xpath(".//*[@id='bt-safetyBasic']");
 	public static By safetyPlanWorksheetButton = By.xpath(".//*[@id='bt-safetyWorksheet']");
+	
 	public static By safetyToolsPageTitle = By.xpath("html/body/center/div/div[1]/h1");
 	public static By personalSecurityStrategiesTitle = By.xpath("html/body/center/div/div[1]/h1");
 	public static By radarTitle = By.xpath("html/body/center/div/div[1]/h1");
+	public static By copingwithUnwantedAttentionTitle = By.xpath("html/body/center/div/div/h1");
+	public static By commonalitiesofSexualPredatorsTitle = By.xpath("html/body/center/div/div[1]/h1");
+	public static By bystanderInterventionTitle = By.xpath("html/body/center/div/div[1]/h1");
+	public static By safetyPlanBasicsTitle = By.xpath("html/body/center/div/div[1]/h1");
+	public static By safetyPlanWorksheetTitle = By.xpath("html/body/center/div/div[1]/h1");
 	
 	public static By toSafetyToolsPage2 = By.xpath(".//*[@id='fw-arrow']/a");
 	public static By toSafetyToolsPage1fromPage2 = By.xpath(".//*[@id='bw-arrow']/a");

@@ -5,16 +5,11 @@
  */
 package RecommendedPagesFeatures;
 
-import java.util.concurrent.TimeUnit;
-
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import LoginAndRegistration.existingUserLogin;
 import Logs.log4j;
 import PageObjectModel.constants;
-import PageObjectModel.logoutPageElements;
 import PageObjectModel.recommendedPagesElements;
 import WebDriver.driver;
 
