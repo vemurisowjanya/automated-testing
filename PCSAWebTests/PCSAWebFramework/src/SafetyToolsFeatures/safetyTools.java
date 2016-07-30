@@ -30,7 +30,7 @@ public class safetyTools
 	{
 		WebElement safetyToolsPageTitle =  safetyToolsElements.safetyToolsPageTitle();
 		
-		if(safetyToolsPageTitle.getText().contains("") && driver.Instance.getCurrentUrl().contains(constants.baseURL+"safetyTools1.html"))
+		if(safetyToolsPageTitle.getText().contains("") && driver.Instance.getCurrentUrl().contains(constants.baseURL+"safetyTools1.php"))
 		{
 			return true;
 		}
@@ -49,7 +49,7 @@ public class safetyTools
 			
 			WebElement personalSecurityStrategiesTitle = safetyToolsElements.personalSecurityStrategiesTitle();
 			
-			if(personalSecurityStrategiesTitle.getText().contains("Personal Security Strategies") && driver.Instance.getCurrentUrl().contains(constants.baseURL+"personalSecurityStrategies.html"))
+			if(personalSecurityStrategiesTitle.getText().contains("Personal Security Strategies") && driver.Instance.getCurrentUrl().contains(constants.baseURL+"personalSecurityStrategies.php"))
 			{
 				return true;
 			}
@@ -69,7 +69,7 @@ public class safetyTools
 			
 			WebElement radarTitle = safetyToolsElements.radarTitle();
 			
-			if(radarTitle.getText().contains("Personal Security Strategies") && driver.Instance.getCurrentUrl().contains(constants.baseURL+"radar.html"))
+			if(radarTitle.getText().contains("Personal Security Strategies") && driver.Instance.getCurrentUrl().contains(constants.baseURL+"radar.php"))
 			{
 				return true;
 			}

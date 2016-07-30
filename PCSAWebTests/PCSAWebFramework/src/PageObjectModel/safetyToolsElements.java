@@ -173,4 +173,42 @@ public class safetyToolsElements
 		element = driver.Instance.findElement(constants.radarTitle);
 		return element;
 	}
+	
+	/*
+	 * @return Page title of the 'Coping With Unwanted Attention Strategies' page
+	 */
+	public static WebElement copingwithUnwantedAttentionTitle()
+	{
+		element = driver.Instance.findElement(constants.copingwithUnwantedAttentionTitle);
+		return element;
+	}
+	
+	/*
+	 * @return Page title of the 'Commonalities Of Sexual Predators' page
+	 */
+	public static WebElement commonalitiesofSexualPredatorsTitle()
+	{
+		element = driver.Instance.findElement(constants.commonalitiesofSexualPredatorsTitle);
+		return element;
+	}
+	
+	/*
+	 * @return Page title of the 'Bystander Intervention' page
+	 */
+	public static WebElement bystanderInterventionTitle()
+	{
+		element = driver.Instance.findElement(constants.bystanderInterventionTitle);
+		return element;
+	}
+	
+	/*
+	 * @return Page title of the 'Safety Plan Basics' page
+	 */
+	public static WebElement safetyPlanBasicsTitle()
+	{
+		element = driver.Instance.findElement(constants.safetyPlanBasicsTitle);
+		return element;
+	}
+	
+	
 }
