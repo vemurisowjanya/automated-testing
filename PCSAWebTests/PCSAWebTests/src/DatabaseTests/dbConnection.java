@@ -4,6 +4,7 @@
  * This class make the connection to the DB before running the test and closes the connection after the test.
  */
 package DatabaseTests;
+
 import java.sql.SQLException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
