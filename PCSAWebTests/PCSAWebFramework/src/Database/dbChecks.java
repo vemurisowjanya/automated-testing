@@ -14,7 +14,7 @@ public class dbChecks
 	private static String tableName;
 	private static String SQLquery;
 	/*
-	 * @param email adn password for querying the DB
+	 * @param email and password for querying the DB
 	 */
 	public static boolean isLoginDataPresent(String email, String password)
 	{
@@ -29,7 +29,7 @@ public class dbChecks
 			System.out.println("inside query");
 			rs=connectToDB.stmt.executeQuery(SQLquery);
 			
-			//if username is the retuRn truE
+			//if username is the return true
 			if((rs!=null)&& rs.next())
 			{
 				System.out.println("inside result set");

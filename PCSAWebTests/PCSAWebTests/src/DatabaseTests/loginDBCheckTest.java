@@ -4,6 +4,7 @@
  * This script checks the DB for login data passed from the test. If the data is present it passes otherwise it fails.
  */
 package DatabaseTests;
+
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -18,6 +19,9 @@ public class loginDBCheckTest extends dbConnection
 		return new Object[][]{{"test@gmail.com","test"},{"dummyEmail","dummy_password"}};
 	}
 	
+	/*
+	 * Verify if the user is present in the DB.
+	 */
 	@Test(dataProvider="Authentication")
 	public void test(String email, String password)
 	{

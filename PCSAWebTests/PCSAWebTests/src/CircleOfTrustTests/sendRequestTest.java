@@ -4,9 +4,9 @@
  * This test script tests checks if the user is able to send all the messages after clicking on "Help Me".
  */
 package CircleOfTrustTests;
+
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import BaseTests.commonTest;
 import CircleOfTrustFeatures.circleOfTrust;
 import Logs.log4j;

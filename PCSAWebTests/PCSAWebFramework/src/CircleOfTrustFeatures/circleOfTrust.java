@@ -7,11 +7,9 @@ package CircleOfTrustFeatures;
 
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
-
 import LoginAndRegistration.existingUserLogin;
 import PageObjectModel.circleOfTrustPageElements;
 import PageObjectModel.constants;
-import PageObjectModel.getHelpNowPageElements;
 import PageObjectModel.sideInMenuBarElements;
 import WebDriver.driver;
 
@@ -33,8 +31,10 @@ public class circleOfTrust
 	 */
 	private static boolean isAtCircleOfTrust()
 	{
+		//Page title of "Circle of Trust"
 		WebElement pageTitle = circleOfTrustPageElements.circleOfTrustTitle();
 		
+		//Validate if at "Circle of Trust"
 		if(pageTitle.getText().contains("") && driver.Instance.getCurrentUrl().contains(constants.baseURL+"circleOfTrust.php"))
 		{
 			return true;
@@ -76,6 +76,7 @@ public class circleOfTrust
 			WebElement msg1_Button = circleOfTrustPageElements.msg1_Button();
 			msg1_Button.click();
 			
+			//handling sweet alert for message 1
 			try
 			{
 				WebElement okButton = driver.Instance.findElement(constants.alertButton);
@@ -103,6 +104,7 @@ public class circleOfTrust
 			WebElement msg2_Button = circleOfTrustPageElements.msg2_Button();
 			msg2_Button.click();
 			
+			//handling sweet alert for message 2
 			try
 			{
 				WebElement okButton = driver.Instance.findElement(constants.alertButton);
@@ -130,6 +132,7 @@ public class circleOfTrust
 			WebElement msg3_Button = circleOfTrustPageElements.msg3_Button();
 			msg3_Button.click();
 			
+			//handling sweet alert for message 3
 			try
 			{
 				WebElement okButton = driver.Instance.findElement(constants.alertButton);
@@ -211,8 +214,4 @@ public class circleOfTrust
 		}
 		return false;
 	}
-
-
-	
-
 }
