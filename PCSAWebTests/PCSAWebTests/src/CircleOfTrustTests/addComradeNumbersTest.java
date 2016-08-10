@@ -18,7 +18,7 @@ public class addComradeNumbersTest extends commonTest
 	public void test()
 	{
 		//All the numbers should be different
-		String phNumbers[] = {"4444","5555","6666","9740314115","3333","1111"};
+		String phNumbers[] = {"4444","5555","6666","1010","3333","1111"};
 		System.out.println(phNumbers[3]);
 		log4j.Log.info("Starting addComradeNumbersTest");
 		circleOfTrust.gotoCOT();
