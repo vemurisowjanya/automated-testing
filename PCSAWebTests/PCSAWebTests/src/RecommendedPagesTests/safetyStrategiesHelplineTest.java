@@ -2,6 +2,7 @@
  * @author Anjali
  * @since 2016-06-09
  * This script tests the navigation to the Safety Strategies Page on click of the button  on Recommended Pages.
+ * This script uses stub and needs to be updated when the functionality is ready.
  */
 package RecommendedPagesTests;
 import org.testng.Assert;

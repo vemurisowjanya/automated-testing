@@ -2,6 +2,7 @@
  * @author Anjali
  * @since 2016-06-09
  * This class maintains validation steps carried out for Recommended Pages.
+ * The validation steps uses just the return statement and needs to be updated when the functionality is ready in the applicatio.
  */
 package RecommendedPagesFeatures;
 
@@ -118,6 +119,7 @@ public class recommendedPage
 			setPreferences.click();
 			url = driver.Instance.getCurrentUrl();
 			
+			//TBA Code for navigation validation
 			return true;
 		}
 		else
