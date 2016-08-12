@@ -6,7 +6,9 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
-		<testSourceDirectory>src/RecommendedPagesTests/</testSourceDirectory>
+		
+		<!-- <testSourceDirectory>src/RecommendedPagesTests/</testSourceDirectory> -->
+		<testSourceDirectory>src</testSourceDirectory>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -16,6 +18,18 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.surefire</groupId>
+				<artifactId>surefire-api</artifactId>
+				<version>2.17</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+			
 		</plugins>
 	</build>
 
@@ -58,12 +72,15 @@
 				<artifactId>maven-surefire-report-plugin</artifactId>
 				<version>2.19.1</version>
 				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
 					<outputName>PCSAWebTests</outputName>
 				</configuration>
 			</plugin>
 		</plugins>
 	</reporting>
-	
+
 	<organization>
 		<name>Systers- Anita Borg Institute</name>
 		<url>http://anitaborg.org/get-involved/systers/</url>
