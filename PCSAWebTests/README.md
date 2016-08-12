@@ -77,6 +77,8 @@ Steps for running tests
      * Right click on the `pom.xml` of PCSAWebTests and then run as `Maven build`and give the Goals as `site`.
      * A test report will be generated inside the site folder which is inside the target directory.
 
+#####Note: If you get errors in the project, clean both the projects.
+
 Steps for running tests on BrowserStack
 ---------------------------------------
 1. Sign up with BrowserStack.
@@ -94,4 +96,4 @@ Steps for running tests on BrowserStack
 
 Project documentation
 ---------------------
-TBA
+The complete project documentation is [here](https://docs.google.com/document/d/1C999BD5yqyilrklVNwsz4HE8_fvIItlEi9ZZxrNyYFs/edit?usp=sharing).
