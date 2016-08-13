@@ -77,6 +77,7 @@
 		<classes>
 			<class name="CircleOfTrustTests.editComradeNavigationTest" />
 			<class name="CircleOfTrustTests.sendRequestTest" />
+			<class name="CircleOfTrustTests.addComradeNumbersTest"/>
 		</classes>
 	</test>
 	
