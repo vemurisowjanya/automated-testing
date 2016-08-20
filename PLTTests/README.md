@@ -26,4 +26,6 @@ This repository contains all the code for Systers Photo Language Translation app
 14. rails s
 15. Enter localhost:3000 on a web browser
 
+Check out a demo - https://www.youtube.com/watch?v=TZ5zJgytNCw
+
 For more information, check out the full documentation - https://docs.google.com/document/d/1QXlycV24xGfdp1PV735F09dDEDsXUK-ALtefQp7YFG4/edit?usp=sharing
