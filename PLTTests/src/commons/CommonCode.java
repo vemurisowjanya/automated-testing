@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.Select;
  * Code to be used by other tests
  */
 
-public class CommonCode {
+public abstract class CommonCode {
   private WebDriver driver;
   private String baseUrl;
   private boolean acceptNextAlert = true;
@@ -56,7 +56,7 @@ public class CommonCode {
     }
   }
 
-  private String closeAlertAndGetItsText() {
+  protected String closeAlertAndGetItsText() {
     try {
       Alert alert = driver.switchTo().alert();
       String alertText = alert.getText();
