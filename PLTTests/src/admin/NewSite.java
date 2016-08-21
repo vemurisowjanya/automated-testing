@@ -19,7 +19,8 @@ public class NewSite {
   }
 
   @Test
-  public void testNewSiteAdmin() throws Exception {
+  public void test() throws Exception {
+    login();
     driver.get(baseUrl + "/sites");
     driver.findElement(By.cssSelector("i.icon-plus")).click();
     driver.findElement(By.id("site_name")).clear();
@@ -34,5 +35,14 @@ public class NewSite {
     if (!"".equals(verificationErrorString)) {
       fail(verificationErrorString);
     }
+  }
+
+  public void login() {
+     driver.get(baseUrl + "/login");
+     driver.findElement(By.id("username")).clear();
+     driver.findElement(By.id("username")).sendKeys("admin1");
+     driver.findElement(By.id("user_password")).clear();
+     driver.findElement(By.id("user_password")).sendKeys("admin1");
+     driver.findElement(By.name("commit")).click();
   }
 }

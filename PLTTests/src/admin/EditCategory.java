@@ -24,17 +24,21 @@ public class EditCategory {
 
   @Test
   public void test() throws Exception {
-	driver.get(baseUrl + "/login");
-	driver.findElement(By.id("username")).clear();
-	driver.findElement(By.id("username")).sendKeys("admin1");
-	driver.findElement(By.id("user_password")).clear();
-	driver.findElement(By.id("user_password")).sendKeys("admin1");
-	driver.findElement(By.name("commit")).click();
+    login();
     driver.get(baseUrl + "/categories");
     driver.findElement(By.cssSelector("i.icon-action")).click();
     driver.findElement(By.linkText("Edit")).click();
     driver.findElement(By.id("category_name")).clear();
     driver.findElement(By.id("category_name")).sendKeys("Test2");
     driver.findElement(By.cssSelector("button.button.button--primary")).click();
+  }
+
+  public void login() {
+     driver.get(baseUrl + "/login");
+     driver.findElement(By.id("username")).clear();
+     driver.findElement(By.id("username")).sendKeys("admin1");
+     driver.findElement(By.id("user_password")).clear();
+     driver.findElement(By.id("user_password")).sendKeys("admin1");
+     driver.findElement(By.name("commit")).click();
   }
 }

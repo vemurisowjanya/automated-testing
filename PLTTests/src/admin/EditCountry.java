@@ -27,12 +27,7 @@ public class EditCountry {
 
   @Test
   public void test() throws Exception {
-	driver.get(baseUrl + "/login");
-	driver.findElement(By.id("username")).clear();
-	driver.findElement(By.id("username")).sendKeys("admin1");
-	driver.findElement(By.id("user_password")).clear();
-	driver.findElement(By.id("user_password")).sendKeys("admin1");
-	driver.findElement(By.name("commit")).click();
+    login();
     driver.get(baseUrl + "/countries");
     driver.findElement(By.xpath("//li[2]/ul/li[5]/div/div/a/i")).click();
     driver.findElement(By.cssSelector("div.dropdown.open > ul.dropdown-menu.u-rightPopup > li > a")).click();
@@ -50,5 +45,14 @@ public class EditCountry {
     if (!"".equals(verificationErrorString)) {
       fail(verificationErrorString);
     }
+  }
+
+  public void login() {
+     driver.get(baseUrl + "/login");
+     driver.findElement(By.id("username")).clear();
+     driver.findElement(By.id("username")).sendKeys("admin1");
+     driver.findElement(By.id("user_password")).clear();
+     driver.findElement(By.id("user_password")).sendKeys("admin1");
+     driver.findElement(By.name("commit")).click();
   }
 }

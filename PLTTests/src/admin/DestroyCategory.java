@@ -26,12 +26,6 @@ public class DestroyCategory {
 
   @Test
   public void test() throws Exception {
-	driver.get(baseUrl + "/login");
-	driver.findElement(By.id("username")).clear();
-	driver.findElement(By.id("username")).sendKeys("admin1");
-	driver.findElement(By.id("user_password")).clear();
-	driver.findElement(By.id("user_password")).sendKeys("admin1");
-	driver.findElement(By.name("commit")).click();
     driver.get(baseUrl + "/categories");
     driver.findElement(By.cssSelector("a.button--icon")).click();
     driver.findElement(By.linkText("Delete")).click();
@@ -51,5 +45,14 @@ public class DestroyCategory {
     } finally {
       acceptNextAlert = true;
     }
+  }
+
+  public void login() {
+     driver.get(baseUrl + "/login");
+     driver.findElement(By.id("username")).clear();
+     driver.findElement(By.id("username")).sendKeys("admin1");
+     driver.findElement(By.id("user_password")).clear();
+     driver.findElement(By.id("user_password")).sendKeys("admin1");
+     driver.findElement(By.name("commit")).click();
   }
 }

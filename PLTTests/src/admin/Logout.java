@@ -26,12 +26,7 @@ public class Logout {
 
   @Test
   public void test() throws Exception {
-	driver.get(baseUrl + "/login");
-	driver.findElement(By.id("username")).clear();
-	driver.findElement(By.id("username")).sendKeys("admin1");
-	driver.findElement(By.id("user_password")).clear();
-	driver.findElement(By.id("user_password")).sendKeys("admin1");
-	driver.findElement(By.name("commit")).click();
+    login();
     driver.get(baseUrl + "/");
     driver.findElement(By.cssSelector("i.icon-chevron-down-thin.UserDetails-more")).click();
     driver.findElement(By.id("sign_out_link")).click();
@@ -44,5 +39,14 @@ public class Logout {
     if (!"".equals(verificationErrorString)) {
       fail(verificationErrorString);
     }
+  }
+
+  public void login() {
+     driver.get(baseUrl + "/login");
+     driver.findElement(By.id("username")).clear();
+     driver.findElement(By.id("username")).sendKeys("admin1");
+     driver.findElement(By.id("user_password")).clear();
+     driver.findElement(By.id("user_password")).sendKeys("admin1");
+     driver.findElement(By.name("commit")).click();
   }
 }

@@ -26,12 +26,7 @@ public class DestroyArticle {
 
   @Test
   public void test() throws Exception {
-	driver.get(baseUrl + "/login");
-	driver.findElement(By.id("username")).clear();
-	driver.findElement(By.id("username")).sendKeys("admin1");
-	driver.findElement(By.id("user_password")).clear();
-	driver.findElement(By.id("user_password")).sendKeys("admin1");
-	driver.findElement(By.name("commit")).click();
+    login();
     driver.get(baseUrl + "/articles");
     driver.findElement(By.cssSelector("i.icon-action")).click();
     driver.findElement(By.linkText("Delete")).click();
@@ -51,5 +46,14 @@ public class DestroyArticle {
     } finally {
       acceptNextAlert = true;
     }
+  }
+  
+  public void login() {
+     driver.get(baseUrl + "/login");
+     driver.findElement(By.id("username")).clear();
+     driver.findElement(By.id("username")).sendKeys("admin1");
+     driver.findElement(By.id("user_password")).clear();
+     driver.findElement(By.id("user_password")).sendKeys("admin1");
+     driver.findElement(By.name("commit")).click();
   }
 }
