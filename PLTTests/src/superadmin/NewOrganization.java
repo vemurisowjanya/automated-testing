@@ -1,8 +1,6 @@
 package superadmin;
 
 import java.util.concurrent.TimeUnit;
-
-import commons.CommonCode;
 import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -27,12 +25,7 @@ public class NewOrganization extends CommonCode {
 
 	@Test
 	public void test() {
-		driver.get(baseUrl + "/login");
-		driver.findElement(By.id("username")).clear();
-		driver.findElement(By.id("username")).sendKeys("superadmin");
-		driver.findElement(By.id("user_password")).clear();
-		driver.findElement(By.id("user_password")).sendKeys("superadmin");
-		driver.findElement(By.name("commit")).click();
+		login();
 		driver.get(baseUrl + "/articles/2");
 		driver.findElement(By.linkText("Organizations")).click();
 		driver.findElement(By.cssSelector("i.icon-plus")).click();
@@ -43,4 +36,13 @@ public class NewOrganization extends CommonCode {
 		driver.findElement(By.cssSelector("span.icon-chevron-left-thin"))
 				.click();
 	}
+
+	public void login() {
+                driver.get(baseUrl + "/login");
+                driver.findElement(By.id("username")).clear();
+                driver.findElement(By.id("username")).sendKeys("superadmin");
+                driver.findElement(By.id("user_password")).clear();
+                driver.findElement(By.id("user_password")).sendKeys("superadmin");
+                driver.findElement(By.name("commit")).click();
+        }
 }

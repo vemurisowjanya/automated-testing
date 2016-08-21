@@ -1,9 +1,7 @@
 package superadmin;
 
 import static org.junit.Assert.*;
-
 import java.util.concurrent.TimeUnit;
-
 import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -29,12 +27,7 @@ public class DestroySite {
 
 	@Test
 	public void test() {
-		driver.get(baseUrl + "/login");
-		driver.findElement(By.id("username")).clear();
-		driver.findElement(By.id("username")).sendKeys("superadmin");
-		driver.findElement(By.id("user_password")).clear();
-		driver.findElement(By.id("user_password")).sendKeys("superadmin");
-		driver.findElement(By.name("commit")).click();
+		login();
 		driver.get(baseUrl + "/sites");
 		driver.findElement(By.cssSelector("i.icon-action")).click();
 		driver.findElement(By.linkText("Delete")).click();
@@ -56,4 +49,12 @@ public class DestroySite {
 		}
 	}
 
+	public void login() {
+                driver.get(baseUrl + "/login");
+                driver.findElement(By.id("username")).clear();
+                driver.findElement(By.id("username")).sendKeys("superadmin");
+                driver.findElement(By.id("user_password")).clear();
+                driver.findElement(By.id("user_password")).sendKeys("superadmin");
+                driver.findElement(By.name("commit")).click();
+        }
 }

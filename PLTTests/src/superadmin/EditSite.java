@@ -1,7 +1,6 @@
 package superadmin;
 
 import java.util.concurrent.TimeUnit;
-
 import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -27,12 +26,7 @@ public class EditSite {
 
 	@Test
 	public void test() {
-		driver.get(baseUrl + "/login");
-		driver.findElement(By.id("username")).clear();
-		driver.findElement(By.id("username")).sendKeys("superadmin");
-		driver.findElement(By.id("user_password")).clear();
-		driver.findElement(By.id("user_password")).sendKeys("superadmin");
-		driver.findElement(By.name("commit")).click();
+		login();
 		driver.get(baseUrl + "/sites");
 		driver.findElement(By.cssSelector("i.icon-action")).click();
 		driver.findElement(By.linkText("Edit")).click();
@@ -44,4 +38,12 @@ public class EditSite {
 				.click();
 	}
 
+	public void login() {
+                driver.get(baseUrl + "/login");
+                driver.findElement(By.id("username")).clear();
+                driver.findElement(By.id("username")).sendKeys("superadmin");
+                driver.findElement(By.id("user_password")).clear();
+                driver.findElement(By.id("user_password")).sendKeys("superadmin");
+                driver.findElement(By.name("commit")).click();
+        }
 }
