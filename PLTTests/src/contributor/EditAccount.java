@@ -26,12 +26,7 @@ public class EditAccount {
 
   @Test
   public void test() throws Exception {
-	driver.get(baseUrl + "/login");
-	driver.findElement(By.id("username")).clear();
-	driver.findElement(By.id("username")).sendKeys("contributor");
-	driver.findElement(By.id("user_password")).clear();
-	driver.findElement(By.id("user_password")).sendKeys("contributor");
-	driver.findElement(By.name("commit")).click();
+    login();
     driver.get(baseUrl + "/articles");
     driver.findElement(By.cssSelector("button.menu")).click();
     driver.findElement(By.cssSelector("i.icon-chevron-down-thin.UserDetails-more")).click();
@@ -45,5 +40,14 @@ public class EditAccount {
     if (!"".equals(verificationErrorString)) {
       fail(verificationErrorString);
     }
+  }
+
+  public void login() {
+     driver.get(baseUrl + "/login");
+     driver.findElement(By.id("username")).clear();
+     driver.findElement(By.id("username")).sendKeys("contributor");
+     driver.findElement(By.id("user_password")).clear();
+     driver.findElement(By.id("user_password")).sendKeys("contributor");
+     driver.findElement(By.name("commit")).click();
   }
 }

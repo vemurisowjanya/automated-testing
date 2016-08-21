@@ -20,12 +20,7 @@ public class EditPost {
 
   @Test
   public void testEditPostContributor() throws Exception {
-	driver.get(baseUrl + "/login");
-	driver.findElement(By.id("username")).clear();
-	driver.findElement(By.id("username")).sendKeys("contributor");
-	driver.findElement(By.id("user_password")).clear();
-	driver.findElement(By.id("user_password")).sendKeys("contributor");
-	driver.findElement(By.name("commit")).click();
+    login();
     driver.get(baseUrl + "/articles");
     driver.findElement(By.cssSelector("a.button--icon")).click();
     driver.findElement(By.linkText("Edit")).click();
@@ -49,5 +44,14 @@ public class EditPost {
     if (!"".equals(verificationErrorString)) {
       fail(verificationErrorString);
     }
+  }
+
+  public void login() {
+     driver.get(baseUrl + "/login");
+     driver.findElement(By.id("username")).clear();
+     driver.findElement(By.id("username")).sendKeys("contributor");
+     driver.findElement(By.id("user_password")).clear();
+     driver.findElement(By.id("user_password")).sendKeys("contributor");
+     driver.findElement(By.name("commit")).click();
   }
 }
