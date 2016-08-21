@@ -1,9 +1,7 @@
 package volunteer;
 
 import static org.junit.Assert.*;
-
 import java.util.concurrent.TimeUnit;
-
 import org.junit.*;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -29,12 +27,7 @@ public class DestroyArticle {
 
 	@Test
 	public void test() {
-		driver.get(baseUrl + "/login");
-		driver.findElement(By.id("username")).clear();
-		driver.findElement(By.id("username")).sendKeys("volunteer");
-		driver.findElement(By.id("user_password")).clear();
-		driver.findElement(By.id("user_password")).sendKeys("volunteer");
-		driver.findElement(By.name("commit")).click();
+		login();
 		driver.get(baseUrl + "/articles");
 		driver.findElement(By.cssSelector("i.icon-action")).click();
 		driver.findElement(By.linkText("Delete")).click();
@@ -55,4 +48,13 @@ public class DestroyArticle {
 			acceptNextAlert = true;
 		}
 	}
+
+	public void login() {
+                driver.get(baseUrl + "/login");
+                driver.findElement(By.id("username")).clear();
+                driver.findElement(By.id("username")).sendKeys("volunteer");
+                driver.findElement(By.id("user_password")).clear();
+                driver.findElement(By.id("user_password")).sendKeys("volunteer");
+                driver.findElement(By.name("commit")).click();
+        }
 }
