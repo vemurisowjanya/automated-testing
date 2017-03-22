@@ -25,7 +25,7 @@ public class DBTests extends CommonDBTests {
 	
 	@Test
 	public void read_operations() throws SQLException {
-		ResultSet result = statement.executeQuery("select * from malaria_post;");
+		ResultSet result = statement.executeQuery("select * from malaria_web_post;");
 		while(result.next()) {
 			String id = result.getString("id");
 			String owner_id = result.getString("owner_id");
@@ -43,7 +43,7 @@ public class DBTests extends CommonDBTests {
 	
 	@Test	
 	public void update_operations() throws SQLException {
-		int result = statement.executeUpdate("update malaria_post set title_post = 'Title1' where id = 7;");
+		int result = statement.executeUpdate("update malaria_web_post set title_post = 'Title1' where id = 7;");
 			Assert.assertTrue("value updated", result == 1);			
 	}
 	
