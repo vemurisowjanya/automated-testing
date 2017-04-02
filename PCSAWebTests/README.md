@@ -17,17 +17,17 @@ Tools and Language used
 
 Installations
 --------------
-#####JDK
+##### JDK
 1. Go to [Oracle's site](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 1. Select the appropriate JDK and download.
 1. Accept License and install.
 
-#####Eclipse
+##### Eclipse
 1. Go to [Eclipse's Download site](https://www.eclipse.org/downloads/).
 1. Download the Eclipse IDE for EE Developers (preferably) as it comes with Maven, Git and TestNG plugin already installed or download the Eclipse IDE for Java Developers.
 1. Select a mirror and install.
 
-#####Egit Plugin for Eclipse
+##### Egit Plugin for Eclipse
 1. Open Eclipse
 1. Click on Help->Install New Software...->
 1. Click on Add.
@@ -37,7 +37,7 @@ Installations
 1. Accept the License Agreement and click on Finish.
 1. Restart Eclipse.
 
-#####Maven Plugin for Eclipse
+##### Maven Plugin for Eclipse
 1. Open Eclipse
 1. Click on Help->Install New Software...->
 1. Click on Add.
@@ -77,7 +77,7 @@ Steps for running tests
      * Right click on the `pom.xml` of PCSAWebTests and then run as `Maven build`and give the Goals as `site`.
      * A test report will be generated inside the site folder which is inside the target directory.
 
-#####Note: If you get errors in the project, clean both the projects.
+##### Note: If you get errors in the project, clean both the projects.
 
 Steps for running tests on BrowserStack
 ---------------------------------------
