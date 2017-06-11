@@ -1,0 +1,98 @@
+<!-- Specifying Test Directories -->
+<suite name="PCSA Web Tests" verbose="1">
+
+	<!-- Landing Test -->
+	<test name="Landing Page Test">
+	   <classes>
+			<class name="LandingPageTests.landingPageNavigationTest" />
+		</classes>
+	</test>
+
+	<!-- Login Test -->
+	<test name="Login Test">
+		<classes>
+			<class name="LoginAndRegistrationTests.loginTest" />
+			<class name="LoginAndRegistrationTests.parameterisedLoginTest" />
+		</classes>
+	</test>
+
+	<!-- Logout Test -->
+	<test name="Logout Test">
+		<classes>
+			<class name="LoginAndRegistrationTests.logoutTest" />
+		</classes>
+	</test>
+
+	<!--Registration Test -->
+	<test name="Registration Test">
+		<classes>
+			<class name="LoginAndRegistrationTests.registrationTest" />
+		</classes>
+	</test>
+
+	<!-- Recommended Pages Tests -->
+	<test name="Recommended Pages Tests">
+		<classes>
+			<class name="RecommendedPagesTests.helpingFriendCommunityTest" />
+			<class name="RecommendedPagesTests.safetyStrategiesHelplineTest" />
+			<class name="RecommendedPagesTests.setPreferencesTest" />
+			<class name="RecommendedPagesTests.thingsToKnowTest" />
+		</classes>
+	</test>
+
+	<!-- Side in Menu Bar Tests -->
+	<test name="Side in Menu Bar Tests">
+		<classes>
+			<class name="SideInMenuBarTests.circleOfTrustNavigationTest" />
+			<class name="SideInMenuBarTests.firstAideNavigationTest" />
+			<class name="SideInMenuBarTests.policiesAndGlossaryTest" />
+			<class name="SideInMenuBarTests.safetyToolsNavigationsTest" />
+			<class name="SideInMenuBarTests.sexualAssaultAwarenessTest" />
+			<class name="SideInMenuBarTests.supportServicesNavigationTest" />
+		</classes>
+	</test>
+
+	<!-- Get Help Now Tests -->
+	<test name="Get Help Now Tests">
+		<classes>
+			<class name="GetHelpNowTests.getHelpNavigationTest" />
+			<class name="GetHelpNowTests.selectCountryTest" />
+			<class name="GetHelpNowTests.pcmoCallTest" />
+			<class name="GetHelpNowTests.pcmoSMSTest" />
+			<class name="GetHelpNowTests.sarlCallTest" />
+			<class name="GetHelpNowTests.sarlSMSTest" />
+			<class name="GetHelpNowTests.ssmCallTest" />
+			<class name="GetHelpNowTests.ssmSMSTest" />
+			<class name="GetHelpNowTests.OfficeofCivilRightsNDiversityContactNowTest" />
+			<class name="GetHelpNowTests.OfficeofInspectorGeneralContactNowTest" />
+			<class name="GetHelpNowTests.OfficeofVictimAdvocacyContactNowTest" />
+			<class name="GetHelpNowTests.officeoOfInspectorGeneralLearnMoreNavigationTest" />
+			<class name="GetHelpNowTests.PCSaveAnonymousHelplineContactNowTest" />
+			<class name="GetHelpNowTests.pcSavesLearnMoreNavigationTest" />
+		</classes>
+	</test>
+
+	<!-- Circle of Trust Tests -->
+	<test name="Circle Of Trust Tests">
+		<classes>
+			<class name="CircleOfTrustTests.editComradeNavigationTest" />
+			<class name="CircleOfTrustTests.sendRequestTest" />
+			<class name="CircleOfTrustTests.addComradeNumbersTest"/>
+		</classes>
+	</test>
+	
+	<!-- Safety Tools Tests -->
+	<test name="Safety Tools Tests">
+		<classes>
+			<class name="SafetyToolsTests.safetyToolsNavigationsTest" />
+		</classes>
+	</test>
+	
+	<!-- Database Tests -->
+	<test name="Database Tests">
+		<classes>
+			<class name="DatabaseTests.loginDBCheckTest" />
+		</classes>
+	</test>
+
+</suite>

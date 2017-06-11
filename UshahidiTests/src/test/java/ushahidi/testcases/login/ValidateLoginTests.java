@@ -25,8 +25,8 @@ import ushahidi.pages.loginpage.LoginPageReference;
  */
 public class ValidateLoginTests {
 
-	WebDriver driver = null;
-	LoginPageReference pageref;
+	private WebDriver driver = null;
+	private LoginPageReference pageref;
 	
 	/**
 	 * @throws java.lang.Exception
@@ -63,6 +63,8 @@ public class ValidateLoginTests {
 
 	@Test
 	public void loginCorrectUsernameCorrectPassword() throws InterruptedException {
+		System.out.println("Test: loginCorrectUsernameCorrectPassword ");
+		
 		loginWith("kesha.shah1106@gmail.com", "abc123");
 
 		// Check for logout button
@@ -75,6 +77,8 @@ public class ValidateLoginTests {
 
 	@Test
 	public void loginCorrectUsernameIncorrectPassword() throws InterruptedException {
+		System.out.println("Test: loginCorrectUsernameIncorrectPassword ");
+		
 		loginWith("kesha.shah1106@gmail.com", "123abc");
 
 		// Check for logout button
@@ -85,6 +89,8 @@ public class ValidateLoginTests {
 	
 	@Test
 	public void loginIncorrectUsernameCorrectPassword() throws InterruptedException {
+		System.out.println("Test: loginIncorrectUsernameCorrectPassword ");
+		
 		loginWith("missshah1106@gmail.com", "abc123");
 
 		// Check for logout button
@@ -95,6 +101,8 @@ public class ValidateLoginTests {
 	
 	@Test
 	public void loginNoUsernameAndSomePassword() throws InterruptedException {
+		System.out.println("Test: loginNoUsernameAndSomePassword ");
+		
 		loginWith("", "abc123");
 
 		// Check for logout button
@@ -105,6 +113,8 @@ public class ValidateLoginTests {
 	
 	@Test
 	public void loginSomeUsernameAndNoPassword() throws InterruptedException {
+		System.out.println("Test: loginSomeUsernameAndNoPassword ");
+		
 		loginWith("missshah1106@gmail.com", "");
 
 		// Check for logout button
@@ -115,6 +125,8 @@ public class ValidateLoginTests {
 	
 	@Test
 	public void loginNoUsernameAndNoPassword() throws InterruptedException {
+		System.out.println("Test: loginNoUsernameAndNoPassword ");
+		
 		loginWith("", "");
 
 		// Check for logout button

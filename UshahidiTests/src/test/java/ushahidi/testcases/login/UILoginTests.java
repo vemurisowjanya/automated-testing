@@ -44,6 +44,8 @@ public class UILoginTests {
 
 	@Test
 	public void LoginUIisOpenByDefault() {
+		System.out.println("Test: LoginUIisOpenByDefault ");
+		
 		WebElement loginUI = driver.findElement(pageref.getLoginUi_id());
 		String getDisplayValue = loginUI.getCssValue("display");
 		System.out.println(getDisplayValue);
@@ -52,6 +54,8 @@ public class UILoginTests {
 	
 	@Test
 	public void LoginUIisClosedByClicking() {
+		System.out.println("Test: LoginUIisClosedByClicking ");
+		
 		driver.findElement(pageref.getEmailLink_xpath()).click();
 		WebElement loginUI = driver.findElement(pageref.getLoginUi_id());
 		String getDisplayValue = loginUI.getCssValue("display");
@@ -61,6 +65,8 @@ public class UILoginTests {
 
 	@Test
 	public void SignupUIisCloseByDefault() {
+		System.out.println("Test: SignupUIisCloseByDefault ");
+		
 		WebElement signupUI = driver.findElement(pageref.getSignupUi_id());
 		String getDisplayValue = signupUI.getCssValue("display");
 		System.out.println(getDisplayValue);
@@ -69,6 +75,8 @@ public class UILoginTests {
 	
 	@Test
 	public void SignupUIisOpenedByClicking() {
+		System.out.println("Test: SignupUIisOpenedByClicking ");
+		
 		driver.findElement(pageref.getCreateAccount_xpath()).click();
 		WebElement signupUI = driver.findElement(pageref.getSignupUi_id());
 		String getDisplayValue = signupUI.getCssValue("display");
@@ -78,6 +86,8 @@ public class UILoginTests {
 
 	@Test
 	public void ForgotPasswordUIisCloseByDefault() {
+		System.out.println("Test: ForgotPasswordUIisCloseByDefault ");
+		
 		WebElement forgotUI = driver.findElement(pageref.getForgotUi_id());
 		String getDisplayValue = forgotUI.getCssValue("display");
 		System.out.println(getDisplayValue);
@@ -86,6 +96,8 @@ public class UILoginTests {
 
 	@Test
 	public void ForgotPasswordUIisOpenedByClicking() {
+		System.out.println("Test: ForgotPasswordUIisOpenedByClicking ");
+		
 		driver.findElement(pageref.getRegisteredemail_xpath()).click();
 		WebElement forgotUI = driver.findElement(pageref.getForgotUi_id());
 		String getDisplayValue = forgotUI.getCssValue("display");
