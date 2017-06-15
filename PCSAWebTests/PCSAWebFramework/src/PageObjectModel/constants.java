@@ -8,7 +8,7 @@ import org.openqa.selenium.By;
 
 public class constants 
 {
-	public static String baseURL = "http://localhost:8080/PCSA-web/";
+	public static String baseURL = "http://localhost/FirstAide-web/";
 	
 	/*
 	 * Existing User credentials for carrying out tests which requires login

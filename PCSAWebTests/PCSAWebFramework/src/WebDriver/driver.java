@@ -26,14 +26,14 @@ public class driver
 	{
 		//Initializing Log4j for logging
 		DOMConfigurator.configure("log4j.xml");
-		log4j.Log.info("Stating Webdriver");
+		log4j.Log.info("Starting Webdriver");
 		
 		/*
 		 * Local Testing setup.
 		 * Edit the path to the chrome driver according to the location in the PC.
 		 * Comment this part when testing on a cloud service
 		 */
-		System.setProperty("webdriver.chrome.driver", "D:\\GSoC Workspace\\ChromeDriver\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "/home/naman/Downloads/chromedriver");
 		Instance= new ChromeDriver();
 		
 		
