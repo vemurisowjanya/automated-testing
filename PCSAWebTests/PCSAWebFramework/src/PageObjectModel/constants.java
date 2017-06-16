@@ -9,6 +9,13 @@ import org.openqa.selenium.By;
 public class constants 
 {
 	public static String baseURL = "http://localhost/FirstAide-web/";
+
+	/*
+	* Chromedriver urls
+	* */
+	public static String chromeDriverURL = "https://chromedriver.storage.googleapis.com/2.30/chromedriver_linux64.zip";
+	public static String chromeDriverZip = "chromedriver.zip";
+	public static String chromeDriverFileName = "chromedriver";
 	
 	/*
 	 * Existing User credentials for carrying out tests which requires login
@@ -19,9 +26,9 @@ public class constants
 	/*
 	 * Login page
 	 */
-	public static By signInEmailId = By.xpath(".//*[@id='email']");
-	public static By signInPassword = By.xpath(".//*[@id='password']");
-	public static By signInButton = By.xpath(".//*[@id='submit']");
+	public static By signInEmailId = By.xpath(".//form[contains(@class, 'login-form')]//*[@id='email']");
+	public static By signInPassword = By.xpath(".//form[contains(@class, 'login-form')]//*[@id='password']");
+	public static By signInButton = By.xpath(".//form[contains(@class, 'login-form')]//*[contains(@class, 'submit')]");
 	public static By recommendedPagesTitle = By.xpath("html/body/center/div/div/h1");
 	public static By pageLoginTitle = By.xpath("html/body/form/center/div[1]/h1");
 	public static String loginTitle = "First Aide";

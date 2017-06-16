@@ -4,10 +4,13 @@
  * This class creates a singleton instance of the Web Driver to be used across all classes.
  */
 package WebDriver;
+
+
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import org.apache.log4j.xml.DOMConfigurator;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -15,13 +18,20 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import Logs.log4j;
 import PageObjectModel.cloudServiceConstants;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.net.MalformedURLException;
 import java.net.URL;
+
+import static PageObjectModel.constants.chromeDriverFileName;
+import static PageObjectModel.constants.chromeDriverURL;
+import static PageObjectModel.constants.chromeDriverZip;
 
 public class driver 
 {
 	public static WebDriver Instance;
-	
+
 	public static void initalizeDriver() throws Exception
 	{
 		//Initializing Log4j for logging
@@ -33,7 +43,17 @@ public class driver
 		 * Edit the path to the chrome driver according to the location in the PC.
 		 * Comment this part when testing on a cloud service
 		 */
-		System.setProperty("webdriver.chrome.driver", "/home/naman/Downloads/chromedriver");
+		driverManager manager = new driverManager();
+
+		if(manager.checkIfFileExists("./chromedriver")){
+			log4j.Log.info("Driver found!");
+		}else{
+			manager.download(chromeDriverZip, chromeDriverURL);
+			manager.unzip("./"+chromeDriverZip, "./");
+			manager.deleteZip("./"+chromeDriverZip);
+			manager.makeFileExecutable("./"+chromeDriverFileName);
+		}
+		System.setProperty("webdriver.chrome.driver", chromeDriverFileName);
 		Instance= new ChromeDriver();
 		
 		
@@ -70,5 +90,10 @@ public class driver
 	{
 		Instance.quit();
 		log4j.Log.info("Driver closed");
+	}
+
+	public static void waitDriver(WebElement element) throws IOException
+	{
+		(new WebDriverWait(Instance, 10)).until(ExpectedConditions.visibilityOf(element));
 	}
 }
