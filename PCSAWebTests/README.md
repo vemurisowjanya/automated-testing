@@ -49,6 +49,5 @@ Setup for Developers
 
 Steps for running tests
 -----------------------
-1. First of all you need to feed in the path to your chromedriver which you can download it from [here](https://sites.google.com/a/chromium.org/chromedriver/downloads). And update its path to `{your storage path}/automated-testing/PCSAWebTests/PCSAWebFramework/src/WebDriver/driver.java`.
 1. Next to run any particular test, in left panel of the IDE go to any .java file under PCSAWebTests/src, right-click its name and click run.
 1. You can also do the same by right-cliking the name `test` which is usually followed by a @Test annotation in code itself. You'll see the same `Run` option there also.
