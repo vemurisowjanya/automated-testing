@@ -11,7 +11,6 @@ Tools and Language used
 1. IntelliJ IDEA
 1. Maven
 1. Log4j
-1. Ubuntu
 1. JDK 8
 1. Cloud Service: [BrowserStack](https://www.browserstack.com)
 
