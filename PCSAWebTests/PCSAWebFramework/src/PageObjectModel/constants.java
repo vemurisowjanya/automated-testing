@@ -48,12 +48,14 @@ public class constants
 	/*
 	 * Registration page
 	 */
-	public static By gotoCreateAccountButton = By.xpath("html/body/form/center/div[3]/a");
-	public static By username = By.xpath(".//*[@id='uname']");
-	public static By signUpPassword = By.xpath(".//*[@id='password']");
-	public static By hostCountry = By.xpath(".//*[@id='host_country']");
-	public static By signUpEmailId = By.xpath(".//*[@id='email']");
-	public static By createAccount = By.xpath("html/body/form/center/div[3]/input");
+	public static By gotoCreateAccountLink = By.xpath("//*[@id='sign-up-link']");
+	public static By username = By.xpath(".//form[contains(@class, 'signup-form')]//*[@id='name']");
+	public static By signUpPassword = By.xpath(".//form[contains(@class, 'signup-form')]//*[@id='password']");
+	public static By confirmPassword = By.xpath(".//form[contains(@class, 'signup-form')]//*[@id='confirm_password']");
+	public static By country = By.xpath(".//form[contains(@class, 'signup-form')]//*[contains(@class, 'search')]");
+	public static By signUpEmailId = By.xpath(".//form[contains(@class, 'signup-form')]//*[@id='email']");
+	public static By signUpButton = By.xpath(".//form[contains(@class, 'signup-form')]//button");
+	public static By countryListDropDown = By.xpath(".//div[contains(@class, 'menu transition visible')]");
 	public static String registrationSheet = "Sheet3";
 	
 	/*

@@ -31,8 +31,8 @@ public class parameterisedLoginTest extends commonTest
 	{
 		loginPage.Goto();
 		loginCommand logInObj = new loginCommand(emailId).withPassword(password);
-		driver.waitDriver(loginPageElements.emailId());
+		driver.waitDriverForElement(loginPageElements.emailId());
 		logInObj.login();
-        /*Assert.assertEquals(loggedInCheck.hasLogeedIn(), true, "parameterisedLoginTest failed");*/
+		Assert.assertEquals(loggedInCheck.hasLogeedIn(), true, "parameterised LoginTest failed");
 	}
 }

@@ -6,6 +6,7 @@
 
 package LoginAndRegistration;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,6 +15,8 @@ import PageObjectModel.constants;
 import PageObjectModel.logoutPageElements;
 import PageObjectModel.registrationPageElements;
 import WebDriver.driver;
+
+import java.io.IOException;
 
 
 public class registration
@@ -26,10 +29,21 @@ public class registration
 	public static void Goto() 
 	{
 		
-		driver.Instance.get(constants.baseURL+"login.php");
+		driver.Instance.get(constants.baseURL);
 		log4j.Log.info("Navigating to the registration page");
-		WebElement gotoCreateAccount = registrationPageElements.gotoCreateAccountButton();
+		WebElement gotoCreateAccount = registrationPageElements.gotoCreateAccountLink();
+		try{
+			driver.waitDriverForElement(registrationPageElements.gotoCreateAccountLink());
+		}catch (IOException e){
+			System.out.print(e);
+		}
 		gotoCreateAccount.click();
+		try{
+			driver.waitDriverForElement(registrationPageElements.emaiId());
+		}catch (IOException e){
+			System.out.print(e);
+		}
+
 	}
 	
 	/*
@@ -38,7 +52,7 @@ public class registration
 	public static boolean isAtRegistrationPage()
 	{
 		URL = driver.Instance.getCurrentUrl();
-		if(URL.contains(constants.baseURL+"registration.php"))
+		if(URL.contains(constants.baseURL))
 		{
 			log4j.Log.info("At Registration Page");
 			return true;
@@ -61,54 +75,35 @@ public class registration
 	 * @param Host Country for registration is the third parameter
 	 * @param Email for registration is the forth parameter
 	 */
-	public static void registerWith(String username, String password, String hostCountry, String emailId)
+	public static void registerWith(String emailId, String username, String password, String confirmPassword, String country)
 	{
 		
 		if(isAtRegistrationPage())
 		{
-			WebElement usrnm, passwrd, hostCntry, emlID, createAccount;
+			WebElement usrnm, passwrd, cntry, emlID, signUpButton, cnfPasswrd;
 			usrnm = registrationPageElements.username();
+			cnfPasswrd = registrationPageElements.confirmPassword();
 			passwrd = registrationPageElements.password();
-			hostCntry = registrationPageElements.hostCountry();
+			cntry = registrationPageElements.hostCountry();
 			emlID = registrationPageElements.emaiId();
-			createAccount = registrationPageElements.createAccount();
+			signUpButton = registrationPageElements.signUpButton();
+			emlID.clear();
+			emlID.sendKeys(emailId);
 			usrnm.clear();
 			usrnm.sendKeys(username);
 			passwrd.clear();
 			passwrd.sendKeys(password);
-			hostCntry.clear();
-			hostCntry.sendKeys(hostCountry);
-			emlID.clear();
-			emlID.sendKeys(emailId);
-			createAccount.click();
+			cnfPasswrd.clear();
+			cnfPasswrd.sendKeys(confirmPassword);
+
+			cntry.click();
+			(new WebDriverWait(driver.Instance, 10)).until(ExpectedConditions.visibilityOf(registrationPageElements.countryListDropDown()));
+			registrationPageElements.countryOptionInDropdown(country).click();
+			(new WebDriverWait(driver.Instance, 10)).until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(".//div[contains(@class, 'menu transition visible')]")));
+
+			signUpButton.click();
 			//System.out.println("reaching here");
-			if(driver.Instance.findElements(constants.alertButton).size()!=0)
-			{
-				try
-				{
-					//accept button
-					driver.Instance.findElement(constants.alertButton).click();
-					//driver.Instance.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-					WebDriverWait wait = new WebDriverWait(driver.Instance, 10);
-					wait.until(ExpectedConditions.urlContains(constants.baseURL+"login.php"));
-					//driver.Instance.get(constants.baseURL+"login.php");
-					//After successful registration, it goes to the log in page
-					loginPage.loginAs(emailId)
-					 .withPassword(password)
-					 .login();
-				}
-				catch(Exception e)
-				{
-					e.printStackTrace();
-					return;
-				}
-			}
-			
-			else
-			{
-				return;
-			}
-			
+
 		}
 		else
 			return;
@@ -123,21 +118,10 @@ public class registration
 	{	
 		System.out.println("inside hasRegistered");
 		System.out.println(driver.Instance.getCurrentUrl());
+
+		(new WebDriverWait(driver.Instance, 10)).until(ExpectedConditions.titleIs("Welcome to XAMPP"));
 		
-		if(driver.Instance.getCurrentUrl().contains(constants.baseURL+"progressBar.php"))
-		{
-			System.out.println("inside progressBar");
-			//wait for the page to load until it finds the logout button
-			WebDriverWait wait = new WebDriverWait(driver.Instance, 20);
-			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(logoutPageElements.logoutButton()));
-		}
-		
-	
-		URL = driver.Instance.getCurrentUrl();
-		System.out.println(URL);
-	
-		
-		if(URL.contains(constants.baseURL+"welcome.php") && driver.Instance.findElement(constants.welcomeTtile).getText().contains(constants.pageTitleWelcome)  )
+		if(driver.Instance.getTitle().contains("Welcome to XAMPP"))
 			return true;
 		else
 			return false;

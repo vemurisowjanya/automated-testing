@@ -92,8 +92,18 @@ public class driver
 		log4j.Log.info("Driver closed");
 	}
 
-	public static void waitDriver(WebElement element) throws IOException
+	public static void waitDriverForElement(WebElement element) throws IOException
 	{
 		(new WebDriverWait(Instance, 10)).until(ExpectedConditions.visibilityOf(element));
 	}
+
+	public static void sleepDriver(int timeInMilis){
+		try {
+			Thread.sleep(timeInMilis);                 //1000 milliseconds is one second.
+		} catch(InterruptedException ex) {
+			Thread.currentThread().interrupt();
+		}
+
+	}
+
 }

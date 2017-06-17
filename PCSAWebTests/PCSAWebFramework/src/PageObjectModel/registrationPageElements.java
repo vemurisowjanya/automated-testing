@@ -4,6 +4,7 @@
  * This class maintains page elements for Registration page.
  */
 package PageObjectModel;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import WebDriver.driver;
@@ -16,9 +17,9 @@ public class registrationPageElements
 	/*
 	 * @return Link to the cretae account page
 	 */
-	public static WebElement gotoCreateAccountButton()
+	public static WebElement gotoCreateAccountLink()
 	{
-		element = driver.Instance.findElement(constants.gotoCreateAccountButton);
+		element = driver.Instance.findElement(constants.gotoCreateAccountLink);
 		return element;
 	}
 	
@@ -45,7 +46,7 @@ public class registrationPageElements
 	 */
 	public static WebElement hostCountry()
 	{
-		element = driver.Instance.findElement(constants.hostCountry);
+		element = driver.Instance.findElement(constants.country);
 		return element;
 	}
 	
@@ -57,14 +58,41 @@ public class registrationPageElements
 		element = driver.Instance.findElement(constants.signUpEmailId);
 		return element;
 	}
+
+	/*
+	 * @return confirm password field on the registration page.
+	 */
+	public static WebElement confirmPassword()
+	{
+		element = driver.Instance.findElement(constants.confirmPassword);
+		return element;
+	}
 	
 	/*
 	 * @return Create Account button on the registration page.
 	 */
-	public static WebElement createAccount()
+	public static WebElement signUpButton()
 	{
-		element = driver.Instance.findElement(constants.createAccount);
+		element = driver.Instance.findElement(constants.signUpButton);
 		return element;
 	}
-	
+
+	/*
+	 * @return country list dropdown
+	 */
+	public static WebElement countryListDropDown()
+	{
+		element = driver.Instance.findElement(constants.countryListDropDown);
+		return element;
+	}
+
+	/*
+	 * @return country option in dropdown
+	 */
+	public static WebElement countryOptionInDropdown(String countryName)
+	{
+		By countryOptionInDropdown = By.xpath(".//div[contains(@class, 'menu transition visible')]/div[text()=\"" + countryName +"\"]");
+		element = driver.Instance.findElement(countryOptionInDropdown);
+		return element;
+	}
 }

@@ -31,11 +31,11 @@ public class registrationTest extends commonTest
 	 * @param Email for registration is the forth parameter
 	 */
 	@Test(dataProvider="Registration")
-	public void test(String username, String password, String hostCountry, String emailId)
+	public void test(String emailId, String username, String password, String confirmPassword, String country)
 	{
 		log4j.Log.info("Starting Registration Test");
 		registration.Goto();
-		registration.registerWith(username, password, hostCountry, emailId);
+		registration.registerWith(emailId, username, password, confirmPassword, country);
 		Assert.assertEquals(registration.hasRegistered(), true, "Registration failed");
 		log4j.Log.info("Registration test over");
 		
