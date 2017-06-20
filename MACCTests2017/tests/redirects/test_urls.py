@@ -13,7 +13,6 @@ To specify the server to run against
 
 import os
 import sys
-
 import requests
 
 BASEURL = os.environ.get('SERVER_URL', 'http://web:8000')
@@ -35,7 +34,6 @@ def main():
 	resp = requests.get(BASEURL + '/login_do/')
 	assert resp.status_code == 200
 
-	print('Done!')
 	return 0
 
 if __name__ == '__main__':
