@@ -5,6 +5,9 @@
  */
 package LoginAndRegistrationTests;
 
+import LoginAndRegistration.loginCommand;
+import PageObjectModel.loginPageElements;
+import WebDriver.driver;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -15,6 +18,8 @@ import LoginAndRegistration.loginPage;
 import Logs.log4j;
 import PageObjectModel.constants;
 import Utilities.excelUtil;
+
+import java.io.IOException;
 
 public class loginTest extends commonTest
 {
@@ -39,9 +44,13 @@ public class loginTest extends commonTest
 		log4j.Log.info("Starting Login test");
 		loginPage.Goto();
 		log4j.Log.info("On login page");
-		loginPage.loginAs(emailId)
-					.withPassword(password)
-					.login();
+		loginCommand logInObj = new loginCommand(emailId).withPassword(password);
+		try {
+			driver.waitDriverForElement(loginPageElements.emailId());
+		}catch(IOException ex) {
+			System.out.print(ex);
+		}
+		logInObj.login();
 		Assert.assertEquals(loggedInCheck.hasLogeedIn(), true, "Login failed");
 		log4j.Log.info("Login test over");
 	}

@@ -30,3 +30,10 @@
 .project
 *.pyc
 /UshahidiTests/target/
+PCSAWebTests/PCSAWebFramework/.idea/
+PCSAWebTests/PCSAWebFramework/target/
+PCSAWebTests/PCSAWebTests/target/
+PCSAWebTests/PCSAWebTests/PCSAWebTests.iml
+PCSAWebTests/PCSAWebTests/logfile.log
+PCSAWebTests/PCSAWebFramework/PCSAWebFramework.iml
+PCSAWebTests/PCSAWebTests/chromedriver

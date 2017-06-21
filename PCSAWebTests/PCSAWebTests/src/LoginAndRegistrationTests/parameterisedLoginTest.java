@@ -5,6 +5,8 @@
  */
 
 package LoginAndRegistrationTests;
+import PageObjectModel.loginPageElements;
+import WebDriver.driver;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -12,22 +14,25 @@ import org.testng.annotations.Test;
 import BaseTests.commonTest;
 import LoginAndRegistration.loggedInCheck;
 import LoginAndRegistration.loginPage;
+import LoginAndRegistration.loginCommand;
+
+import java.io.IOException;
 
 public class parameterisedLoginTest extends commonTest
 {
 	@DataProvider(name = "Credentials")
 	public static Object[][] credentials()
 	{
-		return new Object[][]{{"test@gmail.com","test"},{"dummy@gmail.com","dummy_password"}};
+		return new Object[][]{{"test_user_one@email.com","password"}	};
 	}
 	
 	@Test(dataProvider="Credentials")
-	public void canUserLogin(String emailId, String password)
+	public void canUserLogin(String emailId, String password) throws IOException
 	{
 		loginPage.Goto();
-		loginPage.loginAs(emailId)
-		.withPassword(password)
-		.login();
-        Assert.assertEquals(loggedInCheck.hasLogeedIn(), true, "parameterisedLoginTest failed");
+		loginCommand logInObj = new loginCommand(emailId).withPassword(password);
+		driver.waitDriverForElement(loginPageElements.emailId());
+		logInObj.login();
+		Assert.assertEquals(loggedInCheck.hasLogeedIn(), true, "parameterised LoginTest failed");
 	}
 }

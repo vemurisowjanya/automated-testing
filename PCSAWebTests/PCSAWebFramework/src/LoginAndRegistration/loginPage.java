@@ -16,7 +16,7 @@ public class loginPage
 	public static void Goto() 
 	{
 		log4j.Log.info("Navigated to Login page");
-		driver.Instance.get(constants.baseURL+"login.php");
+		driver.Instance.get(constants.baseURL);
 		log4j.Log.info("At login page");
 	}
 
