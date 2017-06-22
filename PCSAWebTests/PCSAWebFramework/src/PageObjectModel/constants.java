@@ -37,7 +37,9 @@ public class constants
 	/*
 	 * Logout
 	 */
-	public static By logoutButton = By.xpath(".//*[@id='accordian']/ul/li[6]/h3[3]/a");
+	public static By logoutButton = By.xpath(".//a[text()=\"\n" +
+			"          Logout\n" +
+			"        \"]");
 	
 	/*
 	 * Welcome Page
@@ -56,6 +58,7 @@ public class constants
 	public static By signUpEmailId = By.xpath(".//form[contains(@class, 'signup-form')]//*[@id='email']");
 	public static By signUpButton = By.xpath(".//form[contains(@class, 'signup-form')]//button");
 	public static By countryListDropDown = By.xpath(".//div[contains(@class, 'menu transition visible')]");
+	public static By successfulRegistrationAlert = By.xpath(".//div[text()=\"Account created. Welcome aboard.\"]");
 	public static String registrationSheet = "Sheet3";
 	
 	/*

@@ -119,12 +119,13 @@ public class registration
 		System.out.println("inside hasRegistered");
 		System.out.println(driver.Instance.getCurrentUrl());
 
-		(new WebDriverWait(driver.Instance, 10)).until(ExpectedConditions.titleIs("Welcome to XAMPP"));
-		
-		if(driver.Instance.getTitle().contains("Welcome to XAMPP"))
+		(new WebDriverWait(driver.Instance, 10)).until(ExpectedConditions.visibilityOf(registrationPageElements.successfulRegistrationAlert()));
+		if(registrationPageElements.successfulRegistrationAlert().isDisplayed()){
 			return true;
-		else
+		}
+		else{
 			return false;
+		}
 	}
 
 }

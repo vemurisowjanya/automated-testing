@@ -7,6 +7,7 @@ package LoginAndRegistration;
 
 import java.util.concurrent.TimeUnit;
 
+import PageObjectModel.logoutPageElements;
 import org.openqa.selenium.WebElement;
 
 import Logs.log4j;
@@ -23,10 +24,9 @@ public class loggedInCheck {
 	public static boolean hasLogeedIn() {
 		/*
 		* Code for Login check will go here.
-		* Checking for the xampp dashboard
 		* */
-		(new WebDriverWait(driver.Instance, 10)).until(ExpectedConditions.titleIs("Welcome to XAMPP"));
-		if(driver.Instance.getTitle().contains("Welcome to XAMPP")){
+		(new WebDriverWait(driver.Instance, 10)).until(ExpectedConditions.visibilityOf(logoutPageElements.logoutButton()));
+		if(logoutPageElements.logoutButton().isDisplayed()){
 			return true;
 		}
 		else{

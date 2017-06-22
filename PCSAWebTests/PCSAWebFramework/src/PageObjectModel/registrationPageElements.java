@@ -95,4 +95,13 @@ public class registrationPageElements
 		element = driver.Instance.findElement(countryOptionInDropdown);
 		return element;
 	}
+
+	/*
+	 * @return Account created successfully sweet alert
+	 */
+	public static WebElement successfulRegistrationAlert()
+	{
+		element = driver.Instance.findElement(constants.successfulRegistrationAlert);
+		return element;
+	}
 }
