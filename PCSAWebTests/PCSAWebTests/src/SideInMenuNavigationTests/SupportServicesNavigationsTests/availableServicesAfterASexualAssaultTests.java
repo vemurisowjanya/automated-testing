@@ -49,7 +49,7 @@ public class availableServicesAfterASexualAssaultTests {
             log4j.Log.info(e);
         }
 
-        Assert.assertEquals(supportServices.canGoToavailableServicesAfterASexualAssault(), true, "\"Available services after a sexual assault\" is not shown!");
+        Assert.assertEquals(supportServices.canGoToAvailableServicesAfterASexualAssault(), true, "\"Available services after a sexual assault\" is not shown!");
 
     }
 

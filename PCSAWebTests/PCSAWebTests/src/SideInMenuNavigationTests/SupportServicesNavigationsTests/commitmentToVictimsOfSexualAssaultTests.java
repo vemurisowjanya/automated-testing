@@ -47,7 +47,7 @@ public class commitmentToVictimsOfSexualAssaultTests {
             log4j.Log.info(e);
         }
 
-        Assert.assertEquals(supportServices.canGoTocommitmentToVictimsOfSexualAssault(), true, "\"Peace Corps Commitment to Victims Of Sexual Assault\" page is not loading!");
+        Assert.assertEquals(supportServices.canGoToCommitmentToVictimsOfSexualAssault(), true, "\"Peace Corps Commitment to Victims Of Sexual Assault\" page is not loading!");
     }
 
     @Test(priority = 1)
