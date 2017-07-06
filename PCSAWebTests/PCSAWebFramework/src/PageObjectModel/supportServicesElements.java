@@ -7,6 +7,8 @@ package PageObjectModel;
 import org.openqa.selenium.WebElement;
 import WebDriver.driver;
 
+import java.util.List;
+
 public class supportServicesElements
 {
 	public static WebElement element = null;
@@ -28,6 +30,20 @@ public class supportServicesElements
 		element = driver.Instance.findElement(constants.benefitsofSeekingStaffSupportTab);
 		return element;
 	}
+
+	//@return 'Benefits of seeking Staff Support Tab' title
+	public static WebElement benefitsofSeekingStaffSupportTitle()
+	{
+		element = driver.Instance.findElement(constants.benefitsofSeekingStaffSupportTitle);
+		return element;
+	}
+
+	//@return 'Benefits of seeking Staff Support Tab' UI cards
+	public static WebElement benefitsofSeekingStaffSupportUiCards()
+	{
+		element = driver.Instance.findElement(constants.benefitsofSeekingStaffSupportUiCards);
+		return element;
+	}
 	
 	/*
 	 * @return 'Available Services After a Sexual Assault' Tab on the Side in Menu bar
@@ -37,6 +53,21 @@ public class supportServicesElements
 		element = driver.Instance.findElement(constants.availableServicesAfterASexualAssaultTab);
 		return element;
 	}
+
+	//@return 'Available Services After a Sexual Assault' title
+	public static WebElement availableServicesAfterASexualAssaultTitle()
+	{
+		element = driver.Instance.findElement(constants.availableServicesAfterASexualAssaultTitle);
+		return element;
+	}
+
+	//@return 'Available Services After a Sexual Assault' Ui Cards
+	public static List<WebElement> availableServicesAfterASexualAssaultUiCards()
+	{
+		List<WebElement> WebElementList = driver.Instance.findElements(constants.availableServicesAfterASexualAssaultUiCards);
+		return WebElementList;
+	}
+
 	
 	/*
 	 * @return 'Peace Corps' Commitment to Victims of Sexual Assault' Tab on the Side in Menu bar
@@ -44,6 +75,20 @@ public class supportServicesElements
 	public static WebElement commitmentToVictimsOfSexualAssaultTab()
 	{
 		element = driver.Instance.findElement(constants.commitmentToVictimsOfSexualAssaultTab);
+		return element;
+	}
+
+	//@return 'Peace Corps' Commitment to Victims of Sexual Assault' title
+	public static WebElement commitmentToVictimsOfSexualAssaultTitle()
+	{
+		element = driver.Instance.findElement(constants.commitmentToVictimsOfSexualAssaultTitle);
+		return element;
+	}
+
+	//@return 'Peace Corps' Commitment to Victims of Sexual Assault' Ui cards
+	public static WebElement commitmentToVictimsOfSexualAssaultUiCards()
+	{
+		element = driver.Instance.findElement(constants.commitmentToVictimsOfSexualAssaultUiCards);
 		return element;
 	}
 	
@@ -55,13 +100,66 @@ public class supportServicesElements
 		element = driver.Instance.findElement(constants.whatToDoAfterAnAssaultTab);
 		return element;
 	}
-	
+
+	/*
+	 * @return 'Confidentiality' Tab on the Side in Menu bar
+	 */
+	public static WebElement confidentialityTab()
+	{
+		element = driver.Instance.findElement(constants.confidentialityTab);
+		return element;
+	}
+
+	// @return 'Confidentiality' Title
+	public static WebElement confidentialityTitle()
+	{
+		element = driver.Instance.findElement(constants.confidentialityTitle);
+		return element;
+	}
+
+	// @return 'Confidentiality' Ui cards
+	public static WebElement confidentialityUiCards()
+	{
+		element = driver.Instance.findElement(constants.confidentialityUiCards);
+		return element;
+	}
+
 	/*
 	 * @return 'Peace Corps Mythbusters:Assumptions and Facts' Tab on the Side in Menu bar
 	 */
-	public static WebElement mythbustersAssumptionsandFactsTab()
+	public static WebElement peaceCorpsMythbustersTab()
 	{
-		element = driver.Instance.findElement(constants.mythbustersAssumptionsandFactsTab);
+		element = driver.Instance.findElement(constants.peaceCorpsMythbustersTab);
+		return element;
+	}
+
+	//@return 'Peace Corps Mythbusters:Assumptions and Facts' Title
+	public static WebElement peaceCorpsMythbustersTitle()
+	{
+		element = driver.Instance.findElement(constants.peaceCorpsMythbustersTitle);
+		return element;
+	}
+
+	//@return 'Peace Corps Mythbusters:Assumptions and Facts' UI cards
+	public static List<WebElement> peaceCorpsMythbustersUiCards()
+	{
+		List<WebElement> WebElementList = driver.Instance.findElements(constants.peaceCorpsMythbustersUiCards);
+		return WebElementList;
+	}
+
+	/*
+	* @return right navigation button
+	* */
+	public static WebElement rightNavButton(){
+		element = driver.Instance.findElement(constants.rightNavButton);
+		return element;
+	}
+
+	/*
+	* @return left navigation button
+	* */
+	public static WebElement leftNavButton(){
+		element = driver.Instance.findElement(constants.leftNavButton);
 		return element;
 	}
 }

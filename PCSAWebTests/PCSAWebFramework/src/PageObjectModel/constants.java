@@ -20,8 +20,8 @@ public class constants
 	/*
 	 * Existing User credentials for carrying out tests which requires login
 	 */
-	public static String existingEmailId = "test@gmail.com";
-	public static String existingPassword = "test";
+	public static String existingEmailId = "test_user_one@email.com";
+	public static String existingPassword = "password";
 	
 	/*
 	 * Login page
@@ -37,7 +37,7 @@ public class constants
 	/*
 	 * Logout
 	 */
-	public static By logoutButton = By.xpath(".//*[@id='accordian']/ul/li[6]/h3[3]/a");
+	public static By logoutButton = By.xpath(".//a[contains(text(), \"Logout\")]");
 	
 	/*
 	 * Welcome Page
@@ -56,6 +56,7 @@ public class constants
 	public static By signUpEmailId = By.xpath(".//form[contains(@class, 'signup-form')]//*[@id='email']");
 	public static By signUpButton = By.xpath(".//form[contains(@class, 'signup-form')]//button");
 	public static By countryListDropDown = By.xpath(".//div[contains(@class, 'menu transition visible')]");
+	public static By successfulRegistrationAlert = By.xpath(".//div[text()=\"Account created. Welcome aboard.\"]");
 	public static String registrationSheet = "Sheet3";
 	
 	/*
@@ -72,10 +73,10 @@ public class constants
 	public static By firstAideTab= By.xpath(".//*[@id='accordian']/ul/li[1]/h2/a");
 	public static By getHelpNowTab = By.xpath(".//*[@id='accordian']/ul/li[1]/h3[1]/a");
 	public static By circleOfTrustTab = By.xpath(".//*[@id='accordian']/ul/li[1]/h3[2]/a");
-	public static By safetyToolsTab = By.xpath(".//*[@id='accordian']/ul/li[2]/h3");
-	public static By supportServicesTab = By.xpath(".//*[@id='accordian']/ul/li[3]/h3");
-	public static By sexualAssaultAwarenesstTab = By.xpath(".//*[@id='accordian']/ul/li[4]/h3");
-	public static By policiesAndGlossaryTab = By.xpath(".//*[@id='accordian']/ul/li[5]/h3");
+	public static By safetyToolsTab = By.xpath(".//div[text()=\"Safety Tools\"]");
+	public static By supportServicesTab = By.xpath(".//div[text()=\"Support Services\"]");
+	public static By sexualAssaultAwarenesstTab = By.xpath(".//div[text()=\"Sexual Assault Awareness\"]");
+	public static By policiesAndGlossaryTab = By.xpath(".//div[text()=\"Policies and Glossary\"]");
 	public static By settingsTab = By.xpath(".//*[@id='accordian']/ul/li[6]/h3[1]/a");
 	public static By loggedInAsTab = By.xpath(".//*[@id='accordian']/ul/li[6]/h3[2]/a");
 	
@@ -90,54 +91,121 @@ public class constants
 	public static By bystanderInterventionButton = By.xpath(".//*[@id='bt-bystander']");
 	public static By safetyPlanBasicsButton = By.xpath(".//*[@id='bt-safetyBasic']");
 	public static By safetyPlanWorksheetButton = By.xpath(".//*[@id='bt-safetyWorksheet']");
-	
+
 	public static By safetyToolsPageTitle = By.xpath("html/body/center/div/div[1]/h1");
 	public static By personalSecurityStrategiesTitle = By.xpath("html/body/center/div/div[1]/h1");
-	public static By radarTitle = By.xpath("html/body/center/div/div[1]/h1");
-	public static By copingwithUnwantedAttentionTitle = By.xpath("html/body/center/div/div/h1");
-	public static By commonalitiesofSexualPredatorsTitle = By.xpath("html/body/center/div/div[1]/h1");
-	public static By bystanderInterventionTitle = By.xpath("html/body/center/div/div[1]/h1");
-	public static By safetyPlanBasicsTitle = By.xpath("html/body/center/div/div[1]/h1");
-	public static By safetyPlanWorksheetTitle = By.xpath("html/body/center/div/div[1]/h1");
-	
+	public static By radarTitle = By.xpath(".//div[contains(@class, \"ui dividing header\") and text()=\"RADAR\"]");
+	public static By radarUiCards = By.xpath(".//div[contains(@class, \"multi card custom\")]");
+	public static By copingWithUnwantedAttentionUiCards = By.xpath(".//div[contains(@class, \"multi card custom\")]");
+	public static By copingwithUnwantedAttentionTitle = By.xpath(".//div[contains(@class, \"ui dividing header\") and text()=\"Coping With Unwanted Attention Strategies\"]");
+	public static By commonalitiesofSexualPredatorsTitle = By.xpath(".//div[contains(@class, \"ui dividing header\") and text()=\"Commonalities Of Sexual Predators\"]");
+	public static By commonalitiesofSexualPredatorsUiCards = By.xpath(".//div[contains(@class, \"multi card custom\")]");
+	public static By bystanderInterventionTitle = By.xpath(".//div[contains(@class, \"ui dividing header\") and text()=\"Bystander Intervention\"]");
+	public static By bystanderInterventionUiCards = By.xpath(".//div[contains(@class, \"multi card custom\")]");
+	public static By safetyPlanBasicsTitle = By.xpath(".//div[contains(@class, \"ui dividing header\") and text()=\"Safety Plan Basics\"]");
+	public static By safetyPlanBasicsUiCards = By.xpath(".//div[contains(@class, \"multi card custom\")]");
+	public static By safetyPlanWorksheetTitle = By.xpath(".//div[contains(@class, \"ui dividing header\") and text()=\"Safety Plan Worksheet\"]");
+	public static By safetyPlanWorksheetUiCards = By.xpath(".//div[contains(@class, \"ui two column center grid\")]/div[contains(@class, \"column\")]");
+
 	public static By toSafetyToolsPage2 = By.xpath(".//*[@id='fw-arrow']/a");
 	public static By toSafetyToolsPage1fromPage2 = By.xpath(".//*[@id='bw-arrow']/a");
 	
-	public static By personalSecurityStrategiesTab = By.xpath(".//*[@id='accordian']/ul/li[2]/ul/li[2]/a");
-	public static By radarTab = By.xpath(".//*[@id='accordian']/ul/li[2]/ul/li[3]/a");
-	public static By copingwithUnwantedAttentionTab = By.xpath(".//*[@id='accordian']/ul/li[2]/ul/li[4]/a");
-	public static By commonalitiesofSexualPredatorsTab = By.xpath(".//*[@id='accordian']/ul/li[2]/ul/li[5]/a");
-	public static By bystanderInterventionTab = By.xpath(".//*[@id='accordian']/ul/li[2]/ul/li[6]/a");
-	public static By safetyPlanBasicsTab = By.xpath(".//*[@id='accordian']/ul/li[2]/ul/li[7]/a");
-	public static By safetyPlanWorksheetTab = By.xpath(".//*[@id='accordian']/ul/li[2]/ul/li[8]/a");
+	public static By personalSecurityStrategiesTab = By.xpath(".//div[text()=\"Safety Tools\"]/following-sibling::div/a[contains(text(), \"Personal Security Strategies\")]");
+	public static By radarTab = By.xpath(".//div[text()=\"Safety Tools\"]/following-sibling::div/a[contains(text(), \"RADAR\")]");
+	public static By copingwithUnwantedAttentionTab = By.xpath(".//div[text()=\"Safety Tools\"]/following-sibling::div/a[contains(text(), \"Coping with Unwanted Strategies\")]");
+	public static By commonalitiesofSexualPredatorsTab = By.xpath(".//div[text()=\"Safety Tools\"]/following-sibling::div/a[contains(text(), \"Commonalities of Sexual Predators\")]");
+	public static By bystanderInterventionTab = By.xpath(".//div[text()=\"Safety Tools\"]/following-sibling::div/a[contains(text(), \"Bystander Intervention\")]");
+	public static By safetyPlanBasicsTab = By.xpath(".//div[text()=\"Safety Tools\"]/following-sibling::div/a[contains(text(), \"Safety Plan Basics\")]");
+	public static By safetyPlanWorksheetTab = By.xpath(".//div[text()=\"Safety Tools\"]/following-sibling::div/a[contains(text(), \"Safety Plan Worksheet\")]");
 	
 	/*
 	 * Support services
 	 */
 	public static By supportServicesMainTab = By.xpath(".//*[@id='accordian']/ul/li[3]/ul/li[1]/a");
-	public static By benefitsofSeekingStaffSupportTab = By.xpath(".//*[@id='accordian']/ul/li[3]/ul/li[2]/a");
-	public static By availableServicesAfterASexualAssaultTab = By.xpath(".//*[@id='accordian']/ul/li[3]/ul/li[3]/a");
-	public static By commitmentToVictimsOfSexualAssaultTab = By.xpath(".//*[@id='accordian']/ul/li[3]/ul/li[4]/a");
-	public static By whatToDoAfterAnAssaultTab = By.xpath(".//*[@id='accordian']/ul/li[3]/ul/li[5]/a");
-	public static By mythbustersAssumptionsandFactsTab = By.xpath(".//*[@id='accordian']/ul/li[3]/ul/li[6]/a");
-	
+
+		//benefits of seeking staff support
+	public static By benefitsofSeekingStaffSupportTab = By.xpath(".//div[text()=\"Support Services\"]/following-sibling::div/a[contains(text(), \"Benefits of Seeking Staff Support\")]");
+	public static By benefitsofSeekingStaffSupportTitle = By.xpath(".//div[contains(@class, \"ui dividing header\") and text()=\"Benefits of Seeking Staff Support\"]");
+	public static By benefitsofSeekingStaffSupportUiCards = By.xpath(".//div[contains(@class, \"ui raised cards\")]");
+
+		//Available services After a sex assault
+	public static By availableServicesAfterASexualAssaultTab = By.xpath(".//div[text()=\"Support Services\"]/following-sibling::div/a[contains(text(), \"Available Services after a Sexual Assault\")]");
+	public static By availableServicesAfterASexualAssaultTitle = By.xpath(".//div[contains(@class, \"ui dividing header\") and text()=\"Available Services after a Sexual Assault\"]");
+	public static By availableServicesAfterASexualAssaultUiCards = By.xpath(".//div[contains(@class, \"multi card custom\")]");
+
+		//Peace Corps Commitment to Victims of Sexual Assualt
+	public static By commitmentToVictimsOfSexualAssaultTab = By.xpath(".//div[text()=\"Support Services\"]/following-sibling::div/a[contains(text(), \"Peace Corps Commitment to Victims of Sexual Assualt\")]");
+	public static By commitmentToVictimsOfSexualAssaultTitle = By.xpath(".//div[contains(@class, \"ui dividing header\") and text()=\"Peace Corps Commitment to Victims of Sexual Assualt\"]");
+	public static By commitmentToVictimsOfSexualAssaultUiCards = By.xpath(".//div[contains(@class, \"ui raised cards\")]");
+
+	public static By whatToDoAfterAnAssaultTab = By.xpath(".//div[text()=\"Support Services\"]/following-sibling::div/a[contains(text(), \"What to do After an Assault\")]");
+
+		//Confidentiality
+	public static By confidentialityTab = By.xpath(".//div[text()=\"Support Services\"]/following-sibling::div/a[contains(text(), \"Confidentiality\")]");
+	public static By confidentialityTitle = By.xpath(".//div[contains(@class, \"ui dividing header\") and text()=\"Confidentiality\"]");
+	public static By confidentialityUiCards = By.xpath(".//div[contains(@class, \"ui raised cards\")]");
+
+		//Peace Corps Mythbusters: Assumptions and Facts
+	public static By peaceCorpsMythbustersTab = By.xpath(".//div[text()=\"Support Services\"]/following-sibling::div/a[contains(text(), \"Peace Corps Mythbusters\")]");
+	public static By peaceCorpsMythbustersTitle = By.xpath(".//div[contains(@class, \"ui dividing header\") and text()=\"Peace Corps Mythbusters: Assumptions and Facts\"]");
+	public static By peaceCorpsMythbustersUiCards = By.xpath(".//div[contains(@class, \"ui raised segment\")]");
+
 	/*
 	 * Sexual Assault Awareness
 	 */
 	public static By sexualAssaultMainTab = By.xpath(".//*[@id='accordian']/ul/li[4]/ul/li[1]/a");
-	public static By wasItSexualAssaultTab = By.xpath(".//*[@id='accordian']/ul/li[4]/ul/li[2]/a");
-	public static By sexualAssaultCommonQuestionsTab = By.xpath(".//*[@id='accordian']/ul/li[4]/ul/li[3]/a");
-	public static By impactOfSexualAssaultTab = By.xpath(".//*[@id='accordian']/ul/li[4]/ul/li[4]/a");
-	public static By sexualHarrasmentTab = By.xpath(".//*[@id='accordian']/ul/li[4]/ul/li[5]/a");
-	public static By HelpingAFriendOrCommunityMemberTab = By.xpath(".//*[@id='accordian']/ul/li[4]/ul/li[6]/a");
-	
+
+		// Was it sexual assault
+	public static By wasItSexualAssaultTab = By.xpath(".//div[text()=\"Sexual Assault Awareness\"]/following-sibling::div/a[contains(text(), \"Was it Sexual Assault\")]");
+	public static By wasItSexualAssaultTitle = By.xpath(".//div[contains(@class, \"ui dividing header\") and text()=\"What is Sexual Assault?\"]");
+	public static By wasItSexualAssaultUiCards = By.xpath(".//div[contains(@class, \"card full-page\")]");
+	public static By wasItSexualAssaultKnowMoreButton = By.xpath(".//div[contains(@class, \"massive ui button\") and contains(text(), \"Know more About Sexual Assault\")]");
+
+		// Sexual Assault Common Questions
+	public static By sexualAssaultCommonQuestionsTab = By.xpath(".//div[text()=\"Sexual Assault Awareness\"]/following-sibling::div/a[contains(text(), \"Sexual Assault Common Questions\")]");
+	public static By sexualAssaultCommonQuestionsTitle = By.xpath(".//div[contains(@class, \"ui dividing header\") and text()=\"Sexual Assault Common Questions\"]");
+	public static By sexualAssaultCommonQuestionsUiCards = By.xpath(".//div[contains(@class, \"ui raised segment\")]");
+
+		// Impact of sexual assault
+	public static By impactOfSexualAssaultTab = By.xpath(".//div[text()=\"Sexual Assault Awareness\"]/following-sibling::div/a[contains(text(), \"Impact of Sexual Assault\")]");
+	public static By impactOfSexualAssaultTitle = By.xpath(".//div[contains(@class, \"ui dividing header\") and text()=\"Impact Of Sexual Assault\"]");
+	public static By impactOfSexualAssaultUiCards = By.xpath(".//div[contains(@class, \"multi card custom\")]");
+
+		// Sexual Harassment
+	public static By sexualHarassmentTab = By.xpath(".//div[text()=\"Sexual Assault Awareness\"]/following-sibling::div/a[contains(text(), \"Sexual Harassment\")]");
+	public static By sexualHarassmentTitle = By.xpath(".//div[contains(@class, \"ui dividing header\") and text()=\"Sexual Harassment\"]");
+	public static By sexualHarassmentUiCards = By.xpath(".//div[contains(@class, \"ui raised cards\")]");
+
+		// Helping a friend or a community member
+	public static By helpingAFriendOrCommunityMemberTab = By.xpath(".//div[text()=\"Sexual Assault Awareness\"]/following-sibling::div/a[contains(text(), \"Helping a Friend or a Community Member\")]");
+	public static By helpingAFriendOrCommunityMemberTitle = By.xpath(".//div[contains(@class, \"ui dividing header\") and text()=\"Helping a Friend or Community Member\"]");
+	public static By helpingAFriendOrCommunityMemberUiCards = By.xpath(".//td[contains(@class, \"three wide\")]");
+
 	/*
 	 * Policies and Glossary
 	 */
-	public static By policySummarySheetTab = By.xpath(".//*[@id='accordian']/ul/li[5]/ul/li[1]/a");
-	public static By glossaryTab = By.xpath(".//*[@id='accordian']/ul/li[5]/ul/li[2]/a");
-	public static By furtherResourcesTab = By.xpath(".//*[@id='accordian']/ul/li[5]/ul/li[3]/a");
-	
+
+		// Peace Corps Policy Summary Sheet
+	public static By policySummarySheetTab = By.xpath(".//div[text()=\"Policies and Glossary\"]/following-sibling::div/a[contains(text(), \"Peace Corps Policy Summary Sheet\")]");
+	public static By policySummarySheetTitle = By.xpath(".//div[contains(@class, \"ui dividing header\") and text()=\"Peace Corps Policy Summary Sheet\"]");
+	public static By policySummarySheetUiCards = By.xpath(".//div[contains(@class, \"card full-page\")]");
+
+		// Glossary
+	public static By glossaryTab = By.xpath(".//div[text()=\"Policies and Glossary\"]/following-sibling::div/a[contains(text(), \"Glossary\")]");
+	public static By glossaryTitle = By.xpath(".//div[contains(@class, \"ui dividing header\") and text()=\"Glossary\"]");
+	public static By glossaryUiCards = By.xpath(".//div[contains(@class, \"card full-page\")]");
+
+		// Further Resources
+	public static By furtherResourcesTab = By.xpath(".//div[text()=\"Policies and Glossary\"]/following-sibling::div/a[contains(text(), \"Further Resources\")]");
+	public static By furtherResourcesTitle = By.xpath(".//div[contains(@class, \"ui dividing header\") and text()=\"Further Resources\"]");
+	public static By furtherResourcesUiCards = By.xpath(".//div[contains(@class, \"card full-page\")]");
+
+	/*
+	* Right and left page navigation buttons
+	* */
+	public static By rightNavButton = By.xpath(".//i[contains(@class, \"angle right icon\")]");
+	public static By leftNavButton = By.xpath(".//i[contains(@class, \"angle left icon\")]");
+
 	/*
 	 * Get Help Now
 	 */
@@ -205,4 +273,10 @@ public class constants
 	public static By alertHeading = By.xpath("html/body/div[3]/h2");
 	public static By alertText = By.xpath("html/body/div[3]/p");
 	public static By alertButton = By.cssSelector("button.confirm");
+
+	/*
+	*  Left Virtical sidebar menu
+	* */
+	public static By leftSidebarMenu = By.xpath(".//div[contains(@class, \"ui visible left vertical sidebar menu mustard\")]");
+
 }

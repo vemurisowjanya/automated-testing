@@ -7,6 +7,8 @@ package PageObjectModel;
 import org.openqa.selenium.WebElement;
 import WebDriver.driver;
 
+import java.util.List;
+
 public class safetyToolsElements
 {
 	public static WebElement element = null;
@@ -19,7 +21,7 @@ public class safetyToolsElements
 		element = driver.Instance.findElement(constants.safetyToolsMainTab);
 		return element;
 	}
-	
+
 	/*
 	 * @return 'Personal Security Strategies' Tab on the Side in Menu bar
 	 */
@@ -145,6 +147,15 @@ public class safetyToolsElements
 		element = driver.Instance.findElement(constants.safetyPlanWorksheetButton);
 		return element;
 	}
+
+	/*
+	 * @return 'Safety Plan Worksheet' title page of "Safety Tools"
+	 */
+	public static WebElement safetyPlanWorksheetTitle()
+	{
+		element = driver.Instance.findElement(constants.safetyPlanWorksheetTitle);
+		return element;
+	}
 	
 	/*
 	 * @return Page title of the 'Safety Tools' 
@@ -209,6 +220,69 @@ public class safetyToolsElements
 		element = driver.Instance.findElement(constants.safetyPlanBasicsTitle);
 		return element;
 	}
-	
+
+	/*
+	* @return radar mutli ui cards for RADAR
+	* */
+	public static List<WebElement> radarUiCards(){
+		List<WebElement> webElementList = driver.Instance.findElements(constants.radarUiCards);
+		return webElementList;
+	}
+
+	/*
+	* @return coping with Unwanted attentions strategies mutli ui cards for coping with unwanted attention
+	* */
+	public static List<WebElement> copingWithUnwantedAttentionUiCards(){
+		List<WebElement> webElementList = driver.Instance.findElements(constants.copingWithUnwantedAttentionUiCards);
+		return webElementList;
+	}
+
+	/*
+	* @return commonalities of sexual predators multi ui cards for coping with unwanted attention
+	* */
+	public static List<WebElement> commonalitiesOfSexualPredatorsUiCards(){
+		List<WebElement> WebElementList = driver.Instance.findElements(constants.commonalitiesofSexualPredatorsUiCards);
+		return WebElementList;
+	}
+
+	/*
+	* @return list of bystander of Intervention multi ui cards
+	* */
+	public static List<WebElement> bystanderInterventionUiCards(){
+		List<WebElement> WebElementList = driver.Instance.findElements(constants.bystanderInterventionUiCards);
+		return WebElementList;
+	}
+
+	/*
+	* @return list of Safety plan basics multi ui cards
+	* */
+	public static List<WebElement> safetyPlanBasicsUiCards(){
+		List<WebElement> WebElementList = driver.Instance.findElements(constants.safetyPlanBasicsUiCards);
+		return WebElementList;
+	}
+
+	/*
+	* @return list of Safety plan worksheet multi ui cards
+	* */
+	public static List<WebElement> safetyPlanWorksheetUiCards(){
+		List<WebElement> WebElementList = driver.Instance.findElements(constants.safetyPlanWorksheetUiCards);
+		return WebElementList;
+	}
+
+	/*
+	* @return right navigation button
+	* */
+	public static WebElement rightNavButton(){
+		element = driver.Instance.findElement(constants.rightNavButton);
+		return element;
+	}
+
+	/*
+	* @return left navigation button
+	* */
+	public static WebElement leftNavButton(){
+		element = driver.Instance.findElement(constants.leftNavButton);
+		return element;
+	}
 	
 }

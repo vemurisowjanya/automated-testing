@@ -80,14 +80,7 @@
 			<class name="CircleOfTrustTests.addComradeNumbersTest"/>
 		</classes>
 	</test>
-	
-	<!-- Safety Tools Tests -->
-	<test name="Safety Tools Tests">
-		<classes>
-			<class name="SafetyToolsTests.safetyToolsNavigationsTest" />
-		</classes>
-	</test>
-	
+
 	<!-- Database Tests -->
 	<test name="Database Tests">
 		<classes>

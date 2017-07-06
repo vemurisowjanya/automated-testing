@@ -5,6 +5,8 @@
  * It serves as a prerequisite for validating other functions after successful login.
  */
 package LoginAndRegistration;
+import Logs.log4j;
+import PageObjectModel.loginPageElements;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -13,15 +15,26 @@ import PageObjectModel.constants;
 import PageObjectModel.logoutPageElements;
 import WebDriver.driver;
 
+import java.io.IOException;
+
 public class existingUserLogin 
 {
 	public static void login()
 	{
-		driver.Instance.get(constants.baseURL+"login.php");
-		loginPage.loginAs(constants.existingEmailId)
-		.withPassword(constants.existingPassword)
-		.login();
-		WebDriverWait wait = new WebDriverWait(driver.Instance, 20);
-		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(logoutPageElements.logoutButton()));
+		driver.Instance.get(constants.baseURL);
+		loginPage.Goto();
+		loginCommand logInObj = new loginCommand(constants.existingEmailId).withPassword(constants.existingPassword);
+		try {
+			driver.waitDriverForElement(loginPageElements.emailId());
+		}catch(IOException ex) {
+			System.out.print(ex);
+		}
+		logInObj.login();
+		if(loggedInCheck.hasLogeedIn()){
+			return;
+		}
+		else{
+			log4j.Log.info("Login failed!");
+		}
 	}
 }
