@@ -1,6 +1,6 @@
 # automated-testing
 
-Automated Testing
+## Automated Testing
 
 This repository contains automated testing setup and test files for various project supported by Systers like:
 
@@ -16,7 +16,7 @@ This repository contains automated testing setup and test files for various proj
 
 3. [Portal Meetup](https://github.com/systers/automated-testing/blob/develop/PortalMeetupTests/README.md)
 
-4. [Portal VMS](https://github.com/systers/automated-testing/blob/develop/PortalVMSTests/README.md)
+4. [Portal Volunteer Management System - VMS](https://github.com/systers/automated-testing/blob/develop/PortalVMSTests/README.md)
 
 5. [Syster's Portal](https://github.com/systers/automated-testing/blob/develop/SysterPortal/README.md)
 
