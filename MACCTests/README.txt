@@ -1,1 +1,0 @@
-This contains repository for automated testing of MACCTests
