@@ -1,8 +1,10 @@
+# Tests commented out to avoid Travis CI build failure
+
 There are several tests/parts of tests which have been commented out currently to avoid travis build failure:
 
 |File               |Tests            |Reason/Related issue           |
 |------------------------------|:------------------:|:------------------------: |
-| test_formFields.py |  test_null_values_in_edit_event| [345](https://github.com/systers/vms/issues/345)|
+| test_formFields.py |  test_null_values_in_edit_event| [#345](https://github.com/systers/vms/issues/345)|
 | test_formFields.py |  test_field_value_retention_for_event, test_field_value_retention_for_job, test_field_value_retention_for_shift| [#350](https://github.com/systers/vms/issues/350)|
 | test_formFields.py |  test_simplify_job|Cause of failure is still unclear|
 | test_report.py | test_null_values_with_dataset, test_check_intersection_of_fields| [#327](https://github.com/systers/vms/issues/327)|

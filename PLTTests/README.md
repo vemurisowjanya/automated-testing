@@ -1,7 +1,9 @@
-#**Automation Testing Photo Language Translation**
+# Testing Automation: Photo Language Translation
+
 This repository contains all the code for Systers Photo Language Translation application's automation testing framework using Selenium and Maven as the build tool.  Travis CI is used to build and test this project.
 
-##**Tools Used**
+## Tools Used
+
 * Java
 * JUnit
 * Eclipse IDE
@@ -9,7 +11,8 @@ This repository contains all the code for Systers Photo Language Translation app
 * Travis CI
 * Sauce Connect
 
-##**Installing PLT**
+## Installing PLT
+
 1. Install Rails 4.2.1, Ruby 2.2.0p0, and PostgreSQL (here is a great link for help https://gorails.com/setup/ubuntu/14.04)
 2. Clone the PLT repo (git clone https://github.com/systers/language-translation)
 3. cd language-translation
