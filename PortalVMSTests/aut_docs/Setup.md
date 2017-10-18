@@ -4,6 +4,7 @@
 - Clone project: `git clone https://github.com/systers/vms.git`
 - In the root folder of the project, startup a new virtual environment `virtualenv -p /usr/bin/python2.7 venv`
 - Activate virtualenv, `source venv/bin/activate`
+- Run apt-get install libpq-dev
 - Install dependencies: `pip install -r requirements.txt`
 - `cd vms`
 - To run, `python manage.py runserver`. Browse  `http://127.0.0.1:8000`
