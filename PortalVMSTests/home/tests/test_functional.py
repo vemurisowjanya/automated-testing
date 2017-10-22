@@ -239,7 +239,6 @@ class CheckContentAndRedirection(LiveServerTestCase):
         self.assertEqual(logout_link, self.live_server_url + 
                 PageUrls.logout_page)
 
-
     def test_volunteer_page_redirection(self):
         home_page = self.home_page
         authentication_page = self.authentication_page
