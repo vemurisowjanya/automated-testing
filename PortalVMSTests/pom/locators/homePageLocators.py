@@ -1,8 +1,6 @@
 
 class HomePageLocators(object):
 
-	SYSTERS_TEXT = 'Systers'
-	ABOUT_TEXT = 'About'
 	ADMIN_REPORT_TEXT = 'Report'
 	VOLUNTEER_REPORT_TEXT = 'Report'
 	MANAGE_SHIFT_TEXT = 'Manage Volunteer Shifts'
